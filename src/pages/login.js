@@ -11,6 +11,9 @@ export default function Login() {
             <View style={styles.container}>
               <Logo/>
               <Form/>
+              <View style={styles.signupTextCont} >
+              <Text >Dont have an acoount? Sign up</Text>
+              </View>
             </View>
         );
         
@@ -23,5 +26,11 @@ export default function Login() {
       alignItems: 'center',
       justifyContent: 'center',
     },
+    signupTextCont:{
+      flexGrow: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+
+    }
   });
   
