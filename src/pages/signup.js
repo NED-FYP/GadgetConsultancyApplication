@@ -4,16 +4,16 @@ import Logo from "../components/logo.js";
 import Form from "../components/form.js";
 
 
-export default function Login() {
+export default function Signup() {
     
     {
         return(
             <View style={styles.container}>
               <Logo/>
-              <Form type= "Login"/>
+              <Form type= "Signup"/>
               <View style={styles.signupTextCont} >
-              <Text style={styles.signupText}>Dont have an acoount?</Text>
-              <Text style={styles.signupButton}> Sign up</Text>
+              <Text style={styles.signupText}>Already have an account?</Text>
+              <Text style={styles.signupButton}> Sign in</Text>
               </View>
             </View>
         );

@@ -7,16 +7,22 @@ export default function Form() {
 return(
     <View style={styles.container}>
        < TextInput style={styles.inputBox}
-        underlineColorAndroid='#007c91'
-         placeholder="Email address" 
-         placeholderTextColor="#ffffff"/>
-         < TextInput style={styles.inputBox}
-        underlineColorAndroid='#007c91'
-         placeholder="Password" 
-         placeholderTextColor="#ffffff"/>
+            underlineColorAndroid='#007c91'
+            placeholder="Email address" 
+            placeholderTextColor="#ffffff"
+        />
+
+        < TextInput style={styles.inputBox}
+            underlineColorAndroid='#007c91'
+            placeholder="Password" 
+            secureTextEntry={true}
+            placeholderTextColor="#ffffff"
+        />
+
          <TouchableOpacity style={styles.button} > 
-         <Text style={styles.buttonText}>Login</Text>
+            <Text style={styles.buttonText}>{this.props.type}</Text>
          </TouchableOpacity>
+         
     </View>
      );
     
@@ -48,7 +54,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#007c91',
       borderRadius: 10,
       marginVertical: 10,
-      paddingVertical : 12
+      paddingVertical : 13
     }
   });
   

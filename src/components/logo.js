@@ -8,7 +8,7 @@ return(
     <View style={styles.container}>
     <Image style={{width: 90, height: 150}}
     source={require('../images/logo.png')}/>
-    <Text style={{color:'#ffffff' , fontSize: 15}}>GADGET CONSUTANCY</Text>
+    <Text style={{color:'#ffffff' , fontSize: 15}}>GADGET CONSULTANCY</Text>
     
     </View> );
     
