@@ -1,10 +1,16 @@
-import React from 'react';
+//import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput , TouchableOpacity} from 'react-native';
 
 
-export default function Form() {
-    
-return(
+//export default function Form() {
+  //return(
+
+    export default class Form extends Component{
+
+  render(){
+    return(
+
     <View style={styles.container}>
        < TextInput style={styles.inputBox}
             underlineColorAndroid='#007c91'
@@ -26,7 +32,7 @@ return(
     </View>
      );
     
-
+  }
 } 
 const styles = StyleSheet.create({
     container: {
