@@ -31,7 +31,7 @@ export default class Login extends Component{
               </View>  
 
               <View style={styles.SocialAccountIconsCont} >
-              <Image style={{width: 100, height: 90}}
+              <Image 
               source={require('../images/fb_icon.png')}/>
 
               </View>
