@@ -1,20 +1,49 @@
-import React from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import React, { Component } from 'react'; 
+import { StyleSheet, Text, View, StatusBar,TouchableOpacity } from 'react-native';
+//import {Actions} from 'react-native-router-flux';
 import Logo from "../components/logo.js";
 import Form from "../components/form.js";
 
 
-export default function Login() {
+export default class Login extends Component{
+ 
+  render(){
     
-    {
+    
         return(
             <View style={styles.container}>
               <Logo/>
               <Form type= "Login"/>
-              <View style={styles.signupTextCont} >
-              <Text style={styles.signupText}>Dont have an acoount?</Text>
-              <Text style={styles.signupButton}> Sign up</Text>
+              <View style={styles.forgotPasswordCont} >
+                 <TouchableOpacity 
+                                onPress={() =>
+                                this.props.navigation.navigate('signup')
+              }>
+              
+              <Text style={styles.forgotPasswordButton}>Forgot Password?
+              </Text> 
+                 </TouchableOpacity>
               </View>
+
+              <View style={styles.LoginWithSocialAccountTextCont} >
+              <Text style={styles.LoginWithSocialAccountText}>Login With Social Account
+              </Text>
+              </View>  
+
+              <View style={styles.signupTextCont} >
+              <Text style={styles.signupText}>Dont have an acoount?
+              </Text>
+                 <TouchableOpacity 
+                                onPress={() =>
+                                this.props.navigation.navigate('signup')
+              }>
+              <Text style={styles.signupButton}> Sign up
+              </Text>
+                </TouchableOpacity>
+              </View>
+
+              
+
             </View>
         );
         
@@ -42,6 +71,35 @@ export default function Login() {
       color:'#ffffff',
       fontSize: 16,
       fontWeight: '500'
-    }
+    },
+    forgotPasswordCont:{
+      
+      justifyContent: 'center',
+      paddingHorizontal: 30,
+      alignSelf :"flex-end" , 
+      flexDirection: 'row-reverse',
+      position : "relative",
+      top: -145  
+    },
+   forgotPasswordButton:{
+      color:'#ffffff',
+      fontSize: 16,
+      fontWeight: '400', 
+      textDecorationLine: 'underline',   
+},
+   LoginWithSocialAccountTextCont:{
+      flexGrow: 1,
+      alignItems: 'flex-end',
+      justifyContent: 'center',
+      flexDirection: 'row',
+      paddingVertical: 16
+
+  },
+
+  LoginWithSocialAccountText:{
+      color: "#ffffff",
+      fontSize:16,
+      fontWeight: '400',
+    },
   });
   

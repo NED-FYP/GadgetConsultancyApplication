@@ -1,5 +1,5 @@
 //import React from 'react';
-import React, { Component } from 'react';
+import React, { Component } from 'react'; 
 import { StyleSheet, Text, View, TextInput , TouchableOpacity} from 'react-native';
 
 
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
       width:300,
       backgroundColor: '#007c91',
       borderRadius: 10,
-      marginVertical: 10,
+      marginVertical: 40,
       paddingVertical : 13
     }
   });

@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react'; 
 import { StyleSheet, Text, View, StatusBar } from 'react-native';
-import Login from "./src/pages/login";
-import Signup from "./src/pages/signup";
+//import Routes from './src/route' ;
+import Login from './src/pages/login';
+import Signup from './src/pages/signup';
+import { createStackNavigator, } from 'react-navigation-stack';
+import {createAppContainer, } from 'react-navigation';
 
-export default function App() {
+class App extends Component{
+  render(){
   return (
+    
     <View style={styles.container}>
     <StatusBar backgroundColor="#007c91" barStyle="light-content" />
-      <Signup/>
-      
-    </View>
+    
+     </View>
+     
   );
+}
 }
  
 const styles = StyleSheet.create({
@@ -21,3 +27,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+const Router = createStackNavigator({
+  login: { screen: Login },
+  signup: { screen: Signup},
+},
+{
+  headerMode: 'none' 
+},
+
+{
+  initialRouteName: 'login'
+}
+);
+const Routes = createAppContainer(Router);
+
+  export default Routes;
+
+
+
+
