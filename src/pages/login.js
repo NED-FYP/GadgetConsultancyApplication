@@ -31,13 +31,13 @@ export default class Login extends Component{
               </View>  
 
               <View style={styles.SocialAccountIconsCont} >
-              <Image style={{width: 90, height: 150}}
+              <Image style={{width: 100, height: 90}}
               source={require('../images/fb_icon.png')}/>
 
               </View>
 
               <View style={styles.SocialAccountIconsCont} >
-              <Image style={{width: 90, height: 150}}
+              <Image style={{width: 100, height: 90}}
               source={require('../images/gmail_icon.png')}/>
 
               </View>
