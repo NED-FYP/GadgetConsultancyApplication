@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import { StyleSheet, Text, View, StatusBar,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View,TouchableOpacity, Image } from 'react-native';
 //import {Actions} from 'react-native-router-flux';
 import Logo from "../components/logo.js";
 import Form from "../components/form.js";
@@ -29,6 +29,19 @@ export default class Login extends Component{
               <Text style={styles.LoginWithSocialAccountText}>Login With Social Account
               </Text>
               </View>  
+
+              <View style={styles.SocialAccountIconsCont} >
+              <Image style={{width: 90, height: 150}}
+              source={require('../images/fb_icon.png')}/>
+
+              </View>
+
+              <View style={styles.SocialAccountIconsCont} >
+              <Image style={{width: 90, height: 150}}
+              source={require('../images/gmail_icon.png')}/>
+
+              </View>
+
 
               <View style={styles.signupTextCont} >
               <Text style={styles.signupText}>Dont have an acoount?
@@ -92,8 +105,9 @@ export default class Login extends Component{
       alignItems: 'flex-end',
       justifyContent: 'center',
       flexDirection: 'row',
-      paddingVertical: 16
-
+      paddingVertical: 16 ,
+      position : "relative",
+      top: -90                     
   },
 
   LoginWithSocialAccountText:{
