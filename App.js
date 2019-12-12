@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, StatusBar } from 'react-native';
 //import Routes from './src/route' ;
 import Login from './src/pages/login';
 import Signup from './src/pages/signup';
+import ForgotPassword from './src/pages/forgotpassword';
 import { createStackNavigator, } from 'react-navigation-stack';
 import {createAppContainer, } from 'react-navigation';
 
@@ -30,6 +31,8 @@ const styles = StyleSheet.create({
 const Router = createStackNavigator({
   login: { screen: Login },
   signup: { screen: Signup},
+  forgotPassword: { screen: ForgotPassword},
+
 },
 {
   headerMode: 'none' 

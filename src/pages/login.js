@@ -17,7 +17,7 @@ export default class Login extends Component{
               <View style={styles.forgotPasswordCont} >
                  <TouchableOpacity 
                                 onPress={() =>
-                                this.props.navigation.navigate('signup')
+                                this.props.navigation.navigate('forgotPassword')
               }>
               
               <Text style={styles.forgotPasswordButton}>Forgot Password?
@@ -30,14 +30,14 @@ export default class Login extends Component{
               </Text>
               </View>  
 
-              <View style={styles.SocialAccountIconsCont} >
+              <View style={styles.fbIconCont} >
               <Image 
               source={require('../images/fb_icon.png')}/>
 
               </View>
 
-              <View style={styles.SocialAccountIconsCont} >
-              <Image style={{width: 100, height: 90}}
+              <View style={styles.gmailIconCont} >
+              <Image 
               source={require('../images/gmail_icon.png')}/>
 
               </View>
@@ -86,7 +86,7 @@ export default class Login extends Component{
       fontWeight: '500'
     },
     forgotPasswordCont:{
-      
+      flexGrow: 1,
       justifyContent: 'center',
       paddingHorizontal: 30,
       alignSelf :"flex-end" , 
@@ -115,5 +115,19 @@ export default class Login extends Component{
       fontSize:16,
       fontWeight: '400',
     },
+  fbIconCont : {
+    flexGrow: 1,
+     position : "relative",
+      left: -90 
+  },
+
+gmailIconCont : {
+  flexGrow: 1,
+  position : "relative",
+  right: -60 ,
+  top: -65
+
+}
+
   });
   
