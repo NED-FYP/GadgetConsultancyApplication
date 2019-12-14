@@ -3,6 +3,10 @@ import { StyleSheet, Text, View,TouchableOpacity, Image } from 'react-native';
 //import {Actions} from 'react-native-router-flux';
 import Logo from "../components/logo.js";
 import Form from "../components/form.js";
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+ } from 'react-native-responsive-screen' ;
 
 
 export default class Login extends Component{
@@ -106,6 +110,8 @@ export default class Login extends Component{
       justifyContent: 'center',
       flexDirection: 'row',
       paddingVertical: 16 ,
+      width: wp('70%'),
+      height: hp('10%'),
       position : "relative",
       top: -90                     
   },

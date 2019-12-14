@@ -7,6 +7,7 @@ import ForgotPassword from './src/pages/forgotpassword';
 import { createStackNavigator, } from 'react-navigation-stack';
 import {createAppContainer, } from 'react-navigation';
 
+
 class App extends Component{
   render(){
   return (
