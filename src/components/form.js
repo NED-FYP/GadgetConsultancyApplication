@@ -1,6 +1,10 @@
 //import React from 'react';
 import React, { Component } from 'react'; 
 import { StyleSheet, Text, View, TextInput , TouchableOpacity} from 'react-native';
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+ } from 'react-native-responsive-screen' ;
 
 
 //export default function Form() {
@@ -41,13 +45,16 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     inputBox:{
-        width:300,
+        
         backgroundColor: '#007c91',
         borderRadius: 10,
         paddingHorizontal: 16,
         fontSize:16,
         color:'#ffffff',
-        marginVertical: 10
+        marginVertical: 10,
+        width: wp('82%'),
+        height: hp('5%'),
+       
     },
     buttonText:{
       fontSize: 16,
