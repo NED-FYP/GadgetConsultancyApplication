@@ -99,9 +99,9 @@ export default class Login extends Component{
       alignSelf :"flex-end" , 
       flexDirection: 'row-reverse',
       position : "relative",
-      top: -145 ,
-      width: wp('70%'),
-      height: hp('10%'),
+      top: hp('-9%') ,  
+      //width: wp('70%'),
+      //height: hp('10%'),
 
     },
    forgotPasswordButton:{
@@ -116,12 +116,9 @@ export default class Login extends Component{
       justifyContent: 'center',
       flexDirection: 'row',
       paddingVertical: 16 ,
-      width: wp('70%'),
-      height: hp('10%'),
       position : "relative",
-      top: -90  ,
-      width: wp('70%'),
-      height: hp('10%'),
+      top: hp('3%') ,  
+      
                   
   },
 
@@ -133,13 +130,12 @@ export default class Login extends Component{
   fbIconCont : {
     flexGrow: 1,
      position : "relative",
-      left: -90 ,
-      width: wp('70%'),
-      height: hp('10%'),
+      left: wp('-20%') ,
+      bottom: hp('-10%'),
 
-  },
-
-gmailIconCont : {
+    
+},
+gilIconCont : {
   flexGrow: 1,
   position : "relative",
   right: -60 ,

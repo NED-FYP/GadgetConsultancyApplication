@@ -28,20 +28,24 @@ const styles = StyleSheet.create({
       flexGrow: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      width: wp('40%'),
-      height: hp('5%'),
+      
     
     },
     Imagecontainer:
   {
-    width: wp('40%'),
-    height: hp('5%'),
+    
+    position : "relative",
+      top: hp('10%') ,
+      //width: wp('70%'),
+      //height: hp('10%'),
 
 
   },
   Textcontainer:{
-    width: wp('40%'),
-    height: hp('5%'),
+    
+    position : "relative",
+      top: hp('10%') ,
+    //height: hp('40%'),
 
   }
 

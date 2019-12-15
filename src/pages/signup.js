@@ -4,6 +4,10 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 import Logo from "../components/logo.js";
 import Form from "../components/form.js";
 //import { Actions } from 'react-native-router-flux';
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+ } from 'react-native-responsive-screen' ;
 
 
 export default class Signup extends Component{
@@ -50,7 +54,10 @@ export default class Signup extends Component{
       alignItems: 'flex-end',
       justifyContent: 'center',
       flexDirection: 'row',
-      paddingVertical: 16
+      paddingVertical: 16,
+
+      width: wp('82%'),
+      height: hp('5%'),
     },
     signupText:{
       color: "#ffffff",
@@ -62,16 +69,19 @@ export default class Signup extends Component{
       fontWeight: '500'
     },
     inputBox:{
-      width:300,
+      //width:300,
       backgroundColor: '#007c91',
       borderRadius: 10,
       paddingHorizontal: 16,
       fontSize:16,
       color:'#ffffff',
-      marginVertical: 10
+      marginVertical: 10,
+
+      width: wp('82%'),
+      height: hp('5%'),
   },
   confirmPasswordinputBox:{
-    width:300,
+      //width:300,
       backgroundColor: '#007c91',
       borderRadius: 10,
       paddingHorizontal: 16,
@@ -80,7 +90,10 @@ export default class Signup extends Component{
       marginVertical: 10,
       
       position : "relative",
-      top: -145 
+      top: -145 ,
+
+      width: wp('82%'),
+      height: hp('5%'),
 
   }
 });

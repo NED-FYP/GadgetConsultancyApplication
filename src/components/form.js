@@ -6,6 +6,7 @@ import {
   widthPercentageToDP as wp,
  } from 'react-native-responsive-screen' ;
 
+
 //export default function Form() {
   //return(
 
@@ -42,6 +43,8 @@ const styles = StyleSheet.create({
       flexGrow: 1,
       alignItems: 'center',
       justifyContent: 'center',
+      position : "relative",
+      top: hp('10%') ,
     },
     inputBox:{
         //width:300,
@@ -53,6 +56,7 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         width: wp('82%'),
         height: hp('5%'),
+       
     },
     buttonText:{
       fontSize: 16,
