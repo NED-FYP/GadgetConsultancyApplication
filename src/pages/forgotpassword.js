@@ -15,10 +15,10 @@ export default class ForgotPassword extends Component{
           return(
             <View style={styles.container}>
             
-            <view style={styles.Lockcontainer}>
-             <Image style={{width: 90, height: 100, justifyContent: "flex-start" }}
+            <View style={styles.Lockcontainer}>
+             <Image style={{width: 130, height: 140, justifyContent: "flex-start" }}
                source={require('../images/lock.png')}/>
-               </view>
+               </View>
 
                <View style={styles.TroubleloggingTextCont} >
                   <Text style={styles.TroubleloggingText}>Trouble with logging in ?
@@ -63,9 +63,13 @@ export default class ForgotPassword extends Component{
           justifyContent: 'center',
 
         },
+        Lockcontainer:{
+          position : "relative",
+          top: hp('15%') ,
+        },
         TroubleloggingTextCont:{
-          width: wp('82%'),
-          height: hp('5%'),
+          position : "relative",
+          bottom: hp('-17%') ,
         },
 
         TroubleloggingText :{
@@ -79,8 +83,8 @@ export default class ForgotPassword extends Component{
       paddingVertical: 10,
       paddingHorizontal: 24,
       textAlign: 'justify',
-      width: wp('82%'),
-      height: hp('5%'),
+      position : "relative",
+      bottom: hp('-16%') ,
         
     },
     RecoveryEmailText:{
@@ -95,10 +99,11 @@ export default class ForgotPassword extends Component{
         fontSize:16,
         color:'#ffffff',
         marginVertical: 10,
-
         width: wp('82%'),
         height: hp('5%'),
         //textAlign: 'center'
+        position : "relative",
+        bottom: hp('-18%') ,
         
     },
     buttonText:{
@@ -108,11 +113,13 @@ export default class ForgotPassword extends Component{
         textAlign: 'center'
       },
     button:{
-        width:200,
+        width:wp(50),
         backgroundColor: '#a0a0a0',
         borderRadius: 10,
         marginVertical: 10,
         paddingVertical : 20,
+        position : "relative",
+        bottom: hp('-17.5%') ,
       },
       BackToLoginButton:{
         width:300,
@@ -128,16 +135,12 @@ export default class ForgotPassword extends Component{
         justifyContent: 'center',
         flexDirection: 'row',
 
-        width: wp('82%'),
-        height: hp('5%'),
-        //marginVertical: -10,
+        position : "relative",
+        bottom: hp('-10%') ,
          
       },
 
-      Lockcontainer:{
-        width: wp('82%'),
-        height: hp('5%'),
-      }
+      
 
       });
       

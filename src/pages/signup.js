@@ -10,6 +10,7 @@ import {
  } from 'react-native-responsive-screen' ;
 
 
+
 export default class Signup extends Component{
   
   render(){
@@ -17,11 +18,13 @@ export default class Signup extends Component{
         return(
             <View style={styles.container}>
               <Logo/>
+              <View style={styles.inputBoxCont}>
               < TextInput style={styles.inputBox}
                 underlineColorAndroid='#007c91'
                 placeholder="Username" 
                 placeholderTextColor="#ffffff"
                />
+               </View>
               <Form type= "Signup"/>
               < TextInput style={styles.confirmPasswordinputBox}
                 underlineColorAndroid='#007c91'
@@ -56,8 +59,6 @@ export default class Signup extends Component{
       flexDirection: 'row',
       paddingVertical: 16,
 
-      width: wp('82%'),
-      height: hp('5%'),
     },
     signupText:{
       color: "#ffffff",
@@ -69,16 +70,18 @@ export default class Signup extends Component{
       fontWeight: '500'
     },
     inputBox:{
-      //width:300,
+      width: wp('82%'),
+      height: hp('5%'),
       backgroundColor: '#007c91',
       borderRadius: 10,
       paddingHorizontal: 16,
       fontSize:16,
       color:'#ffffff',
       marginVertical: 10,
-
-      width: wp('82%'),
-      height: hp('5%'),
+  },
+  inputBoxCont:{
+    position : "relative",
+    top: hp('7%') ,
   },
   confirmPasswordinputBox:{
       //width:300,
@@ -88,10 +91,6 @@ export default class Signup extends Component{
       fontSize:16,
       color:'#ffffff',
       marginVertical: 10,
-      
-      position : "relative",
-      top: -145 ,
-
       width: wp('82%'),
       height: hp('5%'),
 

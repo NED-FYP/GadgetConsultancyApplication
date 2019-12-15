@@ -125,24 +125,21 @@ export default class Login extends Component{
   LoginWithSocialAccountText:{
       color: "#ffffff",
       fontSize:16,
-      fontWeight: '400',
+      fontWeight: '500',
     },
   fbIconCont : {
     flexGrow: 1,
      position : "relative",
-      left: wp('-20%') ,
-      bottom: hp('-10%'),
+      left: wp('-10%') ,
+      bottom: hp('-2%'),
 
     
 },
-gilIconCont : {
+gmailIconCont : {
   flexGrow: 1,
   position : "relative",
-  right: -60 ,
-  top: -65,
-  width: wp('70%'),
-  height: hp('10%'),
-
+  right: wp('-10%') ,
+  bottom: hp('8%'),
 
 }
 
