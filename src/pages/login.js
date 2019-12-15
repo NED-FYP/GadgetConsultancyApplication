@@ -78,7 +78,10 @@ export default class Login extends Component{
       alignItems: 'flex-end',
       justifyContent: 'center',
       flexDirection: 'row',
-      paddingVertical: 16
+      paddingVertical: 16,
+      width: wp('70%'),
+      height: hp('10%'),
+
     },
     signupText:{
       color: "#ffffff",
@@ -96,7 +99,10 @@ export default class Login extends Component{
       alignSelf :"flex-end" , 
       flexDirection: 'row-reverse',
       position : "relative",
-      top: -145  
+      top: -145 ,
+      width: wp('70%'),
+      height: hp('10%'),
+
     },
    forgotPasswordButton:{
       color:'#ffffff',
@@ -113,7 +119,10 @@ export default class Login extends Component{
       width: wp('70%'),
       height: hp('10%'),
       position : "relative",
-      top: -90                     
+      top: -90  ,
+      width: wp('70%'),
+      height: hp('10%'),
+                  
   },
 
   LoginWithSocialAccountText:{
@@ -124,14 +133,20 @@ export default class Login extends Component{
   fbIconCont : {
     flexGrow: 1,
      position : "relative",
-      left: -90 
+      left: -90 ,
+      width: wp('70%'),
+      height: hp('10%'),
+
   },
 
 gmailIconCont : {
   flexGrow: 1,
   position : "relative",
   right: -60 ,
-  top: -65
+  top: -65,
+  width: wp('70%'),
+  height: hp('10%'),
+
 
 }
 
