@@ -18,20 +18,38 @@ export default class Signup extends Component{
         return(
             <View style={styles.container}>
               <Logo/>
+
               <View style={styles.inputBoxCont}>
-              < TextInput style={styles.inputBox}
-                underlineColorAndroid='#007c91'
-                placeholder="Username" 
-                placeholderTextColor="#ffffff"
-               />
-               </View>
-              <Form type= "Signup"/>
-              < TextInput style={styles.confirmPasswordinputBox}
-                underlineColorAndroid='#007c91'
-                placeholder="Confirm Password" 
-                secureTextEntry={true}
-                placeholderTextColor="#ffffff"
-                />
+                 < TextInput style={styles.inputBox}
+                     underlineColorAndroid='#007c91'
+                     placeholder="Username" 
+                     placeholderTextColor="#ffffff"
+                  />
+                 < TextInput style={styles.inputBox}
+                     underlineColorAndroid='#007c91'
+                     placeholder="Email Address" 
+                     placeholderTextColor="#ffffff"
+                  />
+                 < TextInput style={styles.inputBox}
+                     underlineColorAndroid='#007c91'
+                     placeholder="Password" 
+                     secureTextEntry={true}
+                    placeholderTextColor="#ffffff"
+                  />
+  
+
+                < TextInput style={styles.inputBox}
+                     underlineColorAndroid='#007c91'
+                     placeholder="Confirm Password" 
+                     secureTextEntry={true}
+                     placeholderTextColor="#ffffff"
+                  />
+              </View>         
+
+                <TouchableOpacity style={styles.button} > 
+                   <Text style={styles.buttonText}>Signup</Text>
+                </TouchableOpacity>
+   
               <View style={styles.signupTextCont} >
               <Text style={styles.signupText}>Already have an account?</Text>
               <TouchableOpacity
@@ -40,7 +58,9 @@ export default class Signup extends Component{
               }>
               <Text style={styles.signupButton}> Sign in</Text></TouchableOpacity>
               </View>
-            </View>
+              </View>
+            
+
         );
         
     }
@@ -83,17 +103,23 @@ export default class Signup extends Component{
     position : "relative",
     top: hp('7%') ,
   },
-  confirmPasswordinputBox:{
-      //width:300,
-      backgroundColor: '#007c91',
-      borderRadius: 10,
-      paddingHorizontal: 16,
-      fontSize:16,
-      color:'#ffffff',
-      marginVertical: 10,
-      width: wp('82%'),
-      height: hp('5%'),
+  
+  button:{
+    //width:300,
+    backgroundColor: '#007c91',
+    borderRadius: 10,
+    marginVertical: 40,
+    paddingVertical : 13,
+    width: wp('40%'),
+    bottom:  hp('-5%')
+  },
+  buttonText:{
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#ffffff',
+    textAlign: 'center'
+  },
+  
 
-  }
 });
   

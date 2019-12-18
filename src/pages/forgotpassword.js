@@ -25,7 +25,7 @@ export default class ForgotPassword extends Component{
                   </Text>
               </View>  
               <View style={styles.RecoveryEmailTextCont} >
-                  <Text style={styles.RecoveryEmailText}>Enter your email address to get back into your 
+                  <Text style={styles.RecoveryEmailText}>Enter your email address to recover your 
                   </Text>
                   <Text style={{color:"#c30000" }}>account
                   </Text>

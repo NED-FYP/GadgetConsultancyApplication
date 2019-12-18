@@ -48,13 +48,13 @@ export default class Login extends Component{
 
 
               <View style={styles.signupTextCont} >
-              <Text style={styles.signupText}>Dont have an acoount?
+              <Text style={styles.signupText}>Don't have an acoount?
               </Text>
                  <TouchableOpacity 
                                 onPress={() =>
                                 this.props.navigation.navigate('signup')
               }>
-              <Text style={styles.signupButton}> Sign up
+              <Text style={styles.signupButton}> Signup
               </Text>
                 </TouchableOpacity>
               </View>
@@ -130,16 +130,16 @@ export default class Login extends Component{
   fbIconCont : {
     flexGrow: 1,
      position : "relative",
-      left: wp('-10%') ,
-      bottom: hp('-2%'),
+      left: wp('-15%') ,
+      bottom: hp('-5%'),
 
     
 },
 gmailIconCont : {
   flexGrow: 1,
   position : "relative",
-  right: wp('-10%') ,
-  bottom: hp('8%'),
+  right: wp('-15%') ,
+  bottom: hp('5.5%'),
 
 }
 
