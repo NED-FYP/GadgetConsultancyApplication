@@ -17,7 +17,7 @@ return(
     </View> 
 
     <View style={styles.Textcontainer}>
-    <Text style={{color:'#ffffff' , fontSize: 15}}>GADGET CONSULTANCY</Text>
+    <Text style={{color:'#fff' , fontSize: 15}}>GADGET CONSULTANCY</Text>
     </View> 
 
     </View> );
