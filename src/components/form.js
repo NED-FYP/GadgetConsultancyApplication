@@ -7,10 +7,8 @@ import {
  } from 'react-native-responsive-screen' ;
 
 
-//export default function Form() {
-  //return(
 
-    export default class Form extends Component{
+  export default class Form extends Component{
 
   render(){
     return(
@@ -29,7 +27,8 @@ import {
             placeholderTextColor="#ffffff"
         />
 
-         <TouchableOpacity style={styles.button} > 
+         <TouchableOpacity style={styles.button}>
+          
             <Text style={styles.buttonText}>{this.props.type}</Text>
          </TouchableOpacity>
          

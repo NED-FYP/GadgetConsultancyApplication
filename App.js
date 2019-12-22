@@ -33,7 +33,6 @@ const Router = createStackNavigator({
   login: { screen: Login },
   signup: { screen: Signup},
   forgotPassword: { screen: ForgotPassword},
-
 },
 {
   headerMode: 'none' 
