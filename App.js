@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
 });
 const Router = createStackNavigator({
   login: { screen: Login },
-  
   signup: { screen: Home},
   forgotPassword: { screen: Questions},
 
