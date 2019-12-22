@@ -4,12 +4,19 @@ import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import Login from './src/pages/login';
 import Signup from './src/pages/signup';
 import ForgotPassword from './src/pages/forgotpassword';
+//import DetailQuestion from '././src/pages/detailQuestion';
 import { createStackNavigator, } from 'react-navigation-stack';
 import {createAppContainer, } from 'react-navigation';
+import Home from './src/pages/home';
+import Questions from "./src/components/questions.js";
+
 
 
 class App extends Component{
+
+
   render(){
+    
   return (
     
     <View style={styles.container}>
@@ -31,8 +38,10 @@ const styles = StyleSheet.create({
 });
 const Router = createStackNavigator({
   login: { screen: Login },
-  signup: { screen: Signup},
-  forgotPassword: { screen: ForgotPassword},
+  
+  signup: { screen: Home},
+  forgotPassword: { screen: Questions},
+
 },
 {
   headerMode: 'none' 
