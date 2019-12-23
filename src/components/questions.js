@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet,  View, Text } from 'react-native';
+import { StyleSheet,  View, Text, TouchableOpacity } from 'react-native';
 import {
     heightPercentageToDP as hp,
     widthPercentageToDP as wp,
@@ -19,8 +19,28 @@ export default class Questions extends Component {
                              Question Title
                      </Text>
                   </View>
-             </View>
+                        <TouchableOpacity style={styles.button}>
+          
+                           <Text style={styles.buttonText}>tag
+                           </Text>
+                        </TouchableOpacity>
+                               <View style={styles.timeCont} >
 
+                                 <Text style={styles.timeAndUserText} >
+                                1 min ago
+                                 </Text>
+                               </View>
+                                     <View style={styles.userCont} >
+
+                                       <Text style={styles.timeAndUserText} >
+                                          By saniya
+                                       </Text>
+                                     </View>
+
+                          
+              </View>
+
+               
           </View>
         
           );
@@ -59,7 +79,38 @@ const styles = StyleSheet.create({
       fontSize:16, 
       fontWeight:'bold'
 
-     }
+     },
+     buttonText:{
+      color: "#007c91",
+      fontSize:14, 
+      textAlign: 'center'
+     },
+
+     button:{
+      backgroundColor: '#fff',
+      borderRadius: 5,
+      position : "relative",
+      right: wp('-24%') , 
+      top: hp('-8.5%'),
+      textAlign: 'center',
+      width: wp('12%'),
+     },
+     timeCont:{
+      position : "relative",
+      right: wp('-24%') , 
+      top: hp('-8.6%'),
+      
+     },
+     timeAndUserText:{
+      color: "#fff",
+      fontSize:14,
+     },
+     userCont:{
+      position : "relative",
+      left: wp('70%') , 
+      top: hp('-11.5%'),
+     },
+     
     
 });
      
