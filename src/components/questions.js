@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet,  View } from 'react-native';
+import { StyleSheet,  View, Text } from 'react-native';
 import {
     heightPercentageToDP as hp,
     widthPercentageToDP as wp,
@@ -11,9 +11,16 @@ export default class Questions extends Component {
         return (
           <View style={styles.container}>
              
-             <View style={styles.Rectangle} >
-                <View style={styles.Separator}/>
+             <View style={styles.rectangle} >
+                <View style={styles.separator}/>
+                  <View style={styles.questionTitleCont} >
+
+                     <Text style={styles.questionTitleText} >
+                             Question Title
+                     </Text>
+                  </View>
              </View>
+
           </View>
         
           );
@@ -27,20 +34,31 @@ const styles = StyleSheet.create({
      backgroundColor: '#bdbdbd',
     },
 
-     Rectangle:{
+     rectangle:{
        marginTop: 20,
-        width: wp(120),
-        height: hp(13),
-        borderWidth: wp(0.2),
-        borderColor: 'grey',
-        backgroundColor: '#a0a0a0',
+        width: wp('100%'),
+        height: hp('10%'),
+        borderWidth: wp('0.5%'),
+        borderColor: '#007c91',
+        backgroundColor: '#00acc1',
      },
-     Separator:{
-        height: hp(13),
-        width: wp(0.3),
-        backgroundColor: "grey",
+     separator:{
+        height: hp('9.5%'),
+        width: wp('0.7%'),
+        backgroundColor: "#007c91",
         position : "relative",
         right: wp('-20%') , 
+     },
+     questionTitleCont:{
+      position : "relative",
+      right: wp('-24%') , 
+      top: hp('-9%'),
+     },
+     questionTitleText:{
+      color: "#fff",
+      fontSize:16, 
+      fontWeight:'bold'
+
      }
     
 });
