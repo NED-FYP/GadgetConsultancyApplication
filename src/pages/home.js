@@ -27,6 +27,7 @@ import {
 
 
             
+            {/*By saniya*/}
             <View >
               <ScrollView horizontal={true} >
                  <Tag name="Laptop" />
