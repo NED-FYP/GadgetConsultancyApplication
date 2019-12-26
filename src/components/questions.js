@@ -55,8 +55,7 @@ export default class Questions extends Component {
                                     source={require('../images/question.png')}/>
                                     </View>
 
-                                       </View>
-          {/**  2nd rectangle */}
+              </View>
               <View style={styles.rectangle} >
               <View style={styles.separator}/>
                 <View style={styles.questionTitleCont} >
@@ -236,9 +235,8 @@ const styles = StyleSheet.create({
      },
      QuestionCont:{
         position : "relative",
-        left: wp('4.8%') , 
-        top: hp('-19.7%'),
-
+        left: wp('5%') , 
+        top: hp('-17.5%'),
      },
      likeAndQuestionText:{
         color: "#fff",

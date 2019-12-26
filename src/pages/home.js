@@ -64,8 +64,5 @@ const styles = StyleSheet.create({
       fontWeight: '200',
       textDecorationLine:'underline'
 
-    
-
-
-}
+    }
 });
