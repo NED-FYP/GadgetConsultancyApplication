@@ -10,7 +10,7 @@ export default class Questions extends Component {
     render() {
         return (
           <View style={styles.container}>
-             
+         {/**  1st rectangle */}
              <View style={styles.rectangle} >
                 <View style={styles.separator}/>
                   <View style={styles.questionTitleCont} >
@@ -55,10 +55,8 @@ export default class Questions extends Component {
                                     source={require('../images/question.png')}/>
                                     </View>
 
-                                       
-  
-
-              </View>
+                                       </View>
+          {/**  2nd rectangle */}
               <View style={styles.rectangle} >
               <View style={styles.separator}/>
                 <View style={styles.questionTitleCont} >
@@ -105,9 +103,8 @@ export default class Questions extends Component {
 
                                      
 
-
             </View>
-      
+           {/**  3rd rectangle */}
             <View style={styles.rectangle} >
             <View style={styles.separator}/>
               <View style={styles.questionTitleCont} >
@@ -170,15 +167,17 @@ const styles = StyleSheet.create({
     container: {
      flex: 1,
      backgroundColor: '#bdbdbd',
+     
     },
 
      rectangle:{
-       marginTop: 20,
+       
         width: wp('100%'),
         height: hp('12%'),
         borderWidth: wp('0.5%'),
         borderColor: '#007c91',
         backgroundColor: '#00acc1',
+        
      },
      separator:{
         height: hp('11.5%'),

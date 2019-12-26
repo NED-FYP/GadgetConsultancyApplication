@@ -6,6 +6,7 @@ import {
  } from 'react-native-responsive-screen' ;
  import { Header } from 'react-native-elements';
  //import NavigationDrawerStructure from "../components/navigationDrawer.js";
+ import Questions from "../components/questions.js";
 
 
  export default class Home extends Component{
@@ -14,15 +15,22 @@ import {
         return(
             <View style={styles.container}> 
             
-            <Header
-            backgroundColor='#007c91'
-            statusBarProps={{ barStyle: 'light-content' }}
-            leftComponent={{ icon: 'menu', color: '#fff' }}
-            centerComponent={{    text: 'GADGET CONSULTANCY', style: { color: '#fff' , fontWeight:'bold' , fontSize: 17} }}
-            rightComponent={{ icon: 'search', color: '#fff' }}
-            />
-  
+               <Header
+                  backgroundColor='#007c91'
+                  statusBarProps={{ barStyle: 'light-content' }}
+                  leftComponent={{ icon: 'menu', color: '#fff' }}
+                  centerComponent={{    text: 'GADGET CONSULTANCY', style: { color: '#fff' , fontWeight:'bold' , fontSize: 17} }}
+                  rightComponent={{ icon: 'search', color: '#fff' }}
+               />
+                  <View style={styles.recentlyViewedTextCont} >
+                     <Text style={styles.text} >Recently Viewed</Text>
+                  </View>
+                  <View style={styles.readMoreTextCont} >
+                     <Text style={styles.readMoretext} >Read more</Text>
+                  </View>
+            <Questions/>
             </View>
+
         )
 }}
 
@@ -37,6 +45,27 @@ const styles = StyleSheet.create({
       //justifyContent: 'center',
 
     },
+    recentlyViewedTextCont:{
+      
+    },
+    text:{
+      color:'#000',
+      fontSize: 20,
+      fontWeight: '500'
+    },
+    readMoreTextCont:{
+      position : "relative",
+      left: wp('70%') , 
+      top: hp('-3.7%'),
+    },
+    readMoretext:{
+      color:'#007c91',
+      fontSize: 20,
+      fontWeight: '200',
+      textDecorationLine:'underline'
+
     
 
+
+}
 });
