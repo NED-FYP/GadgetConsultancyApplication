@@ -55,9 +55,6 @@ export default class Questions extends Component {
                                     source={require('../images/question.png')}/>
                                     </View>
 
-                                       
-  
-
               </View>
 
                
@@ -141,7 +138,6 @@ const styles = StyleSheet.create({
         position : "relative",
         left: wp('5%') , 
         top: hp('-17.5%'),
-
      },
      likeAndQuestionText:{
         color: "#fff",
