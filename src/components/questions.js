@@ -230,13 +230,13 @@ const styles = StyleSheet.create({
      likeCont:{
         position : "relative",
         left: wp('5%') , 
-        top: hp('-21%'),
+        top: hp('-20%'),
 
      },
      QuestionCont:{
         position : "relative",
         left: wp('5%') , 
-        top: hp('-17.5%'),
+        top: hp('-18%'),
      },
      likeAndQuestionText:{
         color: "#fff",
@@ -245,12 +245,12 @@ const styles = StyleSheet.create({
      likeIconCont:{
         position : "relative",
         left: wp('10%') , 
-        top: hp('-27%'), 
+        top: hp('-25.6%'), 
      },
      questionIconCont:{
         position : "relative",
-        left: wp('10.8%') , 
-        top: hp('-25.5%'), 
+        left: wp('9.9%') , 
+        top: hp('-24.5%'), 
      }
     
 });

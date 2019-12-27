@@ -33,7 +33,7 @@ import {
 
             
            
-            <View style={{height:hp('200%'), marginTop:wp('60%')}}>
+            <View style={{ marginTop:hp('35%')}}>
               <ScrollView horizontal={true} >
                  <Tag name="Laptop" />
                  <Tag name="Mobile"/>
