@@ -47,7 +47,7 @@ import {
                 <Text style={styles.text} >RECENT TAGS</Text>
               </View>
            
-            <View  /**style={{ marginTop:hp('0%')}}*/>
+            <View  style={{  backgroundColor: '#00acc1'}}>
               <ScrollView horizontal={true} >
                  <Tag name="Laptop" />
                  <Tag name="Mobile"/>
