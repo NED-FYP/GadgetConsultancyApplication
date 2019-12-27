@@ -243,15 +243,16 @@ const styles = StyleSheet.create({
         fontSize:14, 
      },
      likeIconCont:{
+    
         position : "relative",
         left: wp('10%') , 
         top: hp('-25.6%'), 
      },
      questionIconCont:{
+     
         position : "relative",
         left: wp('9.9%') , 
         top: hp('-24.5%'), 
-     }
-    
+     }    
 });
      

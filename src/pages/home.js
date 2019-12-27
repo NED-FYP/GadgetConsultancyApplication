@@ -22,18 +22,24 @@ import {
             centerComponent={{    text: 'GADGET CONSULTANCY', style: { color: '#fff' , fontWeight:'bold' , fontSize: 17} }}
             rightComponent={{ icon: 'search', color: '#fff' }}
             />
-           
-                  <View style={styles.recentlyViewedTextCont} >
-                     <Text style={styles.text} >Recently Viewed</Text>
-                  </View>
-                  <View style={styles.readMoreTextCont} >
-                     <Text style={styles.readMoretext} >Read more</Text>
-                  </View>
-            <Questions/>
+            <ScrollView>  
+              {/*Recently viewed**/}
+              <View style={styles.recentlyViewedTextCont} >
+                <Text style={styles.text} >RECENTLY VIEWED</Text>
+              </View>
+              <View style={styles.readMoreTextCont} >
+                <TouchableOpacity>
+                  <Text style={styles.readMoretext} >Read more</Text>
+                </TouchableOpacity>
+              </View>
+                              <Questions/>
 
-            
+              {/*Recent Tags**/}
+              <View style={styles.recenttagsTextCont} >
+                <Text style={styles.text} >RECENT TAGS</Text>
+              </View>
            
-            <View style={{ marginTop:hp('35%')}}>
+            <View  /**style={{ marginTop:hp('0%')}}*/>
               <ScrollView horizontal={true} >
                  <Tag name="Laptop" />
                  <Tag name="Mobile"/>
@@ -41,8 +47,21 @@ import {
                  <Tag name="Headphones"/>  
               </ScrollView>
             </View>
-  
-             
+
+            {/*Mostly viewed**/}
+            <View style={styles.mostlyViewedTextCont} >
+            <Text style={styles.text} >MOSTLY VIEWED</Text>
+            </View>
+            <View style={styles.readMoreMostlyViewedTextCont} >
+                <TouchableOpacity>
+                  <Text style={styles.readMoretext} >Read more</Text>
+                </TouchableOpacity>
+            </View>
+
+             <Questions /> 
+    
+            
+            </ScrollView>                
             </View>
 
         )
@@ -60,12 +79,14 @@ const styles = StyleSheet.create({
 
     },
     recentlyViewedTextCont:{
-      
+      position : "relative",
+      right: wp('-3%') , 
+      top: hp('-0.1%'),
     },
     text:{
       color:'#000',
       fontSize: 20,
-      fontWeight: '500'
+      fontWeight: 'bold'
     },
     readMoreTextCont:{
       position : "relative",
@@ -75,8 +96,29 @@ const styles = StyleSheet.create({
     readMoretext:{
       color:'#007c91',
       fontSize: 20,
-      fontWeight: '200',
+      fontWeight: 'bold',
       textDecorationLine:'underline'
 
+    },
+
+    recenttagsTextCont:{
+      position : "relative",
+      right: wp('-3%') , 
+      bottom: hp('-3%'),
+    },
+
+    mostlyViewedTextCont:{
+      position : "relative",
+      right: wp('-3%') , 
+      top: hp('-185%'),
+    },
+    readMoreMostlyViewedTextCont:{
+      position : "relative",
+      left: wp('70%') , 
+      top: hp('-188.6%'),
     }
+
+
+
+    
 });
