@@ -23,19 +23,27 @@ import {
             rightComponent={{ icon: 'search', color: '#fff' }}
             />
             <ScrollView>  
-              {/*Recently viewed**/}
-              <View style={styles.recentlyViewedTextCont} >
-                <Text style={styles.text} >RECENTLY VIEWED</Text>
-              </View>
-              <View style={styles.readMoreTextCont} >
-                <TouchableOpacity>
-                  <Text style={styles.readMoretext} >Read more</Text>
-                </TouchableOpacity>
-              </View>
-                              <Questions/>
+             
+            {/*Recently viewed**/}
+            <View >
+               <View style={styles.headingView} >
+                  <Text style={styles.text} >RECENTLY VIEWED</Text>
+               </View>
+                       <View style={styles.readMoreView} >
+                          <TouchableOpacity>
+                              <Text style={styles.readMoretext} >Read more</Text>
+                          </TouchableOpacity>
+                       </View>
+                                   <View style={styles.questionView} >
+                                      <Questions />  
+                                   </View>
+                                          
+             </View>                   
 
               {/*Recent Tags**/}
-              <View style={styles.recenttagsTextCont} >
+              <View>
+
+              <View style={styles.headingView} >
                 <Text style={styles.text} >RECENT TAGS</Text>
               </View>
            
@@ -47,18 +55,40 @@ import {
                  <Tag name="Headphones"/>  
               </ScrollView>
             </View>
+            </View>
 
             {/*Mostly viewed**/}
-            <View style={styles.mostlyViewedTextCont} >
+            <View  >
+            <View style={styles.headingView} >
             <Text style={styles.text} >MOSTLY VIEWED</Text>
             </View>
-            <View style={styles.readMoreMostlyViewedTextCont} >
+             <View style={styles.readMoreView} >
                 <TouchableOpacity>
                   <Text style={styles.readMoretext} >Read more</Text>
                 </TouchableOpacity>
             </View>
+            <View style={styles.questionView} >
+                                      <Questions />  
+                                   </View>
+                      
+            </View>
+             {/*Your Interest**/}
+            <View  >
+            <View style={styles.headingView} >
+            <Text style={styles.text} >YOUR INTEREST</Text>
+            </View>
+             <View style={styles.readMoreView} >
+                <TouchableOpacity>
+                  <Text style={styles.readMoretext} >Read more</Text>
+                </TouchableOpacity>
+            </View>
+            <View style={styles.questionView} >
+            <Questions />  
+         </View>          
+            </View>
+           
 
-             <Questions /> 
+            
     
             
             </ScrollView>                
@@ -72,28 +102,18 @@ import {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#bdbdbd',
-      flexGrow: 1,
-      //alignItems: 'center',
-      //justifyContent: 'center',
+     // backgroundColor: '#bdbdbd',
+      backgroundColor: '#fff',
+      
 
     },
-    recentlyViewedTextCont:{
-      position : "relative",
-      right: wp('-3%') , 
-      top: hp('-0.1%'),
-    },
+   
     text:{
       color:'#000',
       fontSize: 20,
       fontWeight: 'bold'
     },
-    readMoreTextCont:{
-      position : "relative",
-      left: wp('70%') , 
-      top: hp('-3.7%'),
-    },
-    readMoretext:{
+     readMoretext:{
       color:'#007c91',
       fontSize: 20,
       fontWeight: 'bold',
@@ -107,18 +127,21 @@ const styles = StyleSheet.create({
       bottom: hp('-3%'),
     },
 
-    mostlyViewedTextCont:{
+    headingView:{
       position : "relative",
       right: wp('-3%') , 
-      top: hp('-185%'),
+      bottom: hp('-0.5%'),
     },
-    readMoreMostlyViewedTextCont:{
+    readMoreView:{
       position : "relative",
       left: wp('70%') , 
-      top: hp('-188.6%'),
+      top: hp('-3%'),
+    },
+    questionView:{
+      position : "relative",
+      top: hp('-3%'),
+   
     }
-
-
-
+   
     
 });
