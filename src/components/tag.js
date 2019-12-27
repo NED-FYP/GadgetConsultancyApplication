@@ -9,7 +9,7 @@ import {
  export default class Tag extends Component{
     render(){
         return(
-            <View style={{marginLeft:wp('5%') }}>
+            <View style={{marginLeft:wp('5%'),  alignItems: 'center', justifyContent: 'center'}}>
             <View>
               <TouchableOpacity style={styles.button} > 
                  <Text style={styles.buttonText}>{this.props.name}</Text>

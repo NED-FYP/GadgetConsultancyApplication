@@ -43,19 +43,24 @@ import {
               {/*Recent Tags**/}
               <View>
 
-              <View style={styles.headingView} >
-                <Text style={styles.text} >RECENT TAGS</Text>
-              </View>
+                 <View style={styles.headingView} >
+                     <Text style={styles.text} >RECENT TAGS</Text>
+                 </View>
            
-            <View  /**style={{ marginTop:hp('0%')}}*/>
-              <ScrollView horizontal={true} >
-                 <Tag name="Laptop" />
-                 <Tag name="Mobile"/>
-                 <Tag name="Camera"/>
-                 <Tag name="Headphones"/>  
-              </ScrollView>
-            </View>
-            </View>
+                      <View  style={{ backgroundColor: '#00acc1',
+                                      width: wp('100%'),
+                                      height: hp('15%'),
+                                      borderWidth: wp('0.5%'),
+                                      borderColor: '#007c91',
+                                   }}>
+                          <ScrollView horizontal={true} >
+                             <Tag name="Laptop" />
+                             <Tag name="Mobile"/>
+                             <Tag name="Camera"/>
+                             <Tag name="Headphones"/>    
+                          </ScrollView>
+                       </View>
+              </View>
 
             {/*Mostly viewed**/}
             <View  >
@@ -130,7 +135,7 @@ const styles = StyleSheet.create({
     headingView:{
       position : "relative",
       right: wp('-3%') , 
-      bottom: hp('-0.5%'),
+      bottom: hp('-1%'),
     },
     readMoreView:{
       position : "relative",
