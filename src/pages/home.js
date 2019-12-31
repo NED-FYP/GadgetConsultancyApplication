@@ -4,6 +4,7 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
  } from 'react-native-responsive-screen' ;
+ 
  import { Header } from 'react-native-elements';
  //import NavigationDrawerStructure from "../components/navigationDrawer.js";
  import Questions from "../components/questions.js";

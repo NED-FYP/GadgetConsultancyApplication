@@ -9,6 +9,7 @@ import { createStackNavigator, } from 'react-navigation-stack';
 import {createAppContainer, } from 'react-navigation';
 import Home from './src/pages/home';
 import Questions from "./src/components/questions.js";
+import SearchedQuestions from './src/pages/searchedQuestions';
 
 
 
@@ -38,8 +39,8 @@ const styles = StyleSheet.create({
 });
 const Router = createStackNavigator({
   login: { screen: Login },
-  signup: { screen: Home},
-  forgotPassword: { screen: Questions},
+  signup: { screen: Signup},
+  forgotPassword: { screen: ForgotPassword},
 
 },
 {
