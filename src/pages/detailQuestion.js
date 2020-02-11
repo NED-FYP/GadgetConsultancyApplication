@@ -21,7 +21,7 @@ import {
                 centerComponent={{    text: 'DETAIL PAGE', style: { color: '#fff' , fontWeight:'bold' , fontSize: 17} }}
                 rightComponent={{ icon: 'search', color: '#fff' }}
               />
-                <ScrollView>  
+              <ScrollView>  
                 <View style={styles.rectangle} >
                   <View style={styles.separator}/>
                      <View style={styles.questionTitleCont} >
@@ -143,7 +143,18 @@ import {
                      when an unknown printer took a galley of type and scrambled it to make a type specimen
                      book.</Text>
                 </View>
-                
+
+            
+                <View style={styles.postYourAnswerView} >
+                 <TouchableOpacity style={styles.postYourAnswerButton}
+                                onPress={() =>
+                                this.props.navigation.navigate('login')
+                 }>
+                 <Text style={styles.buttonText}>Post Your Answer
+                 </Text>
+                 </TouchableOpacity>
+                 </View>
+                 
                </ScrollView>  
    
 
@@ -391,6 +402,24 @@ import {
             textAlign: 'center',
             paddingHorizontal: 8
                },
-
+               postYourAnswerButton:{
+                  width:300,
+                  backgroundColor: '#007c91',
+                  borderRadius: 10,
+                  marginVertical: 80,
+                  paddingVertical : 13,
+                },
+                postYourAnswerView:{
+                 
+                  position : "absolute",
+                  bottom: hp('-18%') ,  
+                },
+                buttonText:{
+                  fontSize: 16,
+                  fontWeight: '500',
+                  color: '#ffffff',
+                  textAlign: 'center'
+                },
+          
 
 });

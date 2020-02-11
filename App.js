@@ -13,6 +13,14 @@ import SearchedQuestions from './src/pages/searchedQuestions';
 
 
 
+
+import PostQuestion from './src/pages/postQuestion';
+import EditQuestion from './src/pages/editQuestion';
+import Filter from './src/pages/filter';
+import MyQuestions from './src/pages/myQuestions';
+import Home2 from './src/pages/home2';
+
+
 class App extends Component{
 
 
@@ -41,7 +49,6 @@ const Router = createStackNavigator({
   login: { screen: Login },
   signup: { screen: Signup},
   forgotPassword: { screen: ForgotPassword},
-
 },
 {
   headerMode: 'none' 

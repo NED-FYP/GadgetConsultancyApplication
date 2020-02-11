@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet,  View, Text, TouchableOpacity,Image} from 'react-native';
+import { StyleSheet,  View, Text, TouchableOpacity,Image,ScrollView} from 'react-native';
 import { Header } from 'react-native-elements';
 import { Dropdown } from 'react-native-material-dropdown';
 import { Icon } from 'react-native-elements'
@@ -7,7 +7,7 @@ import {
     heightPercentageToDP as hp,
     widthPercentageToDP as wp,
    } from 'react-native-responsive-screen' ;
-import { ScrollView } from 'react-native-gesture-handler';
+
 
 export default class SearchedQuestions extends Component {
 
@@ -31,7 +31,10 @@ export default class SearchedQuestions extends Component {
           />
         <ScrollView>
           <View style={{ flexDirection: 'row-reverse' ,marginLeft:5 ,marginTop:5 }}>
-               <TouchableOpacity style={styles.button} > 
+               <TouchableOpacity style={styles.button}
+                      onPress={() =>
+                      this.props.navigation.navigate('login')
+                             }> 
                     <Text style={styles.buttonText}>Ask Question</Text>
                </TouchableOpacity>
           </View>
@@ -268,14 +271,15 @@ export default class SearchedQuestions extends Component {
             width: wp('100%'),
             height: hp('16%'),
             borderWidth: wp('0.5%'),
-            borderColor: '#9ea7aa',
-            backgroundColor: '#cfd8dc',
+            borderColor: '#aeaeae',
+            backgroundColor: '#ffffff',
+            borderTopWidth:0
             
          },
          separator:{
-            height: hp('15.5%'),
+            height: hp('16%'),
             width: wp('0.7%'),
-            backgroundColor: "#9ea7aa",
+            backgroundColor: "#aeaeae",
             position : "relative",
             right: wp('-20%') , 
          },
