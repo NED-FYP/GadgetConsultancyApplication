@@ -18,6 +18,16 @@ export default class Login extends Component{
             <View style={styles.container}>
               <Logo/>
               <Form type= "Login"/>
+                  <View style={styles.loginButtonView}>
+                  <TouchableOpacity style={styles.loginButton}
+                      onPress={() =>
+                      this.props.navigation.navigate('detailQuestion')
+                   }>
+                      <Text style={styles.loginButtonText}> Login
+                      </Text>
+                  </TouchableOpacity>
+                  </View>
+
               <View style={styles.forgotPasswordCont} >
                  <TouchableOpacity 
                                 onPress={() =>
@@ -141,7 +151,28 @@ gmailIconCont : {
   right: wp('-15%') ,
   bottom: hp('5.5%'),
 
+},
+loginButtonText:{
+  fontSize: 16,
+  fontWeight: '500',
+  color: '#ffffff',
+  textAlign: 'center'
+},
+loginButton:{
+  //width:300,
+  backgroundColor: '#007c91',
+  borderRadius: 10,
+  marginVertical: 40,
+  paddingVertical : 13,
+  width: wp('40%'),
+  //height: hp('5%'),
+},
+loginButtonView:{
+  position : "relative",
+
+  bottom: hp('-10%'),
 }
 
   });
+ 
   

@@ -46,7 +46,11 @@ export default class Signup extends Component{
                   />
               </View>         
 
-                <TouchableOpacity style={styles.button} > 
+                <TouchableOpacity style={styles.button}
+                  onPress={() =>
+                  this.props.navigation.navigate('home')
+                    }
+                 > 
                    <Text style={styles.buttonText}>Signup</Text>
                 </TouchableOpacity>
    
