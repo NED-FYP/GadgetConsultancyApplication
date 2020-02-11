@@ -10,6 +10,11 @@ import {createAppContainer, } from 'react-navigation';
 import Home from './src/pages/home';
 import Questions from "./src/components/questions.js";
 import SearchedQuestions from './src/pages/searchedQuestions';
+import ViewProfile from './src/pages/viewProfile';
+import EditProfile from './src/pages/editProfile';
+import SearchHistory from './src/pages/searchHistory';
+import MyActivities from './src/pages/myActivities';
+
 
 
 
@@ -41,7 +46,13 @@ const Router = createStackNavigator({
   login: { screen: Login },
   signup: { screen: Signup},
   forgotPassword: { screen: ForgotPassword},
-
+  home:{screen: Home},
+  detailQuestion:{screen: DetailQuestion},
+  searchedQuestions:{screen: SearchedQuestions},
+  viewProfile:{screen: ViewProfile},
+  EditProfile:{screen:EditProfile},
+  searchHistory:{screen: SearchHistory},
+  MyActivities :{screen: MyActivities}
 },
 {
   headerMode: 'none' 

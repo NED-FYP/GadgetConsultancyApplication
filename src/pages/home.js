@@ -35,7 +35,13 @@ import {
                               <Text style={styles.readMoretext} >Read more</Text>
                           </TouchableOpacity>
                        </View>
-                                   <View style={styles.questionView} >
+                                   <View style={styles.questionView}
+                                    >
+                                     <TouchableOpacity 
+                                    onPress={() =>
+                                    this.props.navigation.navigate('forgotPassword')
+                                       }>
+                                    </TouchableOpacity>
                                       <Questions />  
                                    </View>
                                           

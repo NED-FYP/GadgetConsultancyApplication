@@ -27,11 +27,8 @@ import {
             placeholderTextColor="#ffffff"
         />
 
-         <TouchableOpacity style={styles.button}>
-          
-            <Text style={styles.buttonText}>{this.props.type}</Text>
-         </TouchableOpacity>
-         
+        
+    
     </View>
      );
     
