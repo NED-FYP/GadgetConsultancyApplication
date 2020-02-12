@@ -1,17 +1,30 @@
 import React, { Component } from 'react';
 import { StyleSheet,  View, Text, TouchableOpacity,Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import {
     heightPercentageToDP as hp,
     widthPercentageToDP as wp,
    } from 'react-native-responsive-screen' ;
 
 export default class Questions extends Component {
-
+   Questionsfunc({ forgotPassword }) {
+   const navigation = useNavigation();}
     render() {
+      
         return (
           <View style={styles.container}>
          {/**  1st rectangle */}
-             <View style={styles.rectangle} >
+             <View >
+             
+             <TouchableOpacity  style={styles.rectangle}
+             onPress={() =>
+             this.props.navigation.navigate('forgotPassword')
+                  }>
+
+
+                  </TouchableOpacity>
+
+ 
                 <View style={styles.separator}/>
                   <View style={styles.questionTitleCont} >
 
@@ -174,8 +187,8 @@ const styles = StyleSheet.create({
         width: wp('100%'),
         height: hp('12%'),
         borderWidth: wp('0.5%'),
-        borderColor: '#007c91',
-        backgroundColor: '#00acc1',
+        borderColor: '#bdbdbd',
+        backgroundColor: '#fff',
         
      },
      separator:{
@@ -191,7 +204,7 @@ const styles = StyleSheet.create({
       top: hp('-11%'),
      },
      questionTitleText:{
-      color: "#fff",
+      color: "#000",
       fontSize:16, 
       fontWeight:'bold'
 
@@ -203,7 +216,7 @@ const styles = StyleSheet.create({
      },
 
      button:{
-      backgroundColor: '#fff',
+      backgroundColor: '#b6ffff',
       borderRadius: 5,
       position : "relative",
       right: wp('-24%') , 
@@ -218,7 +231,7 @@ const styles = StyleSheet.create({
       
      },
      timeAndUserText:{
-      color: "#fff",
+      color: "#000",
       fontSize:14,
      },
      userCont:{
@@ -239,7 +252,7 @@ const styles = StyleSheet.create({
         top: hp('-18%'),
      },
      likeAndQuestionText:{
-        color: "#fff",
+        color: "#000",
         fontSize:14, 
      },
      likeIconCont:{

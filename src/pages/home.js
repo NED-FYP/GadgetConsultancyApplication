@@ -10,6 +10,7 @@ import {
  import Questions from "../components/questions.js";
  import Tag from "../components/tag.js";
 
+
  export default class Home extends Component{
  
     render(){
@@ -37,12 +38,7 @@ import {
                        </View>
                                    <View style={styles.questionView}
                                     >
-                                     <TouchableOpacity 
-                                    onPress={() =>
-                                    this.props.navigation.navigate('forgotPassword')
-                                       }>
-                                    </TouchableOpacity>
-                                      <Questions />  
+                                  <Questions />  
                                    </View>
                                           
              </View>                   
@@ -54,11 +50,11 @@ import {
                      <Text style={styles.text} >RECENT TAGS</Text>
                  </View>
            
-                      <View  style={{ backgroundColor: '#00acc1',
+                      <View  style={{ backgroundColor: '#fff',
                                       width: wp('100%'),
                                       height: hp('15%'),
                                       borderWidth: wp('0.5%'),
-                                      borderColor: '#007c91',
+                                      borderColor: '#bdbdbd',
                                    }}>
                           <ScrollView horizontal={true} >
                              <Tag name="Laptop" />
