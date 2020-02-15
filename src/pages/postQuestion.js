@@ -29,8 +29,6 @@ export default class PostQuestion extends Component{
             centerComponent={{    text: 'POST A QUESTION', style: { color: '#fff' , fontWeight:'bold' , fontSize: 17} }}
             rightComponent={{ icon: 'search', color: '#fff' , 
             onPress:() => this.props.navigation.navigate('filter'), }}
-          
-         
             />
 
             <View style={styles.Imagecontainer}>
