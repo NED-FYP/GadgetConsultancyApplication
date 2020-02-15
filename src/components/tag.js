@@ -10,8 +10,8 @@ import {
     render(){
         return(
             <View style={{marginLeft:wp('5%'),  alignItems: 'center', justifyContent: 'center'}}>
-            <View>
-              <TouchableOpacity style={styles.button} > 
+            <View style={styles.button}>
+              <TouchableOpacity  > 
                  <Text style={styles.buttonText}>{this.props.name}</Text>
               </TouchableOpacity>
             </View>
@@ -27,6 +27,7 @@ import {
           marginVertical: 40,
           paddingVertical : 14,
           width: wp('29%'),
+          height:hp('6.5%')
         },
         buttonText:{
           fontSize: 16,

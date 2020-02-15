@@ -1,30 +1,21 @@
 import React, { Component } from 'react';
 import { StyleSheet,  View, Text, TouchableOpacity,Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import {
     heightPercentageToDP as hp,
     widthPercentageToDP as wp,
    } from 'react-native-responsive-screen' ;
+ 
 
 export default class Questions extends Component {
-   Questionsfunc({ forgotPassword }) {
-   const navigation = useNavigation();}
+  
     render() {
-      
+     
         return (
           <View style={styles.container}>
          {/**  1st rectangle */}
-             <View >
+         
+             <View  style={styles.rectangle}>
              
-             <TouchableOpacity  style={styles.rectangle}
-             onPress={() =>
-             this.props.navigation.navigate('forgotPassword')
-                  }>
-
-
-                  </TouchableOpacity>
-
- 
                 <View style={styles.separator}/>
                   <View style={styles.questionTitleCont} >
 
@@ -69,6 +60,8 @@ export default class Questions extends Component {
                                     </View>
 
               </View>
+            
+              
               <View style={styles.rectangle} >
               <View style={styles.separator}/>
                 <View style={styles.questionTitleCont} >

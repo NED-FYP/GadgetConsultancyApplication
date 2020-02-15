@@ -125,7 +125,7 @@ export default class MyQuestions extends Component {
         </View>
 
         <View style={styles.rectangle}>
-            <View style={styles.separator}/>
+            <View style={styles.separator} />
 
                <View style={styles.questionTitleCont} >
                   <Text style={styles.questionTitleText} > Question Title</Text>

@@ -36,10 +36,12 @@ import {
                               <Text style={styles.readMoretext} >Read more</Text>
                           </TouchableOpacity>
                        </View>
+
                                    <View style={styles.questionView}
                                     >
                                   <Questions />  
                                    </View>
+                            
                                           
              </View>                   
 
