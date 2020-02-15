@@ -33,7 +33,7 @@ export default class SearchedQuestions extends Component {
           <View style={{ flexDirection: 'row-reverse' ,marginLeft:5 ,marginTop:5 }}>
                <TouchableOpacity style={styles.button}
                       onPress={() =>
-                      this.props.navigation.navigate('login')
+                      this.props.navigation.navigate('postQuestion')
                              }> 
                     <Text style={styles.buttonText}>Ask Question</Text>
                </TouchableOpacity>

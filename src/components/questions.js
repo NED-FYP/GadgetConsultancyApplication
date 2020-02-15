@@ -7,15 +7,13 @@ import {
  
 
 export default class Questions extends Component {
-  
     render() {
      
         return (
           <View style={styles.container}>
          {/**  1st rectangle */}
-         
-             <View  style={styles.rectangle}>
-             
+             <View style={styles.rectangle} >
+ 
                 <View style={styles.separator}/>
                   <View style={styles.questionTitleCont} >
 
@@ -60,8 +58,7 @@ export default class Questions extends Component {
                                     </View>
 
               </View>
-            
-              
+              {/*
               <View style={styles.rectangle} >
               <View style={styles.separator}/>
                 <View style={styles.questionTitleCont} >
@@ -109,7 +106,7 @@ export default class Questions extends Component {
                                      
 
             </View>
-           {/**  3rd rectangle */}
+           {/**  3rd rectangle 
             <View style={styles.rectangle} >
             <View style={styles.separator}/>
               <View style={styles.questionTitleCont} >
@@ -153,13 +150,13 @@ export default class Questions extends Component {
                                 <Image  
                                 source={require('../images/question.png')}/>
                                 </View>
-
-                                   
-
-
-          </View>
+</View>
     
         
+                     */              
+
+
+                  }
                
           </View>
         

@@ -319,7 +319,7 @@ export default class Filter extends Component{
                 <View style={styles.filterButtonView} >
                 <TouchableOpacity style={styles.filterButton}
                                 onPress={() =>
-                                this.props.navigation.navigate('home')
+                                this.props.navigation.navigate('searchedQuestions')
                                         }>
                         <Text style={styles.buttonText}>FILTER</Text>
                 </TouchableOpacity>
