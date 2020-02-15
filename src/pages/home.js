@@ -26,7 +26,7 @@ import {
             />
             <ScrollView>  
              
-            {/*Recently viewed**/}
+            {/*Recently viewed**/}                        
             <View >
                <View style={styles.headingView} >
                   <Text style={styles.text} >RECENTLY VIEWED</Text>
@@ -36,10 +36,37 @@ import {
                               <Text style={styles.readMoretext} >Read more</Text>
                           </TouchableOpacity>
                        </View>
-                                   <View style={styles.questionView}
-                                    >
-                                  <Questions />  
-                                   </View>
+                         {/*Question 1*/ }
+                          <TouchableOpacity 
+                          onPress={() =>
+                          this.props.navigation.navigate('detailQuestion')
+                                  }>                  
+                        <View style={styles.question1View}
+                          >
+                          <Questions /> 
+                        </View>
+                        </TouchableOpacity>
+                          {/*Question 2*/ }
+
+                        <TouchableOpacity 
+                        onPress={() =>
+                        this.props.navigation.navigate('detailQuestion')
+                                }>                  
+                      <View style={styles.question1View}
+                        >
+                        <Questions /> 
+                      </View>
+                      </TouchableOpacity>
+                       {/*Question 3*/ }
+                      <TouchableOpacity 
+                        onPress={() =>
+                        this.props.navigation.navigate('detailQuestion')
+                                }>                  
+                      <View style={styles.question1View}
+                        >
+                        <Questions /> 
+                      </View>
+                      </TouchableOpacity>
                                           
              </View>                   
 
@@ -49,20 +76,60 @@ import {
                  <View style={styles.headingView} >
                      <Text style={styles.text} >RECENT TAGS</Text>
                  </View>
-           
-                      <View  style={{ backgroundColor: '#fff',
-                                      width: wp('100%'),
-                                      height: hp('15%'),
-                                      borderWidth: wp('0.5%'),
-                                      borderColor: '#bdbdbd',
-                                   }}>
-                          <ScrollView horizontal={true} >
-                             <Tag name="Laptop" />
-                             <Tag name="Mobile"/>
-                             <Tag name="Camera"/>
-                             <Tag name="Headphones"/>    
-                          </ScrollView>
-                       </View>
+                                        
+                             <View  style={{ backgroundColor: '#fff',
+                                            width: wp('100%'),
+                                            height: hp('15%'),
+                                            borderWidth: wp('0.5%'),
+                                            borderColor: '#bdbdbd',
+                                        }}>
+                                  
+                                <ScrollView horizontal={true} >
+                                  {/*Tag 1*/ }
+                                 
+                               
+                                
+                                  <TouchableOpacity 
+                                    onPress={() =>
+                                    this.props.navigation.navigate('detailQuestion')
+                                            }>                  
+                                     
+                                      <Tag name="Laptop"/>
+                                  
+                                    </TouchableOpacity>
+                                  
+                                  {/*Tag 2*/ }
+                                    <TouchableOpacity 
+                                    onPress={() =>
+                                    this.props.navigation.navigate('detailQuestion')
+                                            }>                  
+                                      <View>
+                                      <Tag name="Mobile"/>
+                                      </View>
+                                    </TouchableOpacity>
+                                   {/*Tag 3*/ }
+                                    <TouchableOpacity 
+                                    onPress={() =>
+                                    this.props.navigation.navigate('detailQuestion')
+                                            }>                  
+                                      <View>
+                                      <Tag name="Camera"/>
+                                      </View>
+                                    </TouchableOpacity>
+                                   {/*Tag 4*/ }
+                                    <TouchableOpacity 
+                                    onPress={() =>
+                                    this.props.navigation.navigate('detailQuestion')
+                                            }>                  
+                                      <View>
+                                      <Tag name="Headphones"/>  
+                                      </View>
+                                    </TouchableOpacity>
+                                    
+                                </ScrollView>
+                                
+                            </View>
+                     
               </View>
 
             {/*Mostly viewed**/}
@@ -75,29 +142,81 @@ import {
                   <Text style={styles.readMoretext} >Read more</Text>
                 </TouchableOpacity>
             </View>
-            <View style={styles.questionView} >
-                                      <Questions />  
-                                   </View>
-                      
-            </View>
-             {/*Your Interest**/}
-            <View  >
-            <View style={styles.headingView} >
-            <Text style={styles.text} >YOUR INTEREST</Text>
-            </View>
-             <View style={styles.readMoreView} >
-                <TouchableOpacity>
-                  <Text style={styles.readMoretext} >Read more</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.questionView} >
-            <Questions />  
-         </View>          
-            </View>
-           
+                          {/*Question 1*/ }
+                          <TouchableOpacity 
+                          onPress={() =>
+                          this.props.navigation.navigate('detailQuestion')
+                                  }>                  
+                        <View style={styles.question1View}
+                          >
+                          <Questions /> 
+                        </View>
+                        </TouchableOpacity>
+                          {/*Question 2*/ }
 
-            
-    
+                        <TouchableOpacity 
+                        onPress={() =>
+                        this.props.navigation.navigate('detailQuestion')
+                                }>                  
+                      <View style={styles.question1View}
+                        >
+                        <Questions /> 
+                      </View>
+                      </TouchableOpacity>
+                       {/*Question 3*/ }
+                      <TouchableOpacity 
+                        onPress={() =>
+                        this.props.navigation.navigate('detailQuestion')
+                                }>                  
+                      <View style={styles.question1View}
+                        >
+                        <Questions /> 
+                      </View>
+                      </TouchableOpacity>
+                                   
+            </View>
+                        {/*Your Interest**/}
+                        <View  >
+                        <View style={styles.headingView} >
+                        <Text style={styles.text} >YOUR INTEREST</Text>
+                        </View>
+                        {/*Question 1*/ }
+                        <TouchableOpacity 
+                        onPress={() =>
+                        this.props.navigation.navigate('detailQuestion')
+                                }>                  
+                      <View style={styles.question1View}
+                        >
+                        <Questions /> 
+                      </View>
+                      </TouchableOpacity>
+                        {/*Question 2*/ }
+
+                      <TouchableOpacity 
+                      onPress={() =>
+                      this.props.navigation.navigate('detailQuestion')
+                              }>                  
+                    <View style={styles.question1View}
+                      >
+                      <Questions /> 
+                    </View>
+                    </TouchableOpacity>
+                      {/*Question 3*/ }
+                    <TouchableOpacity 
+                      onPress={() =>
+                      this.props.navigation.navigate('detailQuestion')
+                              }>                  
+                    <View style={styles.question1View}
+                      >
+                      <Questions /> 
+                    </View>
+                    </TouchableOpacity>
+                          
+                        </View>
+                      
+
+                        
+                
             
             </ScrollView>                
             </View>
@@ -145,11 +264,18 @@ const styles = StyleSheet.create({
       left: wp('70%') , 
       top: hp('-3%'),
     },
-    questionView:{
+    question1View:{
       position : "relative",
       top: hp('-3%'),
    
-    }
-   
+    },
+    
+    button:{
+      backgroundColor: '#007c91',
+      borderRadius: 10,
+      marginVertical: 40,
+      paddingVertical : 14,
+      width: wp('29%'),
+    },
     
 });
