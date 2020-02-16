@@ -48,7 +48,8 @@ export default class MyQuestions extends Component {
             statusBarProps={{ barStyle: 'light-content' ,}}
             leftComponent={{ icon: 'menu', color: '#fff' }}
             centerComponent={{    text: 'MY QUESTIONS', style: { color: '#fff' , fontWeight:'bold' , fontSize: 17} }}
-            rightComponent={{ icon: 'search', color: '#fff' }}
+            rightComponent={{ icon: 'search', color: '#fff' ,
+            onPress:() => this.props.navigation.navigate('filter')}}
             />
 
             <View  style={styles.dropdown} >

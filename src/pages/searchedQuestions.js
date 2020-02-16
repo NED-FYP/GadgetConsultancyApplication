@@ -27,9 +27,12 @@ export default class SearchedQuestions extends Component {
           statusBarProps={{ barStyle: 'light-content' ,}}
           leftComponent={{ icon: 'menu', color: '#fff' }}
           centerComponent={{    text: 'SEARCH RESULTS', style: { color: '#fff' , fontWeight:'bold' , fontSize: 17} }}
-          rightComponent={{ icon: 'search', color: '#fff' }}
+          rightComponent={{ icon: 'search', color: '#fff',
+          onPress:() => this.props.navigation.navigate('filter') }}
           />
+
         <ScrollView>
+        
           <View style={{ flexDirection: 'row-reverse' ,marginLeft:5 ,marginTop:5 }}>
                <TouchableOpacity style={styles.button}
                       onPress={() =>
@@ -40,12 +43,13 @@ export default class SearchedQuestions extends Component {
           </View>
 
           <View style={styles.searchResult}>
-
                 <View >
-                    <Text style={styles.text} >Search Results For........................</Text>
-                    <Text style={styles.text} >.......................................................</Text>
+                    <Text style={styles.text} >Search Results For Lorem Ipsum is simply dummy text of the pri... 
+                    </Text>
+                    
                      <View style={{  position:'absolute',marginTop:8,marginLeft:240}}>
-                           <Icon name='search'  color="grey"/>   
+                           <Icon name='search'  color="grey" 
+                           onPress={() => this.props.navigation.navigate('filter')}/>   
                      </View> 
                 </View>
                 
@@ -72,7 +76,8 @@ export default class SearchedQuestions extends Component {
                    </TouchableOpacity>
 
                    <View style={styles.questionBodyCont} >
-                        <Text style={styles.questionBodyText} >Question body ...............</Text>
+                        <Text style={styles.questionBodyText} >Lorem Ipsum is simply dummy text of the 
+                        printing and typesetting industry.</Text>
                    </View>
 
                    <View style={styles.timeCont} >
@@ -100,7 +105,7 @@ export default class SearchedQuestions extends Component {
                    </View>
  
            </View>
-{/**  1st rectangle */}
+            {/**  2nd rectangle */}
           <View style={styles.rectangle} >
                 <View style={styles.separator}/>
 
@@ -113,7 +118,8 @@ export default class SearchedQuestions extends Component {
                    </TouchableOpacity>
 
                    <View style={styles.questionBodyCont} >
-                        <Text style={styles.questionBodyText} >Question body ...............</Text>
+                        <Text style={styles.questionBodyText} >Lorem Ipsum is simply dummy text of the 
+                        printing and typesetting industry.</Text>
                    </View>
 
                    <View style={styles.timeCont} >
@@ -142,7 +148,7 @@ export default class SearchedQuestions extends Component {
                                    
                    
            </View>
-                 {/**  1st rectangle */}
+            {/**  3rd rectangle */}
           <View style={styles.rectangle} >
           <View style={styles.separator}/>
 
@@ -155,7 +161,8 @@ export default class SearchedQuestions extends Component {
              </TouchableOpacity>
 
              <View style={styles.questionBodyCont} >
-                  <Text style={styles.questionBodyText} >Question body ...............</Text>
+                  <Text style={styles.questionBodyText} >Lorem Ipsum is simply dummy text of the 
+                  printing and typesetting industry.</Text>
              </View>
 
              <View style={styles.timeCont} >
@@ -184,7 +191,7 @@ export default class SearchedQuestions extends Component {
                              
              
      </View>
-            {/**  1st rectangle */}
+            {/**  4th rectangle */}
           <View style={styles.rectangle} >
                 <View style={styles.separator}/>
 
@@ -197,7 +204,8 @@ export default class SearchedQuestions extends Component {
                    </TouchableOpacity>
 
                    <View style={styles.questionBodyCont} >
-                        <Text style={styles.questionBodyText} >Question body ...............</Text>
+                        <Text style={styles.questionBodyText} >Lorem Ipsum is simply dummy text of the 
+                        printing and typesetting industry.</Text>
                    </View>
 
                    <View style={styles.timeCont} >
@@ -226,6 +234,7 @@ export default class SearchedQuestions extends Component {
                                    
                    
            </View>
+        
         </ScrollView>
     </View>
         )
@@ -262,6 +271,7 @@ export default class SearchedQuestions extends Component {
           text:{
             color: "#000",
             fontSize:16,
+            width:wp('57%'),
             textAlign:'justify'
            },
 
@@ -289,13 +299,13 @@ export default class SearchedQuestions extends Component {
           top: hp('0.4%'),
          },
          questionTitleText:{
-          color: "#007c91",
+          color: "#000",
           fontSize:18, 
           fontWeight:'bold'
     
          },
          tagbuttonText:{
-          color: "#007c91",
+          color: "#000",
           fontSize:14, 
           textAlign: 'center'
          },
@@ -358,7 +368,8 @@ export default class SearchedQuestions extends Component {
          questionBodyCont:{
           position : "absolute",
           left: wp('23.7%') , 
-          top: hp('7%'),
+          top: hp('7%'), 
+          width:wp('70%')
          } ,
          questionBodyText:{
           color: "#000",

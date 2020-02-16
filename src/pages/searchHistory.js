@@ -19,7 +19,8 @@ export default class SearchHistory extends Component{
             statusBarProps={{ barStyle: 'light-content' }}
             leftComponent={{ icon: 'menu', color: '#fff' }}
             centerComponent={{    text: 'HISTORY', style: { color: '#fff' , fontWeight:'bold' , fontSize: 17} }}
-            rightComponent={{ icon: 'search', color: '#fff' }}
+            rightComponent={{ icon: 'search', color: '#fff' ,
+            onPress:() => this.props.navigation.navigate('filter')}}
         />
         <ScrollView>  
             <Searches/>
