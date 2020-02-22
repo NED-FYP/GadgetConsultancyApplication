@@ -1,4 +1,4 @@
-import React, { Component } from 'react'; 
+import React, { Component } from 'react';
 import { StyleSheet, Text, View, StatusBar } from 'react-native';
 //import Routes from './src/route' ;
 import Login from './src/pages/login';
@@ -18,24 +18,25 @@ import PostQuestion from './src/pages/postQuestion';
 import EditQuestion from './src/pages/editQuestion';
 import Filter from './src/pages/filter';
 import MyQuestions from './src/pages/myQuestions';
-
+import Home2 from './src/pages/home2';
+import drawernavigationstack from "./src/drawernavigationstack";
 
 
 class App extends Component{
 
 
   render(){
-    
+
   return (
-    
+
     <View style={styles.container}>
     <StatusBar backgroundColor="#007c91" barStyle="light-content" />
      </View>
-     
+
   );
 }
 }
- 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -49,20 +50,10 @@ const Router = createStackNavigator({
   login: { screen: Login },
   signup: { screen: Signup},
   forgotPassword: { screen: ForgotPassword},
-  home:{screen: Home},
-  detailQuestion:{screen: DetailQuestion},
-  searchedQuestions:{screen: SearchedQuestions},
-  viewProfile:{screen: ViewProfile},
-  editProfile:{screen:EditProfile},
-  searchHistory:{screen: SearchHistory},
-  myActivities :{screen: MyActivities},
-  postQuestion:{screen: PostQuestion},
-  editQuestion :{screen: EditQuestion},
-  filter:{screen: Filter},
-  myQuestions:{screen:MyQuestions}
+  main : drawernavigationstack
 },
 {
-  headerMode: 'none' 
+  headerMode: 'none'
 },
 
 {
