@@ -6,7 +6,6 @@ import {
  } from 'react-native-responsive-screen' ;
  
  import { Header } from 'react-native-elements';
- //import NavigationDrawerStructure from "../components/navigationDrawer.js";
  import Questions from "../components/questions.js";
  import Tag from "../components/tag.js";
 
@@ -14,6 +13,7 @@ import {
  export default class Home extends Component{
  
     render(){
+      
         return(
             <View style={styles.container}> 
             

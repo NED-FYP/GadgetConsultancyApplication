@@ -11,6 +11,7 @@ import KeyboardShift from "../components/keyboardShift.js";
    
 
 export default class Filter extends Component{
+    
     constructor(props) {
         super(props);
         this.state = { selectedButton: null };

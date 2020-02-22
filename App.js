@@ -14,12 +14,11 @@ import ViewProfile from './src/pages/viewProfile';
 import EditProfile from './src/pages/editProfile';
 import SearchHistory from './src/pages/searchHistory';
 import MyActivities from './src/pages/myActivities';
-
 import PostQuestion from './src/pages/postQuestion';
 import EditQuestion from './src/pages/editQuestion';
 import Filter from './src/pages/filter';
 import MyQuestions from './src/pages/myQuestions';
-import Home2 from './src/pages/home2';
+
 
 
 class App extends Component{
@@ -31,7 +30,6 @@ class App extends Component{
     
     <View style={styles.container}>
     <StatusBar backgroundColor="#007c91" barStyle="light-content" />
-    
      </View>
      
   );
@@ -46,6 +44,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
 const Router = createStackNavigator({
   login: { screen: Login },
   signup: { screen: Signup},
