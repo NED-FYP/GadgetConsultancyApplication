@@ -4,30 +4,32 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
  } from 'react-native-responsive-screen' ;
+import { NavigationEvents } from 'react-navigation';
 
 
  export default class Tag extends Component{
     render(){
         return(
-            <View style={{marginLeft:wp('5%'),  alignItems: 'center', justifyContent: 'center'}}>
+          <View style={styles.container}> 
             <View style={styles.button}>
-              <TouchableOpacity  > 
                  <Text style={styles.buttonText}>{this.props.name}</Text>
-              </TouchableOpacity>
             </View>
           </View>
         )
     }}
 
     const styles = StyleSheet.create({
-        
+      container: {
+        flex: 1,
+        justifyContent:'center',
+        marginLeft:wp('5%')
+      },
         button:{
           backgroundColor: '#007c91',
           borderRadius: 10,
-          marginVertical: 40,
-          paddingVertical : 14,
           width: wp('29%'),
-          height:hp('6.5%')
+          height:hp('6.5%'),
+          justifyContent:'center'
         },
         buttonText:{
           fontSize: 16,

@@ -18,7 +18,7 @@ export default class EditProfile extends Component{
         <Header
             backgroundColor='#007c91'
             statusBarProps={{ barStyle: 'light-content' }}
-            leftComponent={{ icon: 'menu', color: '#fff' }}
+            leftComponent={{ icon: 'menu', color: '#fff' ,onPress:() => this.props.navigation.toggleDrawer()  }}
             centerComponent={{    text: 'VIEW PROFILE', style: { color: '#fff' , fontWeight:'bold' , fontSize: 17} }}
             rightComponent={{ icon: 'search', color: '#fff' ,
             onPress:() => this.props.navigation.navigate('filter')}}

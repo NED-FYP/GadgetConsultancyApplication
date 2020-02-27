@@ -13,25 +13,79 @@ import EditQuestion from "./pages/editQuestion";
 import Filter from "./pages/filter";
 import MyQuestions from "./pages/myQuestions";
 
+import React, { Component } from 'react';
+import { AntDesign } from '@expo/vector-icons';
+import {FontAwesome} from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+
+
 const navigation = createDrawerNavigator(
     {
-        home: {screen: Home},
-        detailQuestion: {screen: DetailQuestion},
-        searchedQuestions: {screen: SearchedQuestions},
-        viewProfile: {screen: ViewProfile},
-        editProfile: {screen: EditProfile},
-        searchHistory: {screen: SearchHistory},
-        myActivities: {screen: MyActivities},
-        postQuestion: {screen: PostQuestion},
-        editQuestion: {screen: EditQuestion},
-        filter: {screen: Filter},
-        myQuestions: {screen: MyQuestions}
+        home: {screen: Home,
+            navigationOptions: {
+                drawerLabel: 'Home',
+                drawerIcon: ({tintColor}) => <FontAwesome name='home' color={tintColor} size={22}  />
+            },
+        },
+        viewProfile: {screen: ViewProfile,
+            navigationOptions: {
+                drawerLabel: 'My Account',
+                drawerIcon: ({tintColor}) => <FontAwesome name='user-circle'  color={tintColor} size={20}  />
+            }
+        },
+        searchHistory: {screen: SearchHistory,
+            navigationOptions: {
+                drawerLabel: 'History',
+                drawerIcon: ({tintColor}) => <FontAwesome name='history' color={tintColor} size={22}  />
+            }
+        },
+        myQuestions: {screen: MyQuestions,
+            navigationOptions: {
+                drawerLabel: 'My Questions',
+                drawerIcon: ({tintColor}) => <AntDesign name='questioncircle' color={tintColor} size={20}  />
+            }
+        },
+        myActivities: {screen: MyActivities,
+            navigationOptions: {
+                drawerLabel: 'My Activity',
+                drawerIcon: ({tintColor}) => <MaterialIcons name='access-time' color={tintColor} size={22} />
+            }
+        },
+        
+        detailQuestion: {screen: DetailQuestion,
+            navigationOptions: {
+                drawerLabel: () => null
+            }},
+        searchedQuestions: {screen: SearchedQuestions,
+            navigationOptions: {
+                drawerLabel: () => null
+            }},
+        editProfile: {screen: EditProfile,
+            navigationOptions: {
+                drawerLabel: () => null
+            }},
+        postQuestion: {screen: PostQuestion,
+            navigationOptions: {
+                drawerLabel: () => null
+            }},
+        editQuestion: {screen: EditQuestion,
+            navigationOptions: {
+                drawerLabel: () => null
+            }},
+        filter: {screen: Filter,
+            navigationOptions: {
+                drawerLabel: () => null
+            }},
     },{
         contentComponent : navigationDrawer,
         initialRouteName: 'home',
         headerMode: 'none',
         navigationOptions : {
             headerVisible : false
+        },
+        contentOptions: {
+            activeTintColor: '#007c91',
+            activeBackgroundColor:'#f5f5f5'
         }
     }
 )

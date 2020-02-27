@@ -50,7 +50,7 @@ const Router = createStackNavigator({
   login: { screen: Login },
   signup: { screen: Signup},
   forgotPassword: { screen: ForgotPassword},
-  main : drawernavigationstack
+  main : drawernavigationstack,
 },
 {
   headerMode: 'none'

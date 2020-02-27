@@ -46,7 +46,7 @@ export default class MyQuestions extends Component {
             <Header
             backgroundColor='#007c91'
             statusBarProps={{ barStyle: 'light-content' ,}}
-            leftComponent={{ icon: 'menu', color: '#fff' }}
+            leftComponent={{ icon: 'menu', color: '#fff' ,onPress:() => this.props.navigation.toggleDrawer()}}
             centerComponent={{    text: 'MY QUESTIONS', style: { color: '#fff' , fontWeight:'bold' , fontSize: 17} }}
             rightComponent={{ icon: 'search', color: '#fff' ,
             onPress:() => this.props.navigation.navigate('filter')}}
@@ -96,7 +96,7 @@ export default class MyQuestions extends Component {
                <View style={styles.editCont} >
                     <TouchableOpacity 
                     onPress={() =>
-                    this.props.navigation.navigate('login')
+                    this.props.navigation.navigate('editQuestion')
                             }> 
                         <Text style={styles.editText} > edit </Text>
                     </TouchableOpacity>
@@ -141,7 +141,7 @@ export default class MyQuestions extends Component {
                <View style={styles.editCont} >
                     <TouchableOpacity 
                     onPress={() =>
-                    this.props.navigation.navigate('login')
+                    this.props.navigation.navigate('editQuestion')
                             }> 
                         <Text style={styles.editText} > edit </Text>
                     </TouchableOpacity>
@@ -184,14 +184,14 @@ export default class MyQuestions extends Component {
            <View style={styles.editCont} >
                     <TouchableOpacity 
                     onPress={() =>
-                    this.props.navigation.navigate('login')
+                    this.props.navigation.navigate('editQuestion')
                             }> 
                         <Text style={styles.editText} > edit </Text>
                     </TouchableOpacity>
            </View>  
 
            <TouchableOpacity style={styles.deleteButton}>
-               <Icon name='cancel'  color="grey" size={38} /> 
+               <Icon name='cancel'  color="black" size={38} /> 
             </TouchableOpacity>
 
            <View style={styles.likeCont} >
@@ -227,19 +227,19 @@ const styles = StyleSheet.create({
         top:hp('-2%')
         //left:wp('10%')
     },
+    /** 
     searchBar:{
         top:hp('-4%')
     },
+    */
 
     rectangle:{
-       
         width: wp('100%'),
         height: hp('12%'),
         borderWidth: wp('0.5%'),
         borderColor: '#aeaeae',
         backgroundColor: '#ffffff',
         borderTopWidth:0
-        
      },
      separator:{
         height: hp('12%'),

@@ -26,7 +26,7 @@ export default class Profile extends Component {
                 {/**<Text style={styles.userInfo}>jhonnydoe@mail.com </Text>
                     <Text style={styles.userInfo}>Florida </Text> */}
                     <View style={styles.editView} >
-                       <TouchableOpacity>
+                       <TouchableOpacity  /**onPress={() => this.props.navigation.navigate('editProfile')}*/>
                           <Text style={styles.editText}>Edit Profile</Text>
                       </TouchableOpacity>
                     </View>

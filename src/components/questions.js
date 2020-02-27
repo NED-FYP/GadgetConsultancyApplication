@@ -173,18 +173,18 @@ const styles = StyleSheet.create({
     },
 
      rectangle:{
-       
         width: wp('100%'),
         height: hp('12%'),
         borderWidth: wp('0.5%'),
         borderColor: '#bdbdbd',
         backgroundColor: '#fff',
-        
+        borderLeftWidth:0,
+        borderRightWidth:0
      },
      separator:{
         height: hp('11.5%'),
         width: wp('0.7%'),
-        backgroundColor: "#007c91",
+        backgroundColor: "#bdbdbd",
         position : "relative",
         right: wp('-20%') , 
      },
