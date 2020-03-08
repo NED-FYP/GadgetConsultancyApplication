@@ -151,7 +151,7 @@ import {
                                 onPress={() =>
                                 this.props.navigation.navigate('login')
                  }>
-                 <Text style={styles.buttonText}>Post Your Answer
+                 <Text style={styles.answerButtonText}>Post Your Answer
                  </Text>
                  </TouchableOpacity>
                  </View>
@@ -167,7 +167,7 @@ import {
  const styles = StyleSheet.create({
     container: {
       backgroundColor: '#fff',
-      flexGrow: 1,
+      flex: 1,
       },
       rectangle:{
        
@@ -404,18 +404,20 @@ import {
             paddingHorizontal: 8
                },
                postYourAnswerButton:{
-                  width:300,
+                  width: wp('70%'),
+                  height:hp('6.5%'),
                   backgroundColor: '#007c91',
-                  borderRadius: 10,
-                  marginVertical: 80,
-                  paddingVertical : 13,
+                  //borderRadius: 10,
+                  justifyContent:'center',
+                  //marginVertical: 80,
+                  //paddingVertical : 13,
                 },
                 postYourAnswerView:{
-                 
-                  position : "absolute",
-                  bottom: hp('-18%') ,  
+                  flex:1,
+                  paddingHorizontal:9,
+                  paddingVertical:8
                 },
-                buttonText:{
+                answerButtonText:{
                   fontSize: 16,
                   fontWeight: '500',
                   color: '#ffffff',

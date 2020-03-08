@@ -104,7 +104,7 @@ export default class MyQuestions extends Component {
 
 
                <TouchableOpacity style={styles.deleteButton}>
-               <Icon name='cancel'  color="#039be5" size={38} /> 
+               <Icon name='delete'  color="#039be5" size={36} /> 
                </TouchableOpacity>
 
                <View style={styles.likeCont} >
@@ -148,7 +148,7 @@ export default class MyQuestions extends Component {
                </View> 
 
                <TouchableOpacity style={styles.deleteButton}>
-               <Icon name='delete'  color="#039be5" size={38} /> 
+               <Icon name='delete'  color="#039be5" size={36} /> 
                </TouchableOpacity>
 
                <View style={styles.likeCont} >
@@ -191,7 +191,7 @@ export default class MyQuestions extends Component {
            </View>  
 
            <TouchableOpacity style={styles.deleteButton}>
-               <Icon name='cancel'  color="black" size={38} /> 
+                <Icon name='delete'  color="#039be5" size={36} /> 
             </TouchableOpacity>
 
            <View style={styles.likeCont} >

@@ -100,7 +100,7 @@ export default class EditQuestion extends Component{
             <View style={styles.editYourQuestionView} >
                  <TouchableOpacity style={styles.editYourQuestionButton}
                                 onPress={() =>
-                                this.props.navigation.navigate('login')
+                                this.props.navigation.navigate('myQuestions')
                                         }>
                        <Text style={styles.buttonText}>Save Edits</Text>
                  </TouchableOpacity>
