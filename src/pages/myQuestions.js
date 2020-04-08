@@ -89,7 +89,7 @@ export default class MyQuestions extends Component {
 
                <View style={styles.tagButtonView}>
                <TouchableOpacity style={styles.tagbutton}>
-                   <Text style={styles.tagbuttonText}>tag</Text>
+                   <Text style={styles.tagbuttonText}>#tag</Text>
                </TouchableOpacity>
                </View>
 
@@ -134,7 +134,7 @@ export default class MyQuestions extends Component {
 
                <View style={styles.tagButtonView}>
                <TouchableOpacity style={styles.tagbutton}>
-                   <Text style={styles.tagbuttonText}>tag</Text>
+                   <Text style={styles.tagbuttonText}>#tag</Text>
                </TouchableOpacity>
                </View>
 
@@ -177,7 +177,7 @@ export default class MyQuestions extends Component {
 
            <View style={styles.tagButtonView}>
            <TouchableOpacity style={styles.tagbutton}>
-               <Text style={styles.tagbuttonText}>tag</Text>
+               <Text style={styles.tagbuttonText}>#tag</Text>
            </TouchableOpacity>
            </View>
 
@@ -261,29 +261,31 @@ const styles = StyleSheet.create({
      },
      tagbuttonText:{
      //color: "#007c91",
-      color: "black",
+      color: "#0069c0",
       fontSize:14, 
       flex:1,
+      textAlign: 'center',
       justifyContent:'center',
       alignSelf:'center',
-      top:hp('-0.3%')
+      //top:hp('-0.3%')
      },
      tagButtonView:{
-      //flex:1,
       position : "absolute",
       left: wp('23.7%'), 
       top: hp('4%'),
-      marginVertical:2,
+      //marginVertical:1,
      
      },
 
      tagbutton:{
-      borderWidth: wp('0.5%'),
-      borderColor: '#9ea7aa',
-      backgroundColor: '#fff',
+      //borderWidth: wp('0.5%'),
+      //borderColor: '#9ea7aa',
+      backgroundColor: '#b6ffff',
       borderRadius: 5,
       width: wp('12%'),
-      height:hp('3%')
+      height:hp('2.5%'),
+      //textAlign: 'center',
+      justifyContent:'center'
      },
      editCont:{
     
@@ -295,7 +297,6 @@ const styles = StyleSheet.create({
      editText:{
       //color: "#2196f3",
       color:'#039be5',
-      
       fontSize:14,
       fontWeight:"bold"
      },

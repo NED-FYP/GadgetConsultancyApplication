@@ -23,7 +23,7 @@ export default class Questions extends Component {
                   </View>
                         <TouchableOpacity style={styles.button}>
           
-                           <Text style={styles.buttonText}>tag
+                           <Text style={styles.buttonText}>#tag
                            </Text>
                         </TouchableOpacity>
                                <View style={styles.timeCont} >

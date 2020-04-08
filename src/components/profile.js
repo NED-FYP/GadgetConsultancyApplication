@@ -10,9 +10,9 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
  } from 'react-native-responsive-screen' ;
+ import { withNavigation } from 'react-navigation';
 
-
-export default class Profile extends Component {
+class Profile extends Component {
 
   render() {
     return (
@@ -26,7 +26,7 @@ export default class Profile extends Component {
                 {/**<Text style={styles.userInfo}>jhonnydoe@mail.com </Text>
                     <Text style={styles.userInfo}>Florida </Text> */}
                     <View style={styles.editView} >
-                       <TouchableOpacity  /**onPress={() => this.props.navigation.navigate('editProfile')}*/>
+                       <TouchableOpacity  onPress={() => this.props.navigation.navigate('editProfile')}>
                           <Text style={styles.editText}>Edit Profile</Text>
                       </TouchableOpacity>
                     </View>
@@ -137,5 +137,5 @@ const styles = StyleSheet.create({
 
     },
 });
- 
 
+export default withNavigation(Profile);
