@@ -33,7 +33,7 @@ export default class SearchedQuestions extends Component {
 
         <ScrollView>
         
-          <View style={{ flexDirection: 'row-reverse' ,marginLeft:5 ,marginTop:5 }}>
+          <View style={styles.askQuestionView}>
                <TouchableOpacity style={styles.button}
                       onPress={() =>
                       this.props.navigation.navigate('postQuestion')
@@ -41,7 +41,7 @@ export default class SearchedQuestions extends Component {
                     <Text style={styles.buttonText}>Ask Question</Text>
                </TouchableOpacity>
           </View>
-
+          {/** 
           <View style={styles.searchResult}>
                 <View >
                     <Text style={styles.text} >Search Results For Lorem Ipsum is simply dummy text of the pri... 
@@ -61,10 +61,11 @@ export default class SearchedQuestions extends Component {
                     />
                </View>
           </View>
+          */}
 
           
           {/**  1st rectangle */}
-          <View style={styles.rectangle} >
+          <View style={styles.rectangle} borderTopWidth={2} >
                 <View style={styles.separator}/>
 
                    <View style={styles.questionTitleCont} >
@@ -72,7 +73,7 @@ export default class SearchedQuestions extends Component {
                    </View>
 
                    <TouchableOpacity style={styles.tagbutton}>
-                       <Text style={styles.tagbuttonText}>tag</Text>
+                       <Text style={styles.tagbuttonText}>#tag</Text>
                    </TouchableOpacity>
 
                    <View style={styles.questionBodyCont} >
@@ -114,7 +115,7 @@ export default class SearchedQuestions extends Component {
                    </View>
 
                    <TouchableOpacity style={styles.tagbutton}>
-                       <Text style={styles.tagbuttonText}>tag</Text>
+                       <Text style={styles.tagbuttonText}>#tag</Text>
                    </TouchableOpacity>
 
                    <View style={styles.questionBodyCont} >
@@ -157,7 +158,7 @@ export default class SearchedQuestions extends Component {
              </View>
 
              <TouchableOpacity style={styles.tagbutton}>
-                 <Text style={styles.tagbuttonText}>tag</Text>
+                 <Text style={styles.tagbuttonText}>#tag</Text>
              </TouchableOpacity>
 
              <View style={styles.questionBodyCont} >
@@ -200,7 +201,7 @@ export default class SearchedQuestions extends Component {
                    </View>
 
                    <TouchableOpacity style={styles.tagbutton}>
-                       <Text style={styles.tagbuttonText}>tag</Text>
+                       <Text style={styles.tagbuttonText}>#tag</Text>
                    </TouchableOpacity>
 
                    <View style={styles.questionBodyCont} >
@@ -245,11 +246,17 @@ export default class SearchedQuestions extends Component {
           flex: 1,
           backgroundColor: '#fff',
         },
+        askQuestionView:{
+            flexDirection: 'row-reverse',
+            marginLeft:5,
+            marginTop:5,
+            marginBottom:5 
+        },
         button:{
-            borderWidth: wp('0.5%'),
-            borderColor: '#007c91',
+            //borderWidth: wp('0.5%'),
+            //borderColor: '#007c91',
             backgroundColor: '#00acc1',
-            borderRadius: 10,
+            //borderRadius: 10,
             paddingVertical : 5,
             width: wp('30%'),
           },
@@ -259,6 +266,7 @@ export default class SearchedQuestions extends Component {
             color: '#ffffff',
             textAlign: 'center'
           },
+          /** 
           searchResult:{
             width: wp('100%'),
             height: hp('9%'),
@@ -267,7 +275,7 @@ export default class SearchedQuestions extends Component {
             borderColor: '#aeaeae',
             backgroundColor: '#e0e0e0',
             marginTop:5 
-          },
+          }, */
           text:{
             color: "#000",
             fontSize:16,
@@ -284,7 +292,6 @@ export default class SearchedQuestions extends Component {
             borderColor: '#aeaeae',
             backgroundColor: '#ffffff',
             borderTopWidth:0
-            
          },
          separator:{
             height: hp('16%'),
@@ -305,15 +312,15 @@ export default class SearchedQuestions extends Component {
     
          },
          tagbuttonText:{
-          color: "#000",
+          color: "#0069c0",
           fontSize:14, 
           textAlign: 'center'
          },
     
          tagbutton:{
-          borderWidth: wp('0.5%'),
-          borderColor: '#9ea7aa',
-          backgroundColor: '#fff',
+          //borderWidth: wp('0.5%'),
+          //borderColor: '#9ea7aa',
+          backgroundColor: '#b6ffff',
           borderRadius: 5,
           position : "absolute",
           left: wp('23.7%'), 
@@ -328,9 +335,9 @@ export default class SearchedQuestions extends Component {
           
          },
          timeAndUserText:{
-          color: "#9ea7aa",
+          color: "#000",
           fontSize:14,
-          fontWeight:"bold"
+          fontWeight:"600"
          },
          userCont:{
           position : "absolute",
@@ -372,7 +379,7 @@ export default class SearchedQuestions extends Component {
           width:wp('70%')
          } ,
          questionBodyText:{
-          color: "#000",
+          color: "#616161",
           fontSize:14,
          } 
 
