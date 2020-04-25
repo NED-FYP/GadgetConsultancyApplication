@@ -1,82 +1,60 @@
 import React, { Component } from 'react'; 
 import { StyleSheet, Text, View,TouchableOpacity, Image } from 'react-native';
-//import {Actions} from 'react-native-router-flux';
 import Logo from "../components/logo.js";
 import Form from "../components/form.js";
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
- } from 'react-native-responsive-screen' ;
+} from 'react-native-responsive-screen' ;
 
 
 export default class Login extends Component{
- 
   render(){
-    
-    
-        return(
-            <View style={styles.container}>
-              <Logo/>
+    return(
+        <View style={styles.container}>
+            <Logo/>
               <Form type= "Login"/>
                   <View style={styles.loginButtonView}>
-                  <TouchableOpacity style={styles.loginButton}
-                      onPress={() =>
-                      this.props.navigation.navigate('home')
-                   }>
-                      <Text style={styles.loginButtonText}> Login
-                      </Text>
-                  </TouchableOpacity>
+                    <TouchableOpacity style={styles.loginButton}
+                                onPress={() => this.props.navigation.navigate('home')}>
+                        <Text style={styles.loginButtonText}> Login </Text>
+                    </TouchableOpacity>
                   </View>
 
-              <View style={styles.forgotPasswordCont} >
-                 <TouchableOpacity 
-                                onPress={() =>
-                                this.props.navigation.navigate('forgotPassword')
-              }>
-              
-              <Text style={styles.forgotPasswordButton}>Forgot Password?
-              </Text> 
-                 </TouchableOpacity>
-              </View>
+                  <View style={styles.forgotPasswordCont} >
+                    <TouchableOpacity 
+                                onPress={() => this.props.navigation.navigate('forgotPassword')}>
+                        <Text style={styles.forgotPasswordButton}>Forgot Password? </Text> 
+                    </TouchableOpacity>
+                  </View>
 
-              <View style={styles.LoginWithSocialAccountTextCont} >
-              <Text style={styles.LoginWithSocialAccountText}>Login With Social Account
-              </Text>
-              </View>  
+                  <View style={styles.LoginWithSocialAccountTextCont} >
+                    <Text style={styles.LoginWithSocialAccountText}>Login With Social Account
+                    </Text>
+                  </View>  
 
-              <View style={styles.fbIconCont} >
-              <Image 
-              source={require('../images/fb_icon.png')}/>
+                  <View style={styles.fbIconCont} >
+                    <Image source={require('../images/fb_icon.png')}/>
+                  </View>
 
-              </View>
+                  <View style={styles.gmailIconCont} >
+                    <Image source={require('../images/gmail_icon.png')}/>
+                  </View>
 
-              <View style={styles.gmailIconCont} >
-              <Image 
-              source={require('../images/gmail_icon.png')}/>
+                  <View style={styles.signupTextCont} >
+                    <Text style={styles.signupText}>Don't have an acoount? </Text>
+                      <TouchableOpacity 
+                              onPress={() => this.props.navigation.navigate('signup')}>
+                        <Text style={styles.signupButton}> Signup </Text>
+                      </TouchableOpacity>
+                  </View>
 
-              </View>
-
-
-              <View style={styles.signupTextCont} >
-              <Text style={styles.signupText}>Don't have an acoount?
-              </Text>
-                 <TouchableOpacity 
-                                onPress={() =>
-                                this.props.navigation.navigate('signup')
-              }>
-              <Text style={styles.signupButton}> Signup
-              </Text>
-                </TouchableOpacity>
-              </View>
-
-              
-
-            </View>
-        );
-        
-    }
+        </View>
+    );    
+  }
 }
- const styles = StyleSheet.create({
+
+const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#00acc1',
@@ -91,7 +69,6 @@ export default class Login extends Component{
       paddingVertical: 16,
       width: wp('70%'),
       height: hp('10%'),
-
     },
     signupText:{
       color: "#ffffff",
@@ -110,69 +87,56 @@ export default class Login extends Component{
       flexDirection: 'row-reverse',
       position : "relative",
       top: hp('-9%') ,  
-      //width: wp('70%'),
-      //height: hp('10%'),
-
     },
-   forgotPasswordButton:{
+    forgotPasswordButton:{
       color:'#ffffff',
       fontSize: 16,
       fontWeight: '400', 
       textDecorationLine: 'underline',   
-},
-   LoginWithSocialAccountTextCont:{
+    },
+    LoginWithSocialAccountTextCont:{
       flexGrow: 1,
       alignItems: 'flex-end',
       justifyContent: 'center',
       flexDirection: 'row',
       paddingVertical: 16 ,
       position : "relative",
-      top: hp('3%') ,  
-      
-                  
-  },
-
-  LoginWithSocialAccountText:{
+      top: hp('3%') ,                 
+    },
+    LoginWithSocialAccountText:{
       color: "#ffffff",
       fontSize:16,
       fontWeight: '500',
     },
-  fbIconCont : {
-    flexGrow: 1,
-     position : "relative",
+    fbIconCont : {
+      flexGrow: 1,
+      position : "relative",
       left: wp('-15%') ,
-      bottom: hp('-5%'),
-
-    
-},
-gmailIconCont : {
-  flexGrow: 1,
-  position : "relative",
-  right: wp('-15%') ,
-  bottom: hp('5.5%'),
-
-},
-loginButtonText:{
-  fontSize: 16,
-  fontWeight: '500',
-  color: '#ffffff',
-  textAlign: 'center'
-},
-loginButton:{
-  //width:300,
-  backgroundColor: '#007c91',
-  borderRadius: 10,
-  marginVertical: 40,
-  paddingVertical : 13,
-  width: wp('40%'),
-  //height: hp('5%'),
-},
-loginButtonView:{
-  position : "relative",
-
-  bottom: hp('-10%'),
-}
-
-  });
+      bottom: hp('-5%'),  
+    },
+    gmailIconCont : {
+      flexGrow: 1,
+      position : "relative",
+      right: wp('-15%') ,
+      bottom: hp('5.5%'),
+    },
+    loginButtonText:{
+      fontSize: 16,
+      fontWeight: '500',
+      color: '#ffffff',
+      textAlign: 'center'
+    },
+    loginButton:{
+      backgroundColor: '#007c91',
+      borderRadius: 10,
+      marginVertical: 40,
+      paddingVertical : 13,
+      width: wp('40%'),
+    },
+    loginButtonView:{
+      position : "relative",
+      bottom: hp('-10%'),
+    }
+});
  
   

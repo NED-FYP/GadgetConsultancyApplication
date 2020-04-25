@@ -4,8 +4,6 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
  } from 'react-native-responsive-screen' ;
-import { NavigationEvents } from 'react-navigation';
-
 
  export default class Tag extends Component{
     render(){
@@ -16,27 +14,27 @@ import { NavigationEvents } from 'react-navigation';
             </View>
           </View>
         )
-    }}
+    }
+  }
 
-    const styles = StyleSheet.create({
+ const styles = StyleSheet.create({
       container: {
         flex: 1,
         justifyContent:'center',
         marginLeft:wp('5%')
       },
-        button:{
-          backgroundColor: '#007c91',
-          borderRadius: 10,
-          width: wp('29%'),
-          height:hp('6.5%'),
-          justifyContent:'center'
-        },
-        buttonText:{
-          fontSize: 16,
-          fontWeight: '500',
-          color: '#ffffff',
-          textAlign: 'center'
-        },
-    
-    });
+      button:{
+        backgroundColor: '#007c91',
+        borderRadius: 10,
+        width: wp('29%'),
+        height:hp('6.5%'),
+        justifyContent:'center'
+      },
+      buttonText:{
+        fontSize: 16,
+        fontWeight: '500',
+        color: '#ffffff',
+        textAlign: 'center'
+      },
+ });
     

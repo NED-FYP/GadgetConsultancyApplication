@@ -3,18 +3,16 @@ import { StyleSheet, Text, View, ScrollView,TouchableOpacity,TextInput, Image } 
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
- } from 'react-native-responsive-screen' ;
- import { Header } from 'react-native-elements';
- import Questions from "../components/questions.js";
- import Tag from "../components/tag.js";
+} from 'react-native-responsive-screen' ;
+import { Header } from 'react-native-elements';
+import Questions from "../components/questions.js";
+import Tag from "../components/tag.js";
 
-
- export default class Home2 extends Component{
- 
+export default class Home2 extends Component{
     render(){
         return(
           <View style={styles.container}> 
-            
+
                 <Header
                 backgroundColor='#007c91'
                 statusBarProps={{ barStyle: 'light-content' }}
@@ -28,92 +26,93 @@ import {
 
             <ScrollView> 
                 
-    {/*Recently viewed**/}
-            <View style={{flex:1 }}>
-                        {/*Heading**/}
-                    <View style={styles.headingView} >
-                      <Text style={styles.text} >RECENTLY VIEWED</Text>
-                    </View>
-                        {/*Read More**/}
-                    <View style={styles.readMoreView} >
-                        <TouchableOpacity>
-                            <Text style={styles.readMoretext} >Read more</Text>
-                        </TouchableOpacity>
-                    </View>
-                        {/*Question**/}
-                        <View style={styles.questionView}>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                <Questions/>
+        {/*Recently viewed**/}
+                <View style={{flex:1 }}>
+                            {/*Heading**/}
+                        <View style={styles.headingView} >
+                        <Text style={styles.text} >RECENTLY VIEWED</Text>
+                        </View>
+                            {/*Read More**/}
+                        <View style={styles.readMoreView} >
+                            <TouchableOpacity>
+                                <Text style={styles.readMoretext} >Read more</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                <Questions/>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                <Questions/>
-                            </TouchableOpacity>
-                        </View>   
-             </View>
+                        </View>
+                            {/*Question**/}
+                            <View style={styles.questionView}>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
+                                    <Questions/>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
+                                    <Questions/>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
+                                    <Questions/>
+                                </TouchableOpacity>
+                            </View>   
+                </View>
 
-    {/*Recent Tags**/}
-            <View style={{flex:1}}> 
-                      {/*Heading**/}
-                  <View style={styles.headingView} >
-                      <Text style={styles.text} >RECENT TAGS</Text>
-                  </View>
-                      {/*Tags**/}
-                  <View  style={styles.slider} >
-                     <ScrollView horizontal={true} >
-                              {/*Tag 1*/ }
-                          <TouchableOpacity onPress={() =>
-                            this.props.navigation.navigate('detailQuestion')}>
-                                      <Tag name="Laptop"/>
-                          </TouchableOpacity>
-                              {/*Tag 2*/ }
-                          <TouchableOpacity onPress={() =>
-                            this.props.navigation.navigate('detailQuestion')}>
-                                      <Tag name="Mobile"/>
-                          </TouchableOpacity>
-                              {/*Tag 3*/ }
-                          <TouchableOpacity onPress={() =>
-                            this.props.navigation.navigate('detailQuestion')}>
-                                      <Tag name="Camera"/>
-                          </TouchableOpacity>
-                              {/*Tag 4*/ }
-                          <TouchableOpacity onPress={() =>
-                            this.props.navigation.navigate('detailQuestion')}>
-                                      <Tag name="Headphones"/>
-                          </TouchableOpacity>
-                      </ScrollView>
-                  </View>
-            </View>
- {/*Mostly viewed**/}
-            <View style={{flex:1 }}>
+        {/*Recent Tags**/}
+                <View style={{flex:1}}> 
                         {/*Heading**/}
-                    <View style={styles.headingView} >
-                      <Text style={styles.text} >MOSTLY VIEWED</Text>
-                    </View>
-                        {/*Read More**/}
-                    <View style={styles.readMoreView} >
-                        <TouchableOpacity>
-                            <Text style={styles.readMoretext} >Read more</Text>
-                        </TouchableOpacity>
-                    </View>
-                        {/*Question**/}
-                        <View style={styles.questionView}>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                <Questions/>
+                        <View style={styles.headingView} >
+                        <Text style={styles.text} >RECENT TAGS</Text>
+                        </View>
+                        {/*Tags**/}
+                        <View  style={styles.slider} >
+                            <ScrollView horizontal={true} >
+                                {/*Tag 1*/ }
+                                <TouchableOpacity onPress={() =>
+                                    this.props.navigation.navigate('detailQuestion')}>
+                                            <Tag name="Laptop"/>
+                                </TouchableOpacity>
+                                    {/*Tag 2*/ }
+                                <TouchableOpacity onPress={() =>
+                                    this.props.navigation.navigate('detailQuestion')}>
+                                            <Tag name="Mobile"/>
+                                </TouchableOpacity>
+                                    {/*Tag 3*/ }
+                                <TouchableOpacity onPress={() =>
+                                    this.props.navigation.navigate('detailQuestion')}>
+                                            <Tag name="Camera"/>
+                                </TouchableOpacity>
+                                    {/*Tag 4*/ }
+                                <TouchableOpacity onPress={() =>
+                                    this.props.navigation.navigate('detailQuestion')}>
+                                            <Tag name="Headphones"/>
+                                </TouchableOpacity>
+                            </ScrollView>
+                        </View>
+                </View>
+                
+        {/*Mostly viewed**/}
+                <View style={{flex:1 }}>
+                            {/*Heading**/}
+                        <View style={styles.headingView} >
+                        <Text style={styles.text} >MOSTLY VIEWED</Text>
+                        </View>
+                            {/*Read More**/}
+                        <View style={styles.readMoreView} >
+                            <TouchableOpacity>
+                                <Text style={styles.readMoretext} >Read more</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                <Questions/>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                <Questions/>
-                            </TouchableOpacity>
-                        </View>   
-             </View>
+                        </View>
+                            {/*Question**/}
+                            <View style={styles.questionView}>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
+                                    <Questions/>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
+                                    <Questions/>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
+                                    <Questions/>
+                                </TouchableOpacity>
+                            </View>   
+                </View>
 
-  {/*your Interest**/}
-            <View style={{flex:1 }}>
+        {/*your Interest**/}
+                <View style={{flex:1 }}>
                         {/*Heading**/}
                     <View style={styles.headingView} >
                       <Text style={styles.text} >YOUR INTEREST</Text>
@@ -141,7 +140,8 @@ import {
             </ScrollView>         
           </View>
         )
-}}
+    }
+}
 
 
 
@@ -155,28 +155,27 @@ const styles = StyleSheet.create({
         color:'#000',
         fontSize: 20,
         fontWeight: 'bold'
-      },
-       readMoretext:{
+    },
+    readMoretext:{
         color:'#007c91',
         fontSize: 19,
         fontWeight: 'bold',
         textDecorationLine:'underline'
-      },
-
+    },
     headingView:{
-      alignSelf:'flex-start',
-      paddingHorizontal:12,
-      paddingTop:10 
-      },
-      readMoreView:{
+        alignSelf:'flex-start',
+        paddingHorizontal:12,
+        paddingTop:10 
+    },
+    readMoreView:{
         alignSelf:'flex-end',
         paddingRight:8,
         marginTop:-24
-      },
-      questionView:{
+    },
+    questionView:{
         paddingTop:3
-      },
-      slider:{
+    },
+    slider:{
         backgroundColor: '#fff',
         width: wp('100%'),
         height: hp('15%'),
@@ -184,6 +183,5 @@ const styles = StyleSheet.create({
         borderColor: '#bdbdbd', 
         borderLeftWidth:0,
         borderRightWidth:0
-      }
-      
+    }   
 })

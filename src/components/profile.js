@@ -13,58 +13,51 @@ import {
  import { withNavigation } from 'react-navigation';
 
 class Profile extends Component {
-
   render() {
     return (
       <View style={styles.container}>
+      
           <View style={styles.header}>
             <View style={styles.headerContent}>
                 <Image style={styles.avatar}
-                source={require('../images/avatar.png')}/>
-
+                  source={require('../images/avatar.png')}/>
                 <Text style={styles.name}>Ramsha Khan</Text>
-                {/**<Text style={styles.userInfo}>jhonnydoe@mail.com </Text>
-                    <Text style={styles.userInfo}>Florida </Text> */}
-                    <View style={styles.editView} >
-                       <TouchableOpacity  onPress={() => this.props.navigation.navigate('editProfile')}>
-                          <Text style={styles.editText}>Edit Profile</Text>
-                      </TouchableOpacity>
-                    </View>
-
+                <View style={styles.editView} >
+                    <TouchableOpacity  onPress={() => this.props.navigation.navigate('editProfile')}>
+                      <Text style={styles.editText}>Edit Profile</Text>
+                  </TouchableOpacity>
+                </View>
             </View>
           </View>
 
           <View style={styles.body}>
+
             <View style={styles.item}>
               <View style={styles.infoView}>
-              <Text style={styles.info}>Phone Number</Text>
-              <Text style={styles.infoContent}>+92 3471232979</Text>
-              </View>
-               
+                <Text style={styles.info}>Phone Number</Text>
+                <Text style={styles.infoContent}>+92 3471232979</Text>
+              </View> 
             </View>
 
             <View style={styles.item}>
               <View style={styles.infoView}>
-              <Text style={styles.info}>Email</Text>
-              <Text style={styles.infoContent}>ramshakhan704@gmail.com</Text>
-              </View>
-               
+                <Text style={styles.info}>Email</Text>
+                <Text style={styles.infoContent}>ramshakhan704@gmail.com</Text>
+              </View> 
             </View>
 
             <View style={styles.item}>
               <View style={styles.infoView}>
-              <Text style={styles.info}>City</Text>
-              <Text style={styles.infoContent}>Karachi</Text>
+                <Text style={styles.info}>City</Text>
+                <Text style={styles.infoContent}>Karachi</Text>
               </View>
-               
             </View>
 
             <View style={styles.item}>
               <View style={styles.infoView}>
-              <Text style={styles.info}>Language</Text>
-              <Text style={styles.infoContent}>English</Text>
+                <Text style={styles.info}>Language</Text>
+                <Text style={styles.infoContent}>English</Text>
               </View>
-               
             </View>
 
           </View>
@@ -114,7 +107,6 @@ const styles = StyleSheet.create({
   },
   infoView:{
     flex:1,
-    //alignItems:'flex-end',
     paddingLeft:25,
   },
   

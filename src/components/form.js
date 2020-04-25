@@ -6,32 +6,24 @@ import {
   widthPercentageToDP as wp,
  } from 'react-native-responsive-screen' ;
 
-
-
-  export default class Form extends Component{
-
+export default class Form extends Component{
   render(){
     return(
-
-    <View style={styles.container}>
-       < TextInput style={styles.inputBox}
-            underlineColorAndroid='#007c91'
-            placeholder="Email address" 
-            placeholderTextColor="#ffffff"
-        />
-
+      <View style={styles.container}>
         < TextInput style={styles.inputBox}
-            underlineColorAndroid='#007c91'
-            placeholder="Password" 
-            secureTextEntry={true}
-            placeholderTextColor="#ffffff"
-        />
+              underlineColorAndroid='#007c91'
+              placeholder="Email address" 
+              placeholderTextColor="#ffffff"
+          />
 
-        
-    
-    </View>
-     );
-    
+          < TextInput style={styles.inputBox}
+              underlineColorAndroid='#007c91'
+              placeholder="Password" 
+              secureTextEntry={true}
+              placeholderTextColor="#ffffff"
+          />
+      </View>
+    );
   }
 } 
 const styles = StyleSheet.create({
@@ -43,7 +35,6 @@ const styles = StyleSheet.create({
       top: hp('10%') ,
     },
     inputBox:{
-        //width:300,
         backgroundColor: '#007c91',
         borderRadius: 10,
         paddingHorizontal: 16,
@@ -51,8 +42,7 @@ const styles = StyleSheet.create({
         color:'#ffffff',
         marginVertical: 10,
         width: wp('82%'),
-        height: hp('5%'),
-       
+        height: hp('5%'),    
     },
     buttonText:{
       fontSize: 16,
@@ -61,13 +51,11 @@ const styles = StyleSheet.create({
       textAlign: 'center'
     },
     button:{
-      //width:300,
       backgroundColor: '#007c91',
       borderRadius: 10,
       marginVertical: 40,
       paddingVertical : 13,
       width: wp('40%'),
-      //height: hp('5%'),
     }
-  });
+});
   

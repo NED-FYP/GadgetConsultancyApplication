@@ -1,6 +1,10 @@
+import React, { Component } from 'react';
 import { createDrawerNavigator } from 'react-navigation-drawer'
 import { createAppContainer } from 'react-navigation';
-import navigationDrawer from '../src/components/navigationDrawer'
+import { AntDesign } from '@expo/vector-icons';
+import {FontAwesome} from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+import navigationDrawer from './components/navigationDrawer'
 import Home from "./pages/home";
 import DetailQuestion from "./pages/detailQuestion";
 import SearchedQuestions from "./pages/searchedQuestions";
@@ -12,13 +16,6 @@ import PostQuestion from "./pages/postQuestion";
 import EditQuestion from "./pages/editQuestion";
 import Filter from "./pages/filter";
 import MyQuestions from "./pages/myQuestions";
-
-import React, { Component } from 'react';
-import { AntDesign } from '@expo/vector-icons';
-import {FontAwesome} from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
-
-
 const navigation = createDrawerNavigator(
     {
         home: {screen: Home,
@@ -76,7 +73,8 @@ const navigation = createDrawerNavigator(
             navigationOptions: {
                 drawerLabel: () => null
             }},
-    },{
+    },
+    {
         contentComponent : navigationDrawer,
         initialRouteName: 'home',
         headerMode: 'none',
@@ -89,5 +87,4 @@ const navigation = createDrawerNavigator(
         }
     }
 )
-
 export default createAppContainer(navigation)

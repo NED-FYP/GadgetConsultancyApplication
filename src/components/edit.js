@@ -12,32 +12,25 @@ import {
   widthPercentageToDP as wp,
  } from 'react-native-responsive-screen' ;
 
-
 export default class Edit extends Component {
-
   render() {
-    
     return (
       <View style={styles.container}>
+
           <View style={styles.header}>
             <View style={styles.headerContent}>
                 <Image style={styles.avatar}
-                source={require('../images/avatar.png')}/>
-
-               {/** <Text style={styles.name}>Ramsha Khan</Text>
-                <Text style={styles.userInfo}>jhonnydoe@mail.com </Text>
-                    <Text style={styles.userInfo}>Florida </Text> */}
-                    <View style={styles.editView} >
-                       <TouchableOpacity>
-                          <Text style={styles.editText}>Upload Photo</Text>
-                      </TouchableOpacity>
-                    </View>
-
+                    source={require('../images/avatar.png')}/>
+                <View style={styles.editView} >
+                  <TouchableOpacity>
+                    <Text style={styles.editText}>Upload Photo</Text>
+                  </TouchableOpacity>
+                </View>
             </View>
           </View>
 
-          
           <View style={styles.body}>
+
             <View style={styles.item}>
                 <View style={styles.infoView}>
                     <Text style={styles.info}>User Name</Text>
@@ -45,9 +38,8 @@ export default class Edit extends Component {
                         underlineColorAndroid='#007c91'
                         placeholder="Ramsha Khan" 
                         placeholderTextColor="#000"
-                        />
+                    />
                 </View>
-            
             </View>
 
             <View style={styles.item}>
@@ -57,9 +49,10 @@ export default class Edit extends Component {
                         underlineColorAndroid='#007c91'
                         placeholder="******" 
                         placeholderTextColor="#000"
-                        />
+                    />
                 </View>
             </View>
+
             <View style={styles.item}>
                 <View style={styles.infoView}>
                     <Text style={styles.info}>Phone Number</Text>
@@ -67,9 +60,10 @@ export default class Edit extends Component {
                         underlineColorAndroid='#007c91'
                         placeholder="+92 3471232979" 
                         placeholderTextColor="#000"
-                        />
+                    />
                 </View>
             </View>
+
             <View style={styles.item}>
                 <View style={styles.infoView}>
                     <Text style={styles.info}>Email</Text>
@@ -77,9 +71,10 @@ export default class Edit extends Component {
                         underlineColorAndroid='#007c91'
                         placeholder="ramshakhan704@gmail.com" 
                         placeholderTextColor="#000"
-                        />
+                    />
                 </View>
             </View>
+
             <View style={styles.item}>
                 <View style={styles.infoView}>
                     <Text style={styles.info}>City</Text>
@@ -87,9 +82,10 @@ export default class Edit extends Component {
                         underlineColorAndroid='#007c91'
                         placeholder="Karachi" 
                         placeholderTextColor="#000"
-                        />
+                    />
                 </View>
             </View>
+
             <View style={styles.item}>
                 <View style={styles.infoView}>
                     <Text style={styles.info}>Language</Text>
@@ -97,13 +93,11 @@ export default class Edit extends Component {
                         underlineColorAndroid='#007c91'
                         placeholder="English" 
                         placeholderTextColor="#000"
-                        />
+                    />
                 </View>
             </View>
-            
-
-            
-        </View>
+               
+          </View>
         
       </View>
     );
@@ -151,7 +145,6 @@ const styles = StyleSheet.create({
   },
   infoView:{
     flex:1,
-    //alignItems:'flex-end',
     paddingLeft:25,
   },
   
@@ -174,20 +167,12 @@ const styles = StyleSheet.create({
 
     },
     inputBox:{
-        //width:300,
-        //backgroundColor: '#fff',
-        //borderRadius: 10,
         paddingHorizontal: 10,
         fontSize:16,
         color:'#000',
-        //marginVertical: 10,
         width: wp('82%'),
         height: hp('5%'),
-        //borderColor: 'gray',
-        //borderWidth: wp('0.2%'),
     },
-    
-      
 });
  
 
