@@ -4,127 +4,81 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen' ;
+import {styler} from '../../assets/style'
 
 export default class ForgotPassword extends Component{
     render(){
         return(
             <View style={styles.container}>
+            
+                <View style={styler.logoView}>
+                      <Image source={require('../images/splashScreenLogo.png')}/> 
+                </View> 
+            
+                <View style={styler.textInputView}>
+                    < TextInput style={styler.inputBox}
+                      //underlineColorAndroid='#007c91'
+                      placeholder="Enter your email address" 
+                      placeholderTextColor="#aeaeae"
+                  />
+                </View>
 
-              <View style={styles.Lockcontainer}>
-                <Image style={{width: 130, height: 140, justifyContent: "flex-start" }}
-                  source={require('../images/lock.png')}/>
-              </View>
-
-              <View style={styles.TroubleloggingTextCont} >
-                <Text style={styles.TroubleloggingText}>Trouble with logging in ?
-                </Text>
-              </View> 
-
-              <View style={styles.RecoveryEmailTextCont} >
-                  <Text style={styles.RecoveryEmailText}>Enter your email address to recover your 
-                  </Text>
-                  <Text style={{color:"#c30000" }}>account
-                  </Text>
-              </View>  
-
-              < TextInput style={styles.inputBox}
-                underlineColorAndroid='#a0a0a0'
-                placeholder="Email address" 
-                placeholderTextColor="#ffffff"
-              />
-
-              <TouchableOpacity style={styles.button} > 
-                <Text style={styles.buttonText}>Send Recovery Email
-                </Text>
-              </TouchableOpacity>
-
-              <View style={styles.BackToLoginButtonCont} >
-                <TouchableOpacity style={styles.BackToLoginButton}
-                                onPress={() =>
-                                this.props.navigation.navigate('login')}>
-                  <Text style={styles.buttonText}>Back To Login 
-                  </Text>
+                <View style={styler.buttonView}>
+                <TouchableOpacity style={styler.button}
+                            onPress={() => this.props.navigation.navigate('home')}>
+                    <Text style={styler.text}> Submit </Text>
                 </TouchableOpacity>
-              </View>
+                </View>
+            
             </View>
       );
     }
 }
 
 const styles = StyleSheet.create({
-    container: {
-      backgroundColor: '#bdbdbd',
-      flexGrow: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    Lockcontainer:{
-      position : "relative",
-      top: hp('15%') ,
-    },
-    TroubleloggingTextCont:{
-      position : "relative",
-      bottom: hp('-17%') ,
-    },
-    TroubleloggingText :{
-      color:'#000000' , 
-      fontSize: 25, 
-      fontWeight: '600'
-    },
-    RecoveryEmailTextCont :{
-      alignItems: 'center',
-      justifyContent: 'center',
-      paddingVertical: 10,
-      paddingHorizontal: 24,
-      textAlign: 'justify',
-      position : "relative",
-      bottom: hp('-16%') ,  
-    },
-    RecoveryEmailText:{
-      color:'#c30000' , 
-      fontSize: 15
-    },
-    inputBox:{
-      backgroundColor: '#a0a0a0',
-      borderRadius: 10,
-      paddingHorizontal: 16,
-      fontSize:16,
-      color:'#ffffff',
-      marginVertical: 10,
-      width: wp('82%'),
-      height: hp('5%'),
-      position : "relative",
-      bottom: hp('-18%') , 
-    },
-    buttonText:{
-      fontSize: 16,
-      fontWeight: '500',
-      color: '#ffffff',
-      textAlign: 'center'
-    },
-    button:{
-      width:wp(50),
-      backgroundColor: '#a0a0a0',
-      borderRadius: 10,
-      marginVertical: 10,
-      paddingVertical : 20,
-      position : "relative",
-      bottom: hp('-17.5%') ,
-      },
-      BackToLoginButton:{
-        width:300,
-        backgroundColor: '#007c91',
-        borderRadius: 10,
-        marginVertical: 80,
-        paddingVertical : 13,
-      },
-      BackToLoginButtonCont:{
-        flexGrow: 1,
-        alignItems: 'flex-end',
-        justifyContent: 'center',
-        flexDirection: 'row',
-        position : "relative",
-        bottom: hp('-10%') ,   
-      },
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  /** 
+  logoView:{ 
+    alignItems: 'center',
+    justifyContent:'flex-start',
+    paddingVertical:30
+  },
+  textInputView:{
+    alignItems: 'center',
+  },
+  inputBox:{
+    backgroundColor: '#fff',
+    borderWidth:1,
+    borderColor:'#aeaeae',
+    borderRadius: 20,
+    fontSize:16,
+    color:'black',
+    marginVertical: 10,
+    width: wp('82%'),
+    height: hp('6%'), 
+    paddingHorizontal: 16,   
+  },
+  buttonView:{
+    alignItems: 'center',
+  },
+  text:{
+    fontSize: 18,
+    fontWeight: '500',
+    color: '#ffffff',
+    textAlign: 'center',
+  },
+  button:{
+    backgroundColor: '#083b66',
+    borderRadius: 20,
+    width: wp('82%'),
+    height: hp('6%'),
+    justifyContent:'center',
+    marginVertical: 25,
+  },
+  */
+ 
 });
       

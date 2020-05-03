@@ -1,107 +1,142 @@
 import React, { Component } from 'react'; 
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity ,Image} from 'react-native';
 import Logo from "../components/logo.js";
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen' ;
+import KeyboardShift from "../components/keyboardShift.js";
+import {styler} from '../../assets/style'
 
 export default class Signup extends Component{
   render(){
     return(
+      <KeyboardShift>
+      {() => (
         <View style={styles.container}>
-          <Logo/>
-            <View style={styles.inputBoxCont}>
-                  < TextInput style={styles.inputBox}
-                      underlineColorAndroid='#007c91'
-                      placeholder="Username" 
-                      placeholderTextColor="#ffffff"
-                  />
-                  < TextInput style={styles.inputBox}
-                      underlineColorAndroid='#007c91'
-                      placeholder="Email Address" 
-                      placeholderTextColor="#ffffff"
-                  />
-                  < TextInput style={styles.inputBox}
-                      underlineColorAndroid='#007c91'
-                      placeholder="Password" 
-                      secureTextEntry={true}
-                    placeholderTextColor="#ffffff"
-                  />
-                  < TextInput style={styles.inputBox}
-                        underlineColorAndroid='#007c91'
-                        placeholder="Confirm Password" 
-                        secureTextEntry={true}
-                        placeholderTextColor="#ffffff"
-                    />
-              </View>         
+            
+        <View style={styler.logoView}>
+            <Image source={require('../images/splashScreenLogo.png')}/> 
+        </View> 
+        
+        <View style={styler.textInputView}>
 
-              <TouchableOpacity style={styles.button}
-                    onPress={() => this.props.navigation.navigate('home')}> 
-                  <Text style={styles.buttonText}>Signup</Text>
-              </TouchableOpacity>
-    
-              <View style={styles.signupTextCont} >
-                <Text style={styles.signupText}>Already have an account?</Text>
-                  <TouchableOpacity
-                      onPress={() => this.props.navigation.navigate('login')}>
-                      <Text style={styles.signupButton}> Sign in</Text>
-                  </TouchableOpacity>
-              </View>
+            < TextInput style={styler.inputBox}
+                //underlineColorAndroid='#007c91'
+                placeholder="Username" 
+                placeholderTextColor="#aeaeae"
+                returnKeyType = { "next" }
+                onSubmitEditing={() => { this.secondTextInput.focus(); }}
+            />
+            < TextInput style={styler.inputBox}
+                //underlineColorAndroid='#007c91'
+                placeholder="Email address" 
+                placeholderTextColor="#aeaeae"
+                ref={(input) => { this.secondTextInput = input; }}
+                returnKeyType = { "next" }
+                onSubmitEditing={() => { this.thirdTextInput.focus(); }}
+            />
+            < TextInput style={styler.inputBox}
+                //underlineColorAndroid='#007c91'
+                placeholder="Password" 
+                secureTextEntry={true}
+                placeholderTextColor="#aeaeae"
+                ref={(input) => { this.thirdTextInput = input; }}
+                returnKeyType = { "next" }
+                onSubmitEditing={() => { this.fourthTextInput.focus(); }}
+            />
+            < TextInput style={styler.inputBox}
+                //underlineColorAndroid='#007c91'
+                placeholder="Confirm password" 
+                secureTextEntry={true}
+                placeholderTextColor="#aeaeae"
+                ref={(input) => { this.fourthTextInput = input; }}
+                returnKeyType = { "done" }
+                //onSubmitEditing={this.handleTitleInputSubmit}
+            />
         </View>
+
+        <View style={styler.buttonView}>
+        <TouchableOpacity style={styler.button}
+                    onPress={() => this.props.navigation.navigate('home')}>
+            <Text style={styler.text}> Signup </Text>
+        </TouchableOpacity>
+        </View>
+
+        <View style={styler.signupTextView} >
+        <Text style={styler.signupText}>Already have an acoount? </Text>
+          <TouchableOpacity 
+                  onPress={() => this.props.navigation.navigate('login')}>
+                <Text style={styler.linkButton}> Sign in </Text>
+          </TouchableOpacity>
+        </View>
+
+        </View>
+      )}
+      </KeyboardShift> 
     );
   }
-}
+}  
+
+ 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#00acc1',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    signupTextCont:{
-      flexGrow: 1,
-      alignItems: 'flex-end',
-      justifyContent: 'center',
-      flexDirection: 'row',
-      paddingVertical: 16,
-    },
-    signupText:{
-      color: "#ffffff",
-      fontSize:16
-    },
-    signupButton:{
-      color:'#ffffff',
-      fontSize: 16,
-      fontWeight: '500'
-    },
-    inputBox:{
-      width: wp('82%'),
-      height: hp('5%'),
-      backgroundColor: '#007c91',
-      borderRadius: 10,
-      paddingHorizontal: 16,
-      fontSize:16,
-      color:'#ffffff',
-      marginVertical: 10,
-    },
-    inputBoxCont:{
-      position : "relative",
-      top: hp('7%') ,
-    },
-    button:{
-      backgroundColor: '#007c91',
-      borderRadius: 10,
-      marginVertical: 40,
-      paddingVertical : 13,
-      width: wp('40%'),
-      bottom:  hp('-5%')
-    },
-    buttonText:{
-      fontSize: 16,
-      fontWeight: '500',
-      color: '#ffffff',
-      textAlign: 'center'
-    },
-});
-  
+  container: {
+    flex: 1,
+    backgroundColor: '#ffffff',
+  },
+  /**
+  logoView:{ 
+    alignItems: 'center',
+    justifyContent:'flex-start',
+    paddingVertical:30
+  },
+  textInputView:{
+    alignItems: 'center',
+  },
+  inputBox:{
+    backgroundColor: '#fff',
+    borderWidth:1,
+    borderColor:'#aeaeae',
+    borderRadius: 20,
+    fontSize:16,
+    color:'black',
+    marginVertical: 10,
+    width: wp('82%'),
+    height: hp('6%'), 
+    paddingHorizontal: 16,   
+  },
+  buttonView:{
+    alignItems: 'center',
+  },
+  text:{
+    fontSize: 18,
+    fontWeight: '500',
+    color: '#ffffff',
+    textAlign: 'center',
+  },
+  button:{
+    backgroundColor: '#083b66',
+    borderRadius: 20,
+    width: wp('82%'),
+    height: hp('6%'),
+    justifyContent:'center',
+    marginVertical: 25,
+  },
+   
+  signupTextView:{
+    flexGrow: 1,
+    alignItems: 'flex-end',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    marginBottom:12
+  },
+  signupText:{
+    color: "#aeaeae",
+    fontSize:16,
+  },
+  linkButton:{
+    color:'#083b66',
+    fontSize: 16,
+    fontWeight: '400',
+  },*/
+})

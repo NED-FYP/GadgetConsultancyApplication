@@ -9,7 +9,7 @@ export default class MyActivities extends Component {
         return(
             <View style={styles.container}> 
                 <Header
-                    backgroundColor='#007c91'
+                    backgroundColor='#083b66'
                     statusBarProps={{ barStyle: 'light-content' }}
                     leftComponent={{ icon: 'menu', color: '#fff' ,onPress:() => this.props.navigation.toggleDrawer()}}
                     centerComponent={{    text: 'ACTIVITY LOG', style: { color: '#fff' , fontWeight:'bold' , fontSize: 17} }}

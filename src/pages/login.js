@@ -1,142 +1,209 @@
 import React, { Component } from 'react'; 
-import { StyleSheet, Text, View,TouchableOpacity, Image } from 'react-native';
-import Logo from "../components/logo.js";
-import Form from "../components/form.js";
+import { StyleSheet, Text, View,TouchableOpacity, Image ,TextInput } from 'react-native';
+import {FontAwesome} from '@expo/vector-icons';
+import {MaterialCommunityIcons} from '@expo/vector-icons';
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen' ;
+import {styler} from '../../assets/style'
 
 
 export default class Login extends Component{
   render(){
     return(
         <View style={styles.container}>
-            <Logo/>
-              <Form type= "Login"/>
-                  <View style={styles.loginButtonView}>
-                    <TouchableOpacity style={styles.loginButton}
-                                onPress={() => this.props.navigation.navigate('home')}>
-                        <Text style={styles.loginButtonText}> Login </Text>
-                    </TouchableOpacity>
-                  </View>
 
-                  <View style={styles.forgotPasswordCont} >
-                    <TouchableOpacity 
-                                onPress={() => this.props.navigation.navigate('forgotPassword')}>
-                        <Text style={styles.forgotPasswordButton}>Forgot Password? </Text> 
-                    </TouchableOpacity>
-                  </View>
+            <View style={styler.logoView}>
+              <Image source={require('../images/splashScreenLogo.png')}/> 
+            </View> 
+              
+            <View style={styler.textInputView}>
+                < TextInput style={styler.inputBox}
+                  //underlineColorAndroid='#007c91'
+                  placeholder="Email address" 
+                  placeholderTextColor="#aeaeae"
+                  returnKeyType = { "next" }
+                  onSubmitEditing={() => { this.secondTextInput.focus(); }}
+              />
 
-                  <View style={styles.LoginWithSocialAccountTextCont} >
-                    <Text style={styles.LoginWithSocialAccountText}>Login With Social Account
+              < TextInput style={styler.inputBox}
+                  //underlineColorAndroid='#007c91'
+                  placeholder="Password" 
+                  secureTextEntry={true}
+                  placeholderTextColor="#aeaeae"
+                  ref={(input) => { this.secondTextInput = input; }}
+                  returnKeyType = { "done" }
+              />
+            </View>
+
+            <View style={styles.forgotPasswordView} >
+                <TouchableOpacity 
+                            onPress={() => this.props.navigation.navigate('forgotPassword')}>
+                    <Text style={styles.forgotPasswordText}>Forgot Password? </Text> 
+                </TouchableOpacity>
+            </View>
+
+            <View style={styler.buttonView}>
+            <TouchableOpacity style={styles.button}
+                        onPress={() => this.props.navigation.navigate('home')}>
+                <Text style={styler.text}> Login </Text>
+            </TouchableOpacity>
+            </View>
+
+            <View style={styles.orView} >
+             <View style={styles.leftLine} /> 
+             <View style={styles.rightLine} /> 
+                    <Text style={styles.orText}> OR </Text> 
+               
+            </View>
+    
+            <View style={styler.buttonView}>
+                <TouchableOpacity style={styles.facebookButton}
+                            onPress={() => this.props.navigation.navigate('home')}>
+                    <Text style={styler.text} >
+                        <FontAwesome   name='facebook-square'  size={18}  />
+                              Login with Facebook 
                     </Text>
-                  </View>  
+                </TouchableOpacity>
+            </View>
 
-                  <View style={styles.fbIconCont} >
-                    <Image source={require('../images/fb_icon.png')}/>
-                  </View>
-
-                  <View style={styles.gmailIconCont} >
-                    <Image source={require('../images/gmail_icon.png')}/>
-                  </View>
-
-                  <View style={styles.signupTextCont} >
-                    <Text style={styles.signupText}>Don't have an acoount? </Text>
-                      <TouchableOpacity 
-                              onPress={() => this.props.navigation.navigate('signup')}>
-                        <Text style={styles.signupButton}> Signup </Text>
-                      </TouchableOpacity>
-                  </View>
-
-        </View>
+            <View style={styler.buttonView}>
+                <TouchableOpacity style={styles.gmailButton}
+                            onPress={() => this.props.navigation.navigate('home')}>
+                    <Text style={styler.text}> 
+                        <MaterialCommunityIcons   name='gmail'  size={18}  />
+                                Login with gmail
+                    </Text>
+                </TouchableOpacity>
+            </View>
+            
+            <View style={styler.signupTextView} >
+            <Text style={styler.signupText}>Don't have an acoount? </Text>
+              <TouchableOpacity 
+                      onPress={() => this.props.navigation.navigate('signup')}>
+                    <Text style={styler.linkButton}> Signup </Text>
+              </TouchableOpacity>
+            </View>
+    
+      </View>       
     );    
   }
 }
-
+          
+ 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#00acc1',
+      backgroundColor: '#fff',
+    },
+    /**logoView:{ 
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent:'flex-start',
+      paddingVertical:30
     },
-    signupTextCont:{
-      flexGrow: 1,
-      alignItems: 'flex-end',
-      justifyContent: 'center',
-      flexDirection: 'row',
-      paddingVertical: 16,
-      width: wp('70%'),
-      height: hp('10%'),
+    textInputView:{
+      alignItems: 'center',
     },
-    signupText:{
-      color: "#ffffff",
-      fontSize:16
+    inputBox:{
+      backgroundColor: '#fff',
+      borderWidth:1,
+      borderColor:'#aeaeae',
+      borderRadius: 20,
+      fontSize:16,
+      color:'black',
+      marginVertical: 10,
+      width: wp('82%'),
+      height: hp('6%'), 
+      paddingHorizontal: 16,   
     },
-    signupButton:{
-      color:'#ffffff',
-      fontSize: 16,
-      fontWeight: '500'
+    buttonView:{
+      alignItems: 'center',
     },
-    forgotPasswordCont:{
-      flexGrow: 1,
-      justifyContent: 'center',
-      paddingHorizontal: 30,
-      alignSelf :"flex-end" , 
-      flexDirection: 'row-reverse',
-      position : "relative",
-      top: hp('-9%') ,  
+    text:{
+      fontSize: 18,
+      fontWeight: '500',
+      color: '#ffffff',
+      textAlign: 'center',
+    },*/
+    button:{
+      backgroundColor: '#083b66',
+      borderRadius: 20,
+      width: wp('82%'),
+      height: hp('6%'),
+      justifyContent:'center',
+      marginVertical: 20,
     },
-    forgotPasswordButton:{
-      color:'#ffffff',
+    forgotPasswordView:{
+      alignItems:'flex-end',
+      paddingHorizontal:32
+    },
+    forgotPasswordText:{
+      color:'#083b66',
       fontSize: 16,
       fontWeight: '400', 
       textDecorationLine: 'underline',   
     },
-    LoginWithSocialAccountTextCont:{
+    orView:{
+      alignItems:'center',
+      marginBottom:22
+    },
+    orText:{
+      color:'#aeaeae',
+      fontSize: 16,
+      fontWeight: '500', 
+    },
+    leftLine: {
+      alignSelf:'flex-start',
+      borderBottomColor:'#aeaeae',
+      borderBottomWidth:1,
+      width: wp('38%'),
+      bottom:hp('-1.3%'),
+      marginLeft:30,
+    },
+    rightLine: {
+      alignSelf:'flex-end',
+      borderBottomColor:'#aeaeae',
+      borderBottomWidth:1,
+      width: wp('38%'),
+      bottom:hp('-1.3%'),
+      marginRight:30,
+    },
+    facebookButton:{
+      backgroundColor: '#3b5998',
+      borderRadius: 20,
+      width: wp('82%'),
+      height: hp('6%'),
+      justifyContent:'center',
+      marginVertical: 10,
+    },
+    gmailButton:{
+      backgroundColor: '#dd4b39',
+      borderRadius: 20,
+      width: wp('82%'),
+      height: hp('6%'),
+      justifyContent:'center',
+      marginVertical: 10,
+    },
+    /** 
+    signupTextView:{
       flexGrow: 1,
       alignItems: 'flex-end',
       justifyContent: 'center',
       flexDirection: 'row',
-      paddingVertical: 16 ,
-      position : "relative",
-      top: hp('3%') ,                 
+      marginBottom:12
     },
-    LoginWithSocialAccountText:{
-      color: "#ffffff",
+    signupText:{
+      color: "#aeaeae",
       fontSize:16,
-      fontWeight: '500',
     },
-    fbIconCont : {
-      flexGrow: 1,
-      position : "relative",
-      left: wp('-15%') ,
-      bottom: hp('-5%'),  
-    },
-    gmailIconCont : {
-      flexGrow: 1,
-      position : "relative",
-      right: wp('-15%') ,
-      bottom: hp('5.5%'),
-    },
-    loginButtonText:{
+    linkButton:{
+      color:'#083b66',
       fontSize: 16,
-      fontWeight: '500',
-      color: '#ffffff',
-      textAlign: 'center'
+      fontWeight: '400',
     },
-    loginButton:{
-      backgroundColor: '#007c91',
-      borderRadius: 10,
-      marginVertical: 40,
-      paddingVertical : 13,
-      width: wp('40%'),
-    },
-    loginButtonView:{
-      position : "relative",
-      bottom: hp('-10%'),
-    }
+    */
+   
 });
  
   

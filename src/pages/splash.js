@@ -16,7 +16,7 @@ export default class Splash extends Component{
             () =>{
                 this.props.navigation.dispatch(resetAction)
             },
-            4 * 1000
+            2 * 1000
         );
     }
 

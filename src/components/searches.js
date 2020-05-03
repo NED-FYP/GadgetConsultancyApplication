@@ -46,7 +46,7 @@ export default class Searches extends Component {
                 <TouchableOpacity >
                   <Icon
                     name='delete'
-                    color='#00aced'
+                    color='#083b66'
                     height={hp('5%')} 
                   />
                 </TouchableOpacity>
@@ -69,7 +69,7 @@ export default class Searches extends Component {
                 <TouchableOpacity >
                   <Icon
                     name='delete'
-                    color='#00aced'
+                    color='#083b66'
                     height={hp('5%')} 
                   />
                 </TouchableOpacity>
@@ -96,7 +96,7 @@ export default class Searches extends Component {
                 <TouchableOpacity >
                   <Icon
                     name='delete'
-                    color='#00aced'
+                    color='#083b66'
                     height={hp('5%')} 
                   />
                 </TouchableOpacity>
@@ -119,21 +119,13 @@ export default class Searches extends Component {
                 <TouchableOpacity >
                   <Icon
                     name='delete'
-                    color='#00aced'
+                    color='#083b66'
                     height={hp('5%')}
                   />
                 </TouchableOpacity>
               </View>
           </View>
-
-          <View style={styles.Imagecontainer}>
-            <Image style={{width: wp('20%'), height: hp ('10%'), }}
-                   source={require('../images/nothing_to_show.png')}/> 
-          </View> 
-
-          <View style={styles.nothingToShowView} >
-            <Text style={styles.nothingToShowText}>Nothing more to show</Text>
-          </View>
+     
 
       </View>
     );  
@@ -146,9 +138,9 @@ const styles = StyleSheet.create({
     },
     rectangle:{
       width: wp('100%'),
-      height: hp('7%'),
-      borderWidth: wp('0.5%'),
-      borderColor: '#bdbdbd',
+      height: hp('6%'),
+      borderBottomWidth:wp('0.3%'),
+      borderColor: '#aeaeae',
       backgroundColor: '#fff',   
     },
     rectangle2:{
@@ -193,22 +185,6 @@ const styles = StyleSheet.create({
     deleteIconView:{
       right: wp('-43%'),
       top: hp('-3.5%')
-    },
-    Imagecontainer:{
-      flexGrow: 1,
-      alignItems: 'flex-end',
-      justifyContent: 'center',
-      flexDirection: 'row',
-      paddingVertical: 80,
-    },
-    nothingToShowView:{
-      marginTop:8,
-      bottom: hp('10%'),
-      right:('-29%')
-    },
-    nothingToShowText:{
-      color:'#000',
-      fontSize: 14,
-    }     
+    },   
 });
 

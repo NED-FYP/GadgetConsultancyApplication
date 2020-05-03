@@ -9,7 +9,7 @@ export default class SearchHistory extends Component{
     return(
       <View style={styles.container}>    
           <Header
-              backgroundColor='#007c91'
+              backgroundColor='#083b66'
               statusBarProps={{ barStyle: 'light-content' }}
               leftComponent={{ icon: 'menu', color: '#fff' ,onPress:() => this.props.navigation.toggleDrawer()}}
               centerComponent={{    text: 'HISTORY', style: { color: '#fff' , fontWeight:'bold' , fontSize: 17} }}
