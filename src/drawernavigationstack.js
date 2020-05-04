@@ -82,7 +82,7 @@ const navigation = createDrawerNavigator(
             headerVisible : false
         },
         contentOptions: {
-            activeTintColor: '#007c91',
+            activeTintColor: '#083b66',
             activeBackgroundColor:'#f5f5f5'
         }
     }
