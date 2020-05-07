@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
         color: "#000",
         fontSize:20,
         marginVertical:10,
+        textAlign:'center'
     },
     separator:{
         width: wp('100%'),

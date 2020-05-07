@@ -11,124 +11,166 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
  } from 'react-native-responsive-screen' ;
+ import {Entypo} from '@expo/vector-icons';
+import { withNavigation } from 'react-navigation';
+import * as ImagePicker from 'expo-image-picker';
+import Constants from 'expo-constants';
+import * as Permissions from 'expo-permissions';
 
-export default class Edit extends Component {
+
+class Edit extends Component {
+    constructor(){
+      super();
+      this.state={
+        image: null,
+        loadingImage : false
+      }
+  
+    }
+
+    componentDidMount() {
+      this.getPermissionAsync();
+    }
+
+    getPermissionAsync = async () => {
+      if (Constants.platform.ios) {
+        const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+        if (status !== 'granted') {
+          alert('Sorry, we need camera roll permissions to make this work!');
+        }
+      }
+    };
+
+    _pickImage = async () => {
+      try {
+        let result = await ImagePicker.launchImageLibraryAsync({
+          mediaTypes: ImagePicker.MediaTypeOptions.Images,
+          allowsEditing: true,
+          aspect: [4, 3],
+          quality: 1,
+        });
+    
+        if (!result.cancelled) {
+          this.setState({ image: result.uri });
+          this.setState({ loadingImage: true });
+        }
+
+        console.log(result);
+      } catch (E) {
+        console.log(E);
+      }
+    };
+
+
   render() {
+    let { image } = this.state;
     return (
       <View style={styles.container}>
 
-          <View style={styles.header}>
-            <View style={styles.headerContent}>
-                <Image style={styles.avatar}
-                    source={require('../images/avatar.png')}/>
-                <View style={styles.editView} >
-                  <TouchableOpacity>
-                    <Text style={styles.editText}>Upload Photo</Text>
+        <View style={styles.imageView}>
+            <Image style={styles.avatar} 
+              source= { this.state.loadingImage 
+                ? 
+                { uri: image } 
+                : 
+                require('../images/profile.png')} 
+            />
+            <View style={styles.cameraView}>
+              <View style={{alignSelf:'center', justifyContent:'center'}}>
+                  <TouchableOpacity 
+                       onPress= {this._pickImage} >
+                       <Entypo  name='camera' color="#aeaeae"  size={20}  /> 
                   </TouchableOpacity>
-                </View>
+              </View>
             </View>
+        </View> 
+    
+        <View style={styles.body}>
+
+          <View style={styles.item}>
+              <View style={styles.infoView}>
+                  <Text style={styles.info}>User Name</Text>
+                  < TextInput style={styles.inputBox}
+                      underlineColorAndroid='#007c91'
+                      placeholder="Ramsha Khan" 
+                      placeholderTextColor="#000"
+                  />
+              </View>
           </View>
 
-          <View style={styles.body}>
-
-            <View style={styles.item}>
-                <View style={styles.infoView}>
-                    <Text style={styles.info}>User Name</Text>
-                    < TextInput style={styles.inputBox}
-                        underlineColorAndroid='#007c91'
-                        placeholder="Ramsha Khan" 
-                        placeholderTextColor="#000"
-                    />
-                </View>
-            </View>
-
-            <View style={styles.item}>
-                <View style={styles.infoView}>
-                    <Text style={styles.info}>Password</Text>
-                    < TextInput style={styles.inputBox}
-                        underlineColorAndroid='#007c91'
-                        placeholder="******" 
-                        placeholderTextColor="#000"
-                    />
-                </View>
-            </View>
-
-            <View style={styles.item}>
-                <View style={styles.infoView}>
-                    <Text style={styles.info}>Phone Number</Text>
-                    < TextInput style={styles.inputBox}
-                        underlineColorAndroid='#007c91'
-                        placeholder="+92 3471232979" 
-                        placeholderTextColor="#000"
-                    />
-                </View>
-            </View>
-
-            <View style={styles.item}>
-                <View style={styles.infoView}>
-                    <Text style={styles.info}>Email</Text>
-                    < TextInput style={styles.inputBox}
-                        underlineColorAndroid='#007c91'
-                        placeholder="ramshakhan704@gmail.com" 
-                        placeholderTextColor="#000"
-                    />
-                </View>
-            </View>
-
-            <View style={styles.item}>
-                <View style={styles.infoView}>
-                    <Text style={styles.info}>City</Text>
-                    < TextInput style={styles.inputBox}
-                        underlineColorAndroid='#007c91'
-                        placeholder="Karachi" 
-                        placeholderTextColor="#000"
-                    />
-                </View>
-            </View>
-
-            <View style={styles.item}>
-                <View style={styles.infoView}>
-                    <Text style={styles.info}>Language</Text>
-                    < TextInput style={styles.inputBox}
-                        underlineColorAndroid='#007c91'
-                        placeholder="English" 
-                        placeholderTextColor="#000"
-                    />
-                </View>
-            </View>
-               
+          <View style={styles.item}>
+              <View style={styles.infoView}>
+                  <Text style={styles.info}>Email</Text>
+                  < TextInput style={styles.inputBox}
+                      underlineColorAndroid='#007c91'
+                      placeholder="ramshakhan704@gmail.com" 
+                      placeholderTextColor="#000"
+                  />
+              </View>
           </View>
-        
+
+          <View style={styles.item}>
+              <View style={styles.infoView}>
+                  <Text style={styles.info}>Current Password</Text>
+                  < TextInput style={styles.inputBox}
+                      underlineColorAndroid='#007c91'
+                      placeholder="******" 
+                      placeholderTextColor="#000"
+                  />
+              </View>
+          </View>
+
+          <View style={styles.item}>
+              <View style={styles.infoView}>
+                  <Text style={styles.info}>New Password</Text>
+                  < TextInput style={styles.inputBox}
+                      underlineColorAndroid='#007c91'
+                      placeholder="******" 
+                      placeholderTextColor="#000"
+                  />
+              </View>
+          </View>
+
+          <View style={styles.saveButtonView}>
+          <TouchableOpacity style={styles.saveButton}
+                      onPress={() => this.props.navigation.navigate('viewProfile')}>
+              <Text style={styles.text}> Save </Text>
+          </TouchableOpacity>
+          </View>
+
+      
+        </View>
+
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  header:{
-    backgroundColor: "#DCDCDC",
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
   },
-  headerContent:{
-    padding:30,
+  imageView:{  
     alignItems: 'center',
+    justifyContent:'flex-start',
+    paddingVertical:20
   },
   avatar: {
     width: 130,
     height: 130,
     borderRadius: 63,
     borderWidth: 4,
-    borderColor: "white",
-    marginBottom:10,
+    borderColor: "#aeaeae",
   },
-  name:{
-    fontSize:22,
-    color:"#000000",
-    fontWeight:'600',
-  },
-  userInfo:{
-    fontSize:16,
-    color:"#778899",
-    fontWeight:'600',
+  cameraView: {
+    justifyContent:'center',
+    width: wp('9%'),
+    height: hp('5%'),
+    borderRadius: 20,
+    backgroundColor:'#083b66',
+    marginLeft:90,
+    marginTop:-45
   },
   body:{
     backgroundColor: "#fff",
@@ -138,11 +180,6 @@ const styles = StyleSheet.create({
   item:{
     flexDirection : 'row',
   },
-  infoContent:{
-    fontSize:18,
-    marginTop:20,
-    color: "#000",
-  },
   infoView:{
     flex:1,
     paddingLeft:25,
@@ -151,28 +188,39 @@ const styles = StyleSheet.create({
   info:{
     fontSize:18,
     marginTop:20,
-    color: "#616161",
-    fontWeight:'200',
+    color: "#aeaeae",
+    fontWeight:'400',
   },
-  editView:{
-    position : "absolute",
-     left: wp('39%') , 
-     bottom: hp('1%'),
-    },
-    editText:{
-     color: '#0069c0',
-     fontSize:15,
-     textDecorationLine: 'underline',
-     fontWeight:'bold'
-
-    },
-    inputBox:{
-        paddingHorizontal: 10,
-        fontSize:16,
-        color:'#000',
-        width: wp('82%'),
-        height: hp('5%'),
-    },
+  inputBox:{
+    fontSize:16,
+    borderBottomWidth:1,
+    borderColor:'#aeaeae',
+    color:'#000',
+    width: wp('82%'),
+    height: hp('5%'),
+      
+  },
+  saveButton:{
+    backgroundColor: '#083b66',
+    borderRadius: 20,
+    width: wp('82%'),
+    height: hp('6%'),
+    justifyContent:'center',
+    marginVertical: 40,
+  },
+  saveButtonView:{
+    flex:1,
+    alignSelf:'flex-start',
+    paddingLeft:25,
+  },
+  text:{
+    fontSize: 18,
+    fontWeight: '500',
+    color: '#ffffff',
+    textAlign: 'center',
+  },
+  
 });
  
 
+export default withNavigation(Edit);
