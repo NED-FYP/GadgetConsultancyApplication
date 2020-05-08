@@ -11,7 +11,7 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
  } from 'react-native-responsive-screen' ;
- import {Entypo} from '@expo/vector-icons';
+import {Entypo} from '@expo/vector-icons';
 import { withNavigation } from 'react-navigation';
 import * as ImagePicker from 'expo-image-picker';
 import Constants from 'expo-constants';
@@ -25,6 +25,11 @@ class Edit extends Component {
         image: null,
         loadingImage : false
       }
+      this.state = { 
+        userName: 'Ramsha Khan',
+        emailAddress: 'ramshakhan704@gmail.com',
+        CurrentPassword:"******"
+      };
   
     }
 
@@ -91,9 +96,10 @@ class Edit extends Component {
               <View style={styles.infoView}>
                   <Text style={styles.info}>User Name</Text>
                   < TextInput style={styles.inputBox}
-                      underlineColorAndroid='#007c91'
-                      placeholder="Ramsha Khan" 
-                      placeholderTextColor="#000"
+                      //placeholder="Ramsha Khan" 
+                      onChangeText={(userName) => this.setState({userName})}
+                      value={this.state.userName}
+                      //placeholderTextColor="#000"
                   />
               </View>
           </View>
@@ -102,9 +108,10 @@ class Edit extends Component {
               <View style={styles.infoView}>
                   <Text style={styles.info}>Email</Text>
                   < TextInput style={styles.inputBox}
-                      underlineColorAndroid='#007c91'
-                      placeholder="ramshakhan704@gmail.com" 
-                      placeholderTextColor="#000"
+                      onChangeText={(emailAddress) => this.setState({emailAddress})}
+                      value={this.state.emailAddress}
+                      //placeholder="ramshakhan704@gmail.com" 
+                      //placeholderTextColor="#000"
                   />
               </View>
           </View>
@@ -113,9 +120,11 @@ class Edit extends Component {
               <View style={styles.infoView}>
                   <Text style={styles.info}>Current Password</Text>
                   < TextInput style={styles.inputBox}
-                      underlineColorAndroid='#007c91'
-                      placeholder="******" 
-                      placeholderTextColor="#000"
+                      //placeholder="******" 
+                      //placeholderTextColor="#000"
+                      secureTextEntry={true}
+                      onChangeText={(CurrentPassword) => this.setState({CurrentPassword})}
+                      value={this.state.CurrentPassword}
                   />
               </View>
           </View>
@@ -124,9 +133,9 @@ class Edit extends Component {
               <View style={styles.infoView}>
                   <Text style={styles.info}>New Password</Text>
                   < TextInput style={styles.inputBox}
-                      underlineColorAndroid='#007c91'
-                      placeholder="******" 
-                      placeholderTextColor="#000"
+                      //placeholder="" 
+                      //placeholderTextColor="#000"
+                      secureTextEntry={true}
                   />
               </View>
           </View>
@@ -137,6 +146,7 @@ class Edit extends Component {
               <Text style={styles.text}> Save </Text>
           </TouchableOpacity>
           </View>
+
 
       
         </View>
