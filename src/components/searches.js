@@ -35,7 +35,7 @@ export default class Searches extends Component {
               <View style={styles.searchIconView} >
                 <Icon
                   name='search'
-                  color='#00aced'
+                  color='#083b66'
                   height={hp('5%')} 
                 />
               </View>
@@ -58,7 +58,7 @@ export default class Searches extends Component {
               <View style={styles.searchIconView} >
                 <Icon
                   name='search'
-                  color='#00aced'
+                  color='#083b66'
                   height={hp('5%')} 
                 />
               </View>
@@ -85,7 +85,7 @@ export default class Searches extends Component {
               <View style={styles.searchIconView} >
                 <Icon
                   name='search'
-                  color='#00aced'
+                  color='#083b66'
                   height={hp('5%')} 
                 />
               </View>
@@ -108,7 +108,7 @@ export default class Searches extends Component {
               <View style={styles.searchIconView} >
                 <Icon
                   name='search'
-                  color='#00aced'
+                  color='#083b66'
                   height={hp('5%')} 
                   />
               </View>
@@ -151,9 +151,9 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
     },
     clearSearchesButtonText:{
-      color:'#0069c0',
+      color:'#083b66',
       fontSize: 16,
-      fontWeight: '400',
+      fontWeight: 'bold',
       textAlign: 'center'
     },
     clearSearchesButton:{

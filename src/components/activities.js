@@ -11,6 +11,9 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
  } from 'react-native-responsive-screen' ;
+ import {AntDesign} from '@expo/vector-icons';
+ import {MaterialCommunityIcons} from '@expo/vector-icons';
+ import {MaterialIcons} from '@expo/vector-icons';
 
  export default class Activities extends Component {
     render() { 
@@ -22,8 +25,7 @@ import {
                       <Text style={styles.dateAndTimeText}>January 23, 2020</Text>
                     </View>
                     <View style={styles.likeIconView} >
-                      <Image
-                        source={require('../images/Like2.png')}/>
+                        <AntDesign  name='like1'   color="#083b66" size={22}  /> 
                     </View>
                     <View style={styles.likeContentView} >
                       <Text style={styles.likeContentText}>You have liked 2 questions recently</Text>
@@ -35,8 +37,7 @@ import {
                       <Text style={styles.dateAndTimeText}>February 25, 2020</Text>
                     </View>
                     <View style={styles.likeIconView} >
-                      <Image
-                        source={require('../images/dislike.png')}/>
+                       <AntDesign  name='dislike1'  color="#083b66" size={22}  /> 
                     </View>
                     <View style={styles.likeContentView} >
                       <Text style={styles.likeContentText}>You have disliked 1 questions recently</Text>
@@ -48,8 +49,7 @@ import {
                       <Text style={styles.dateAndTimeText}>March 25, 2020</Text>
                     </View>
                     <View style={styles.likeIconView} >
-                      <Image
-                        source={require('../images/tag.png')}/>
+                        <AntDesign name="tags" size={26} color="#083b66" />
                     </View>
                     <View style={styles.likeContentView} >
                         <Text style={styles.likeContentText}>You have used 2 tags recently</Text>
@@ -61,8 +61,7 @@ import {
                       <Text style={styles.dateAndTimeText}>June 25, 2020</Text>
                     </View>
                     <View style={styles.likeIconView} >
-                      <Image
-                        source={require('../images/question.png')}/>
+                         <MaterialIcons name="question-answer" size={24} color="#083b66" />
                     </View>
                     <View style={styles.likeContentView} >
                         <Text style={styles.likeContentText}>You have answered 3 question recently</Text>
@@ -74,8 +73,7 @@ import {
                       <Text style={styles.dateAndTimeText}>August 25, 2020</Text>
                     </View>
                     <View style={styles.likeIconView} >
-                      <Image
-                        source={require('../images/question.png')}/>
+                        <MaterialCommunityIcons name="comment-question" size={24} color="#083b66" />
                     </View>
                     <View style={styles.likeContentView} >
                       <Text style={styles.likeContentText}>You have posted 2 question recently</Text>
