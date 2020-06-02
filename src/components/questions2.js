@@ -11,7 +11,7 @@ export default class Questions2 extends Component {
   render() {
     return(
       <View style={styles.container}>
-    
+    <View style={{ height:hp('12%')}}>
             <View style={styles.likeIconView} >
                 <AntDesign  name='like1'   color="#083b66" size={22}  /> 
             </View>
@@ -36,10 +36,10 @@ export default class Questions2 extends Component {
                 />
                 </TouchableOpacity>
             
+            </View>
+    
+    
        </View>
-    
-    
-    
        </View>
      
    )
@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
     quesTitleView:{
         top:hp('-9%'),
         right: wp('-17%'), 
-        position : "relative",
      },
      quesTitleText:{
         fontSize:18,
