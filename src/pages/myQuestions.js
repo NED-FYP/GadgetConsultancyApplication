@@ -51,21 +51,22 @@ export default class MyQuestions extends Component {
                 </View>
 
                 <View >
-                    <View style={styles.quesTitleView} >
-                      <Text style={styles.quesTitleText}>Question Title</Text>
-                    </View>
                     <View style={styles.likeIconView} >
                         <AntDesign  name='like1'   color="#083b66" size={22}  /> 
                     </View>
-                    
+                    <View style={styles.dislikeIconView} >
+                        <AntDesign  name='dislike1'   color="#083b66" size={22}  /> 
+                    </View>
+                   
+                    <View style={styles.quesTitleView} >
+                      <Text style={styles.quesTitleText}>Question Title</Text>
+                    </View>
                     <View style={styles.quesDescriptionView} >
                       <Text style={styles.quesDescriptionText}>
                           Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                       </Text>
                     </View>
-                    <View style={styles.dislikeIconView} >
-                        <AntDesign  name='dislike1'   color="#083b66" size={22}  /> 
-                    </View>
+                    
                 </View>
 
             </View>
@@ -87,15 +88,15 @@ const styles = StyleSheet.create({
         top:hp('-2%')
     },
     quesTitleView:{
-        marginTop:4,
+        top:hp('-9%'),
         right: wp('-17%'), 
      },
      quesTitleText:{
-        fontSize:17,
+        fontSize:18,
         fontWeight:'bold'
      },
      likeIconView:{
-        top:-27,
+        //top:-27,
         right: wp('-5%'),
      },
      dislikeIconView :{
@@ -103,8 +104,9 @@ const styles = StyleSheet.create({
         right: wp('-5%'),
      },
      quesDescriptionView:{
-       top:hp('-1.9%'),
+       top:hp('-7%'),
        right: wp('-17%'), 
+       width:('70%')
      }
     
 });    
