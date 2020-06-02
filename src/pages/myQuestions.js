@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 import { StyleSheet,  View, Text, TouchableOpacity,Image} from 'react-native';
 import { Header } from 'react-native-elements';
 import { Dropdown } from 'react-native-material-dropdown';
-import { Icon } from 'react-native-elements';
-import {AntDesign} from '@expo/vector-icons';
- import {MaterialCommunityIcons} from '@expo/vector-icons';
- import {MaterialIcons} from '@expo/vector-icons';
+import { ScrollView } from 'react-native-gesture-handler';
+import Questions2 from "../components/questions2.js";
+
 import {
     heightPercentageToDP as hp,
     widthPercentageToDP as wp,
    } from 'react-native-responsive-screen' ;
-import { SearchBar } from 'react-native-elements';
 
 export default class MyQuestions extends Component {
   render() {
@@ -41,7 +39,8 @@ export default class MyQuestions extends Component {
                 rightComponent={{ icon: 'search', color: '#fff' ,
                 onPress:() => this.props.navigation.navigate('filter')}}
                 />
-
+                <ScrollView>  
+                
                 <View  style={styles.dropdown} >
                     <Dropdown 
                         containerStyle={{  width: wp('35%'), }}
@@ -49,27 +48,14 @@ export default class MyQuestions extends Component {
                         data={data}
                     />
                 </View>
-
-                <View >
-                    <View style={styles.likeIconView} >
-                        <AntDesign  name='like1'   color="#083b66" size={22}  /> 
-                    </View>
-                    <View style={styles.dislikeIconView} >
-                        <AntDesign  name='dislike1'   color="#083b66" size={22}  /> 
-                    </View>
-                   
-                    <View style={styles.quesTitleView} >
-                      <Text style={styles.quesTitleText}>Question Title</Text>
-                    </View>
-                    <View style={styles.quesDescriptionView} >
-                      <Text style={styles.quesDescriptionText}>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                      </Text>
-                    </View>
-                    
-                </View>
-
+                <Questions2/>
+                
+                <Questions2/>
+               <Questions2/>
+                
+                </ScrollView>
             </View>
+            
 
                 
     
@@ -87,26 +73,6 @@ const styles = StyleSheet.create({
         alignSelf:"flex-end",
         top:hp('-2%')
     },
-    quesTitleView:{
-        top:hp('-9%'),
-        right: wp('-17%'), 
-     },
-     quesTitleText:{
-        fontSize:18,
-        fontWeight:'bold'
-     },
-     likeIconView:{
-        //top:-27,
-        right: wp('-5%'),
-     },
-     dislikeIconView :{
-        marginTop:13,
-        right: wp('-5%'),
-     },
-     quesDescriptionView:{
-       top:hp('-7%'),
-       right: wp('-17%'), 
-       width:('70%')
-     }
+    
     
 });    
