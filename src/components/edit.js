@@ -91,7 +91,6 @@ class Edit extends Component {
               <View style={styles.infoView}>
                   <Text style={styles.info}>User Name</Text>
                   < TextInput style={styles.inputBox}
-                      underlineColorAndroid='#007c91'
                       placeholder="Ramsha Khan" 
                       placeholderTextColor="#000"
                   />
@@ -102,7 +101,6 @@ class Edit extends Component {
               <View style={styles.infoView}>
                   <Text style={styles.info}>Email</Text>
                   < TextInput style={styles.inputBox}
-                      underlineColorAndroid='#007c91'
                       placeholder="ramshakhan704@gmail.com" 
                       placeholderTextColor="#000"
                   />
@@ -113,7 +111,6 @@ class Edit extends Component {
               <View style={styles.infoView}>
                   <Text style={styles.info}>Current Password</Text>
                   < TextInput style={styles.inputBox}
-                      underlineColorAndroid='#007c91'
                       placeholder="******" 
                       placeholderTextColor="#000"
                   />
@@ -124,7 +121,6 @@ class Edit extends Component {
               <View style={styles.infoView}>
                   <Text style={styles.info}>New Password</Text>
                   < TextInput style={styles.inputBox}
-                      underlineColorAndroid='#007c91'
                       placeholder="******" 
                       placeholderTextColor="#000"
                   />

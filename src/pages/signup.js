@@ -1,10 +1,5 @@
 import React, { Component } from 'react'; 
 import { StyleSheet, Text, View, TextInput, TouchableOpacity ,Image} from 'react-native';
-import Logo from "../components/logo.js";
-import {
-  heightPercentageToDP as hp,
-  widthPercentageToDP as wp,
-} from 'react-native-responsive-screen' ;
 import KeyboardShift from "../components/keyboardShift.js";
 import {styler} from '../../assets/style'
 
