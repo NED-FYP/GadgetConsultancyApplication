@@ -15,9 +15,9 @@ export default class PostQuestion extends Component{
         return(
           <KeyboardShift>
             {() => (
-              <View style={styles.container}> 
+              <View style={styles.container}>  
                 <Header
-                backgroundColor='#007c91'
+                backgroundColor='#083b66'
                 statusBarProps={{ barStyle: 'light-content' }}
                 leftComponent={{ icon: 'menu', color: '#fff' ,onPress:() => this.props.navigation.toggleDrawer() }}
                 centerComponent={{    text: 'POST A QUESTION', style: { color: '#fff' , fontWeight:'bold' , fontSize: 17} }}
@@ -25,10 +25,10 @@ export default class PostQuestion extends Component{
                 onPress:() => this.props.navigation.navigate('filter'), }}
                 />
 
-                <View style={styles.Imagecontainer}>
+               {/**  <View style={styles.Imagecontainer}>
                   <Image  style={{width: 130, height: 150}}
                       source={require('../images/question-icon.png')}/> 
-                </View> 
+            </View> */}
             
                 <View style={styles.headingView} >
                   <Text style={styles.text} >Title</Text>
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     postYourQuestionButton:{
       width:wp('50%'),
       height: hp('5%'),
-      backgroundColor: '#007c91',
+      backgroundColor: '#083b66',
       borderRadius: 5,
       paddingVertical : 8,
     },
