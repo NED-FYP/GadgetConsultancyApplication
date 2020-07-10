@@ -40,18 +40,7 @@ export default class Filter extends Component{
          
         })
     }
-    onFocus() {
-        this.setState({
-           borderColor: '#007c91',
-           
-        })
-    }
-    onBlur() {
-        this.setState({
-          borderColor: '#007c91',
-         
-        })
-    }
+   
 
 
     render(){
@@ -60,7 +49,7 @@ export default class Filter extends Component{
               {() => (
                 <View style={styles.container}> 
                     <Header
-                    backgroundColor='#007c91'
+                    backgroundColor='#083b66'
                     statusBarProps={{ barStyle: 'light-content' }}
                     leftComponent={{ icon: 'menu', color: '#fff' ,onPress:() => this.props.navigation.toggleDrawer() }}
                     centerComponent={{    text: 'FILTER', style: { color: '#fff' , fontWeight:'bold' , fontSize: 17} }}
@@ -77,15 +66,15 @@ export default class Filter extends Component{
                                 backgroundColor: '#007c91',
                                 borderRadius: 5,
                                 borderColor:'grey',
-                                borderWidth:1,
+                                borderWidth:2,
                                 paddingVertical : 22,
                                 backgroundColor:
                                     this.state.selectedButton === "BASIC"
-                                    ? "#00acc1"
+                                    ? "#E6EBEF"
                                     : "#fff",
                                 borderColor:
                                     this.state.selectedButton === "BASIC"
-                                ? "white"
+                                ? "#083b66"
                                 : "grey",
                                 }}
                                 onPress={() => this.selectionOnPress("BASIC")}
@@ -93,7 +82,7 @@ export default class Filter extends Component{
                                 <Text style={{fontSize: 16,
                                             fontWeight: 'bold',
                                             color: this.state.selectedButton === "BASIC"
-                                                    ? "#fff"
+                                                    ? "#083b66"
                                                     : "grey",
                                             textAlign:'center',
                                             }}> Most Liked
@@ -427,7 +416,7 @@ const styles = StyleSheet.create({
     filterButton:{
         width:wp('90%'),
         height: hp('6%'),
-        backgroundColor: '#007c91',
+        backgroundColor: '#083b66',
         paddingTop:10
     },
     buttonText:{
