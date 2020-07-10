@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet,  View, Text, TouchableOpacity,Image ,TextInput} from 'react-native';
+import { StyleSheet,  View, Text, TouchableOpacity,Image ,TextInput, ScrollView} from 'react-native';
 import { Header } from 'react-native-elements';
 import {
     heightPercentageToDP as hp,
@@ -30,18 +30,16 @@ export default class Filter extends Component{
 
     onFocus() {
         this.setState({
-           borderColor: '#007c91',
+           borderColor: '#426594',
            
         })
     }
     onBlur() {
         this.setState({
-          borderColor: '#007c91',
+          borderColor: '#426594',
          
         })
     }
-   
-
 
     render(){
         return(
@@ -54,7 +52,7 @@ export default class Filter extends Component{
                     leftComponent={{ icon: 'menu', color: '#fff' ,onPress:() => this.props.navigation.toggleDrawer() }}
                     centerComponent={{    text: 'FILTER', style: { color: '#fff' , fontWeight:'bold' , fontSize: 17} }}
                     />
-
+                      <ScrollView>
                         <View style={styles.headingView} >
                             <Text style={styles.text} >Sort</Text>
                         </View>
@@ -63,14 +61,13 @@ export default class Filter extends Component{
                             <TouchableOpacity  style={{
                                 width:wp('30%'),
                                 height: hp('10%'),
-                                backgroundColor: '#007c91',
                                 borderRadius: 5,
                                 borderColor:'grey',
                                 borderWidth:2,
                                 paddingVertical : 22,
                                 backgroundColor:
                                     this.state.selectedButton === "BASIC"
-                                    ? "#E6EBEF"
+                                    ? "#CDD7E0"
                                     : "#fff",
                                 borderColor:
                                     this.state.selectedButton === "BASIC"
@@ -95,18 +92,17 @@ export default class Filter extends Component{
                             <TouchableOpacity style={{
                                 width:wp('30%'),
                                 height: hp('10%'),
-                                backgroundColor: '#007c91',
                                 borderRadius: 5,
                                 borderColor:'grey',
-                                borderWidth:1,
+                                borderWidth:2,
                                 paddingVertical : 22,
                                 backgroundColor:
                                     this.state.selectedButton === "INTERMEDIATE"
-                                    ? "#007c91"
+                                    ? "#CDD7E0"
                                     : "#fff",
                                 borderColor:
                                     this.state.selectedButton === "INTERMEDIATE"
-                                    ? "white"
+                                    ? "#083b66"
                                     : "grey",
                                 }}
                                 onPress={() => this.selectionOnPress("INTERMEDIATE")}
@@ -114,7 +110,7 @@ export default class Filter extends Component{
                                 <Text style={{fontSize: 16,
                                             fontWeight: 'bold',
                                             color: this.state.selectedButton === "INTERMEDIATE"
-                                                    ? "#fff"
+                                                    ? "#083b66"
                                                     : "grey",
                                             textAlign:'center',
                                             }}>Most Viewed
@@ -126,19 +122,18 @@ export default class Filter extends Component{
                             <TouchableOpacity style={{
                                 width:wp('30%'),
                                 height: hp('10%'),
-                                backgroundColor: '#007c91',
                                 borderRadius: 5,
                                 borderColor:'grey',
-                                borderWidth:1,
+                                borderWidth:2,
                                 paddingVertical : 22,
                                 backgroundColor:
                                     this.state.selectedButton === "ADVANCED"
-                                        ? "#00acc1"
+                                        ? "#CDD7E0"
                                         : "#fff",
                                         
                                 borderColor:
                                     this.state.selectedButton === "ADVANCED"
-                                        ? "white"
+                                        ? "#083b66"
                                         : "grey",
                                 }}
                                 onPress={() => this.selectionOnPress("ADVANCED")}
@@ -146,7 +141,7 @@ export default class Filter extends Component{
                                 <Text style={{fontSize: 16,
                                                 fontWeight: 'bold',
                                                 color: this.state.selectedButton === "ADVANCED"
-                                                ? "#fff"
+                                                ? "#083b66"
                                                 : "grey",
                                                 textAlign:'center',
                                             }}>Most Recent
@@ -164,18 +159,17 @@ export default class Filter extends Component{
                             <TouchableOpacity  style={{
                                 width:wp('45%'),
                                 height: hp('10%'),
-                                backgroundColor: '#007c91',
                                 borderRadius: 5,
                                 borderColor:'grey',
-                                borderWidth:1,
+                                borderWidth:2,
                                 paddingVertical : 22,
                                 backgroundColor:
                                     this.state.viewSelectedButton === "BASIC"
-                                    ? "#00acc1"
+                                    ? "#CDD7E0"
                                     : "#fff",
                                 borderColor:
                                     this.state.viewSelectedButton === "BASIC"
-                                ? "white"
+                                ? "#083b66"
                                 : "grey",
                                 }}
                                 onPress={() => this.viewSelectionOnPress("BASIC")}
@@ -183,7 +177,7 @@ export default class Filter extends Component{
                                 <Text style={{fontSize: 16,
                                             fontWeight: 'bold',
                                             color: this.state.viewSelectedButton === "BASIC"
-                                                    ? "#fff"
+                                                    ? "#083b66"
                                                     : "grey",
                                             textAlign:'center',
                                             marginRight:-5
@@ -194,7 +188,7 @@ export default class Filter extends Component{
                                     <Icon
                                         name='image' 
                                         color= {this.state.viewSelectedButton === "BASIC"
-                                                ? "#fff"
+                                                ? "#083b66"
                                                 : "grey"
                                             }
                                     />
@@ -206,18 +200,17 @@ export default class Filter extends Component{
                             <TouchableOpacity  style={{
                                 width:wp('45%'),
                                 height: hp('10%'),
-                                backgroundColor: '#007c91',
                                 borderRadius: 5,
                                 borderColor:'grey',
-                                borderWidth:1,
+                                borderWidth:2,
                                 paddingVertical : 22,
                                 backgroundColor:
                                     this.state.viewSelectedButton === "INTERMEDIATE"
-                                    ? "#00acc1"
+                                    ? "#CDD7E0"
                                     : "#fff",
                                 borderColor:
                                     this.state.viewSelectedButton === "INTERMEDIATE"
-                                    ? "white"
+                                    ? "#083b66"
                                     : "grey",
                                 }}
                                 onPress={() => this.viewSelectionOnPress("INTERMEDIATE")}
@@ -225,7 +218,7 @@ export default class Filter extends Component{
                                 <Text style={{fontSize: 16,
                                             fontWeight: 'bold',
                                             color: this.state.viewSelectedButton === "INTERMEDIATE"
-                                                    ? "#fff"
+                                                    ? "#083b66"
                                                     : "grey",
                                             textAlign:'center',
                                             }}>List
@@ -235,7 +228,7 @@ export default class Filter extends Component{
                                     <Icon
                                         name='list' 
                                         color= {this.state.viewSelectedButton === "INTERMEDIATE"
-                                                ? "#fff"
+                                                ? "#083b66"
                                                 : "grey"
                                                 }
                                     />
@@ -253,7 +246,7 @@ export default class Filter extends Component{
                             <TextInput 
                                 style={{
                                 borderColor: this.state.borderColor ? 
-                                "#007c91"
+                                "#083b66"
                                 : "grey",                       
                                 width: wp('95%'),
                                 height: hp('6%'),
@@ -285,7 +278,7 @@ export default class Filter extends Component{
                             < TextInput 
                                 style={{
                                 borderColor: this.state.borderColor ? 
-                                "#007c91"
+                                "#083b66"
                                 : "grey",
                                 borderWidth: this.state.borderWidth,                      
                                 width: wp('95%'),
@@ -309,7 +302,7 @@ export default class Filter extends Component{
                         </View>
             
                     <View style={styles.separatorFour}/>
-
+                    </ScrollView>
                         <View style={styles.filterButtonView} >
                         <TouchableOpacity style={styles.filterButton}
                                                 onPress={() =>
