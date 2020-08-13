@@ -5,16 +5,17 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen' ;
 import { Header } from 'react-native-elements';
-import Questions from "../components/questions.js";
+import HomeQuestions from "../components/homeQuestions.js";
+
 import Tag from "../components/tag.js";
 
-export default class Home2 extends Component{
+export default class Home extends Component{
     render(){
         return(
           <View style={styles.container}> 
 
                 <Header
-                backgroundColor='#007c91'
+                backgroundColor='#083b66'
                 statusBarProps={{ barStyle: 'light-content' }}
                 leftComponent={{ icon: 'menu', color: '#fff',
                 onPress:() => this.props.navigation.toggleDrawer() }}
@@ -41,13 +42,13 @@ export default class Home2 extends Component{
                             {/*Question**/}
                             <View style={styles.questionView}>
                                 <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                    <Questions/>
+                                    <HomeQuestions/>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                    <Questions/>
+                                    <HomeQuestions/>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                    <Questions/>
+                                    <HomeQuestions/>
                                 </TouchableOpacity>
                             </View>   
                 </View>
@@ -100,13 +101,13 @@ export default class Home2 extends Component{
                             {/*Question**/}
                             <View style={styles.questionView}>
                                 <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                    <Questions/>
+                                    <HomeQuestions/>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                    <Questions/>
+                                    <HomeQuestions/>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                    <Questions/>
+                                    <HomeQuestions/>
                                 </TouchableOpacity>
                             </View>   
                 </View>
@@ -125,15 +126,15 @@ export default class Home2 extends Component{
                     </View>
                         {/*Question**/}
                         <View style={styles.questionView}>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                <Questions/>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                < Questions />
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                <Questions/>
-                            </TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
+                                    <HomeQuestions/>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
+                                    <HomeQuestions/>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
+                                    <HomeQuestions/>
+                                </TouchableOpacity>
                         </View>   
              </View>
 
@@ -152,12 +153,12 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
     },
     text:{
-        color:'#000',
+        color:'#083b66',
         fontSize: 20,
         fontWeight: 'bold'
     },
     readMoretext:{
-        color:'#007c91',
+        color:'#083b66',
         fontSize: 19,
         fontWeight: 'bold',
         textDecorationLine:'underline'
@@ -165,7 +166,8 @@ const styles = StyleSheet.create({
     headingView:{
         alignSelf:'flex-start',
         paddingHorizontal:12,
-        paddingTop:10 
+        paddingTop:12 ,
+        marginTop:10
     },
     readMoreView:{
         alignSelf:'flex-end',
@@ -180,7 +182,7 @@ const styles = StyleSheet.create({
         width: wp('100%'),
         height: hp('15%'),
         borderWidth: wp('0.5%'),
-        borderColor: '#bdbdbd', 
+        borderColor: '#fff', 
         borderLeftWidth:0,
         borderRightWidth:0
     }   

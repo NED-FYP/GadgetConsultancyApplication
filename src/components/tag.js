@@ -24,7 +24,7 @@ import {
         marginLeft:wp('5%')
       },
       button:{
-        backgroundColor: '#007c91',
+        backgroundColor: '#083b66',
         borderRadius: 10,
         width: wp('29%'),
         height:hp('6.5%'),
