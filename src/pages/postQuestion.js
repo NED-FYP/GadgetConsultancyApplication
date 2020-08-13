@@ -6,7 +6,8 @@ import {
     widthPercentageToDP as wp,
 } from 'react-native-responsive-screen' ;
 import KeyboardShift from "../components/keyboardShift.js";
-
+import {AntDesign} from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 export default class PostQuestion extends Component{
     constructor(props) {
       super(props);
@@ -25,10 +26,13 @@ export default class PostQuestion extends Component{
                 onPress:() => this.props.navigation.navigate('filter'), }}
                 />
 
-               {/**  <View style={styles.Imagecontainer}>
-                  <Image  style={{width: 130, height: 150}}
-                      source={require('../images/question-icon.png')}/> 
-            </View> */}
+               <View style={styles.Imagecontainer}>
+               <MaterialCommunityIcons name="comment-question-outline" size={100} color="#083b66" />
+               </View> 
+
+               <View style={styles.mainHeadingView} >
+                  <Text style={styles.mainHeadingText} >How can we help you ?</Text>
+                </View>
             
                 <View style={styles.headingView} >
                   <Text style={styles.text} >Title</Text>
@@ -36,7 +40,7 @@ export default class PostQuestion extends Component{
                       <TextInput style={styles.inputBox}
                           multiline
                           placeholder="Lorem Ipsum is simply dummy text" 
-                          placeholderTextColor="grey"
+                          placeholderTextColor="#C1C0C8"
                           returnKeyType = { "next" }
                           onSubmitEditing={() => { this.secondTextInput.focus(); }}
                           blurOnSubmit={false}
@@ -52,7 +56,7 @@ export default class PostQuestion extends Component{
                           //numberOfLines={4}
                           placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen
                           book." 
-                          placeholderTextColor="grey" 
+                          placeholderTextColor="#C1C0C8" 
                           ref={(input) => { this.secondTextInput = input; }}
                           returnKeyType = { "next" }
                           onSubmitEditing={() => { this.thirdTextInput.focus(); }}
@@ -66,7 +70,7 @@ export default class PostQuestion extends Component{
                       <TextInput style={styles.inputBox}
                           multiline
                           placeholder="Lorem Ipsum is simply dummy text" 
-                          placeholderTextColor="grey"
+                          placeholderTextColor="#C1C0C8"
                           ref={(input) => { this.thirdTextInput = input; }}
                           returnKeyType = { "done" }
                           onSubmitEditing={this.handleTitleInputSubmit}
@@ -78,7 +82,7 @@ export default class PostQuestion extends Component{
                 <View style={styles.postYourQuestionView} >
                   <TouchableOpacity style={styles.postYourQuestionButton}
                                     onPress={() =>
-                                    this.props.navigation.navigate('home') }>
+                                    this.props.navigation.navigate('editQuestion') }>
                     <Text style={styles.buttonText}> Post Your Question </Text>
                   </TouchableOpacity>
                 </View>
@@ -96,7 +100,17 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
     },
     Imagecontainer:{
-      alignSelf:'center'
+      alignSelf:'center',
+      top:hp('1%')
+    },
+    mainHeadingView:{
+      alignSelf:'center',
+      textAlign:'center'
+    },
+    mainHeadingText:{
+      color:'#083b66',
+      fontSize: 22,
+      fontWeight: 'bold'
     },
     text:{
       color:'#000',
@@ -106,7 +120,7 @@ const styles = StyleSheet.create({
     headingView:{
       position : "relative",
       right: wp('-3%') , 
-      bottom: hp('-1%'),
+      bottom: hp('-0.5%'),
     },
     inputBox:{
       width: wp('95%'),
@@ -114,10 +128,11 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       paddingHorizontal: 10,
       fontSize:16,
-      color:'#000', 
+      borderColor:'#BBC0C4'
+      
     },
     inputBoxView:{
-      marginBottom:15
+      marginBottom:17
     },
     bodyInputBox:{
       width: wp('95%'),
@@ -125,7 +140,8 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       paddingHorizontal: 10,
       fontSize:16,
-      color:'#000', 
+      borderColor:'#BBC0C4'
+      
     },
     postYourQuestionButton:{
       width:wp('50%'),

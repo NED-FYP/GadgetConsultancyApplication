@@ -23,13 +23,15 @@ export default class EditQuestion extends Component{
               {() => (
                 <View style={styles.container}> 
                     <Header
-                        backgroundColor='#007c91'
+                        backgroundColor='#083b66'
                         statusBarProps={{ barStyle: 'light-content' }}
                         leftComponent={{ icon: 'menu', color: '#fff' ,onPress:() => this.props.navigation.toggleDrawer() }}
                         centerComponent={{    text: 'EDIT QUESTION', style: { color: '#fff' , fontWeight:'bold' , fontSize: 17} }}
                         rightComponent={{ icon: 'search', color: '#fff' ,
                         onPress:() => this.props.navigation.navigate('filter')}}
                     />
+
+                    {/** 
 
                     <View style={styles.editDailogBoxView} >
                         <Text style={styles.editDailogBoxText}>
@@ -39,6 +41,7 @@ export default class EditQuestion extends Component{
                             book.
                         </Text>
                     </View>
+                    */}
            
             
                     <View style={styles.headingView} >
@@ -60,7 +63,7 @@ export default class EditQuestion extends Component{
                         <View style={styles.inputBoxView}>
                             <TextInput style={styles.bodyInputBox}
                                 multiline
-                                numberOfLines={4}
+                                //numberOfLines={4}
                                 onChangeText={(bodytext) => this.setState({bodytext})}
                                 value={this.state.bodytext}
                                 ref={(input) => { this.secondTextInput = input; }}
@@ -92,6 +95,15 @@ export default class EditQuestion extends Component{
                             <Text style={styles.buttonText}>Save Edits</Text>
                         </TouchableOpacity>
                     </View>
+                    {/** 
+                    <View style={styles.cancelButtonView} >
+                        <TouchableOpacity style={styles.editYourQuestionButton}
+                                onPress={() =>
+                                this.props.navigation.navigate('myQuestions')}>
+                            <Text style={styles.buttonText}>Save Edits</Text>
+                        </TouchableOpacity>
+                    </View>
+                    */}
 
                 </View>
               )}
@@ -117,7 +129,8 @@ const styles = StyleSheet.create({
     headingView:{
         position : "relative",
         right: wp('-3%') , 
-        bottom: hp('-1%'),
+        bottom: hp('-3%'),
+        paddingVertical:2
     },
     inputBox:{
         width: wp('95%'),
@@ -125,10 +138,11 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         paddingHorizontal: 10,
         fontSize:16,
-        color:'#000', 
+        borderColor:'#BBC0C4'
     },
     inputBoxView:{
-        marginBottom:15
+        marginBottom:17,
+        paddingVertical:2
     },
     bodyInputBox:{
         width: wp('95%'),
@@ -136,17 +150,17 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         paddingHorizontal: 10,
         fontSize:16,
-        color:'#000', 
+        borderColor:'#BBC0C4' 
     },
     editYourQuestionButton:{
-        width:wp('45%'),
+        width:wp('50%'),
         height: hp('5%'),
-        backgroundColor: '#007c91',
+        backgroundColor: '#083b66',
         borderRadius: 5,
         paddingVertical : 8,
     },
     editYourQuestionView:{
-        marginVertical:10,
+        marginVertical:30,
         paddingHorizontal:10  
     },
     buttonText:{
@@ -155,10 +169,11 @@ const styles = StyleSheet.create({
         color: '#ffffff',
         textAlign: 'center'
     },
+   
     editDailogBoxView:{
         width: wp('80%'),
         borderWidth: wp('0.5%'),
-        borderColor: '#007c91',
+        borderColor: '#083b66',
         marginVertical:20,
         marginTop:12,
         alignSelf:'center' ,

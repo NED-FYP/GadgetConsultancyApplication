@@ -20,7 +20,7 @@ export default class SearchedQuestions extends Component {
               />
 
               <ScrollView>
-        
+                          
                      <View style={styles.askQuestionView}>
                             <TouchableOpacity style={styles.button}
                                    onPress={() =>
