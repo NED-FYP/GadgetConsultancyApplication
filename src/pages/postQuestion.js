@@ -82,7 +82,7 @@ export default class PostQuestion extends Component{
                 <View style={styles.postYourQuestionView} >
                   <TouchableOpacity style={styles.postYourQuestionButton}
                                     onPress={() =>
-                                    this.props.navigation.navigate('editQuestion') }>
+                                    this.props.navigation.navigate('home') }>
                     <Text style={styles.buttonText}> Post Your Question </Text>
                   </TouchableOpacity>
                 </View>

@@ -16,7 +16,8 @@ export default class HomeQuestions extends Component {
             
                     
                     <View style={styles.dislikeIconView} >
-                        <AntDesign  name='dislike1'   color="#083b66" size={19}  /> 
+                    <Image source={require('../images/answer.png')}/>
+                        
                     </View>
                     <View style={styles.NumberOfLikeDislikeView} >
                                 <Text style={styles.NumberOfLikeDislikeText}>2</Text>
@@ -62,19 +63,24 @@ const styles = StyleSheet.create({
      },
      quesTitleText:{
         fontSize:17,
-        color: "#083b66",
-        
+        color: "#083b66", 
 
      },
      
      dislikeIconView :{
-        marginTop:9.5,
+        marginTop:11,
         right: wp('-8%'),
      },
      NumberOfLikeDislikeView:{
         position: "absolute",
-        left: wp('4%') , 
-        top:hp('3%')
+        left: wp('9.5%') , 
+        top:hp('6%')
+     },
+     NumberOfLikeDislikeText:{
+      fontSize:17,
+      color: "#083b66",
+      fontWeight:'400'
+
      },
      quesDescriptionText:{
         fontSize:15,
@@ -89,9 +95,6 @@ const styles = StyleSheet.create({
         right: wp('-43%'),
         top: hp('-14%')
       }, 
-      NumberOfLikeDislikeText:{
-        color: "#000",
-        fontSize:14, 
-     },
+      
     
 });    
