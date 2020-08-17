@@ -5,13 +5,15 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen' ;
 import { Header } from 'react-native-elements';
+import {AntDesign} from '@expo/vector-icons';
+import {FontAwesome5} from '@expo/vector-icons';
  
 export default class DetailQuestion extends Component{
    render(){
       return(
          <View style={styles.container}>
                <Header
-                backgroundColor='#007c91'
+                backgroundColor='#083b66'
                 statusBarProps={{ barStyle: 'light-content' }}
                 leftComponent={{ icon: 'menu', color: '#fff',onPress:() => this.props.navigation.toggleDrawer() }}
                 centerComponent={{ text: 'DETAIL PAGE', style: { color: '#fff' , fontWeight:'bold' , fontSize: 17} }}
@@ -41,11 +43,11 @@ export default class DetailQuestion extends Component{
                         </View> 
                                                           
                         <View style={styles.likeIconCont} >
-                           <Image source={require('../images/Like2.png')}/>
+                           <AntDesign  name='like1'   color="#083b66" size={22}  /> 
                         </View>
 
                         <View style={styles.dislikeIconCont} >
-                           <Image  source={require('../images/dislike.png')}/>
+                           <AntDesign  name='dislike1'   color="#083b66" size={22}  /> 
                         </View>
 
                   </View>
@@ -62,17 +64,13 @@ export default class DetailQuestion extends Component{
                   <View style={styles.userView} >
 
                      <View style={styles.userIconView} >
-                        <Image  source={require('../images/user.png')}/>
+                     <FontAwesome5 name='user-alt' color ="#757575" size={28}  />
                      </View>
                               
                      <View style={styles.userNameView} >
-                        <Text style={styles.userNameText}>User Name</Text>
+                        <Text style={styles.userNameText}>Ramsha Khan</Text>
                      </View>
 
-                     <View style={styles.editView} >
-                        <Text style={styles.editText}>Edit</Text>
-                     </View>
-              
                      <View style={styles.askedView} >
                         <Text style={styles.askedText}>asked</Text>
                      </View>
@@ -102,13 +100,13 @@ export default class DetailQuestion extends Component{
                                   
                         <View style={styles.iconContainerView}>
                            <View style={styles.likeIconCont} >
-                              <Image source={require('../images/Like2.png')}/>
+                              <AntDesign  name='like1'   color="#083b66" size={22}  /> 
                            </View>
                            <View style={styles.numberView2} >
                               <Text style={styles.numberText}>2</Text>
                            </View>
                            <View style={styles.dislikeIconCont} >
-                              <Image  source={require('../images/dislike.png')}/>
+                              <AntDesign  name='dislike1'   color="#083b66" size={22}  />
                            </View>
                         </View>
                   </View>
@@ -116,15 +114,11 @@ export default class DetailQuestion extends Component{
                   <View style={styles.userView} >
 
                      <View style={styles.userIconView} >
-                        <Image  source={require('../images/user.png')}/>
+                     <FontAwesome5 name='user-alt' color ="#757575" size={28}  />
                      </View>
 
                      <View style={styles.userNameView} >
-                        <Text style={styles.userNameText}>User Name</Text>
-                     </View>
-
-                     <View style={styles.editView} >
-                        <Text style={styles.editText}>Edit</Text>
+                        <Text style={styles.userNameText}>Saniya Abdul Rehman</Text>
                      </View>
               
                      <View style={styles.askedView} >
@@ -191,17 +185,17 @@ export default class DetailQuestion extends Component{
       top: hp('-11%'),
    },
    questionTitleText:{
-      color: "#000",
+      color: "#083b66",
       fontSize:17, 
       fontWeight:'bold'
    },
    buttonText:{
-      color: "#0069c0",
+      color: "#083b66",
       fontSize:14, 
       textAlign: 'center'
    },
    button:{
-      backgroundColor: '#b6ffff',
+      backgroundColor: '#CDD7E0',
       borderRadius: 5,
       position : "relative",
       right: wp('-24%') , 
@@ -240,7 +234,7 @@ export default class DetailQuestion extends Component{
    buttonTag:{
       position : "relative",
       right: wp('-15%') , 
-      top: hp('-2.6%'),
+      top: hp('-2.3%'),
    },
    questionBody:{  
       width: wp('97%'),
@@ -260,8 +254,8 @@ export default class DetailQuestion extends Component{
       width: wp('100%'),
       height: hp('6%'),
       borderWidth: wp('0.5%'),
-      borderColor: '#b2ebf2',
-      backgroundColor: '#b2ebf2',
+      borderColor: '#CDD7E0',
+      backgroundColor: '#CDD7E0',
       marginTop:6,
    },
    userIconView:{
@@ -275,7 +269,7 @@ export default class DetailQuestion extends Component{
       top: hp('-4%'),
    },
    userNameText:{
-      color: "#000",
+      color: "#757575",
       fontSize:14,
    },
    editView:{
@@ -291,7 +285,7 @@ export default class DetailQuestion extends Component{
    askedView:{
       position : "relative",
       right: wp('-80%') , 
-      top: hp('-9%'),
+      top: hp('-6.5%'),
    },
    askedText:{
       color: '#000',
@@ -301,7 +295,7 @@ export default class DetailQuestion extends Component{
    timeView:{
       position : "relative",
       right: wp('-78%') , 
-      top: hp('-9%'),
+      top: hp('-6%'),
    },
    timeText:{
       color: '#757575',
@@ -381,7 +375,7 @@ export default class DetailQuestion extends Component{
    postYourAnswerButton:{
       width: wp('70%'),
       height:hp('6.5%'),
-      backgroundColor: '#007c91',
+      backgroundColor: '#083b66',
       justifyContent:'center',
    },
    postYourAnswerView:{
