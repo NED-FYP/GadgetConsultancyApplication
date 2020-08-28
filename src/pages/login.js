@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import { StyleSheet, Text, View,TouchableOpacity, Image ,TextInput } from 'react-native';
+import { StyleSheet, Text, View,TouchableOpacity, Image ,TextInput, AsyncStorage } from 'react-native';
 import {FontAwesome} from '@expo/vector-icons';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import {
@@ -9,7 +9,28 @@ import {
 import {styler} from '../../assets/style'
 
 
+
 export default class Login extends Component{
+
+  constructor(props){
+    super(props);
+    this.state = {
+      emailaddress: '',
+      password: '',
+    };
+  }
+
+  componentDidMount() {
+    this._loadInitialStage().done();
+  }
+
+  _loadInitialStage = async () => {
+    var value = await AsyncStorage.getItem('email_address');
+    if (value !== null){
+      this.props.navigation.navigate('home')  
+    }
+  }
+
   render(){
     return(
         <View style={styles.container}>
@@ -20,8 +41,8 @@ export default class Login extends Component{
               
             <View style={styler.textInputView}>
                 < TextInput style={styler.inputBox}
-                  //underlineColorAndroid='#007c91'
                   placeholder="Email address" 
+                  onChangeText = { (emailaddress) => this.setState({emailaddress}) }
                   placeholderTextColor="#aeaeae"
                   returnKeyType = { "next" }
                   onSubmitEditing={() => { this.secondTextInput.focus(); }}
@@ -30,6 +51,7 @@ export default class Login extends Component{
               < TextInput style={styler.inputBox}
                   //underlineColorAndroid='#007c91'
                   placeholder="Password" 
+                  onChangeText = { (password) => this.setState({password}) }
                   secureTextEntry={true}
                   placeholderTextColor="#aeaeae"
                   ref={(input) => { this.secondTextInput = input; }}
@@ -46,7 +68,9 @@ export default class Login extends Component{
 
             <View style={styler.buttonView}>
             <TouchableOpacity style={styles.button}
-                        onPress={() => this.props.navigation.navigate('home')}>
+                        //onPress={() => this.props.navigation.navigate('home')}
+                          onPress= {this.login} >
+
                 <Text style={styler.text}> Login </Text>
             </TouchableOpacity>
             </View>
@@ -88,6 +112,35 @@ export default class Login extends Component{
     
       </View>       
     );    
+  }
+  login = () =>{
+    
+      {
+        fetch('http://192.168.1.108:4000/api/questions', {
+                method: 'GET',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  emailaddress: this.state.emailaddress,
+                  password: this.state.password,
+                }),
+        })
+        .then((response) => response.json())
+        .then((res) => {
+         
+          if ( res.success === true ){
+            AsyncStorage.setItem('email_address' , res.email_address);
+            this.props.navigation.navigate('home'); 
+          }
+          else{
+            alert(res.message);
+          }
+
+        })
+        .done();
+      }
   }
 }
           
