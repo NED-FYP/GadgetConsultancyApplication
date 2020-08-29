@@ -25,7 +25,7 @@ export default class Login extends Component{
   }
 
   _loadInitialStage = async () => {
-    var value = await AsyncStorage.getItem('email_address');
+    var value = await AsyncStorage.getItem('users');
     if (value !== null){
       this.props.navigation.navigate('home')  
     }
@@ -116,14 +116,14 @@ export default class Login extends Component{
   login = () =>{
     
       {
-        fetch('http://192.168.1.108:4000/api/questions', {
-                method: 'GET',
+        fetch('http://192.168.1.107:4000/api/login', {
+                method: 'POST',
                 headers: {
                   'Accept': 'application/json',
                   'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                  emailaddress: this.state.emailaddress,
+                  email_address: this.state.emailaddress,
                   password: this.state.password,
                 }),
         })
@@ -131,7 +131,7 @@ export default class Login extends Component{
         .then((res) => {
          
           if ( res.success === true ){
-            AsyncStorage.setItem('email_address' , res.email_address);
+            AsyncStorage.setItem('users' , res.users);
             this.props.navigation.navigate('home'); 
           }
           else{
