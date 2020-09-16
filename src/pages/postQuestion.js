@@ -9,9 +9,17 @@ import KeyboardShift from "../components/keyboardShift.js";
 import {AntDesign} from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 export default class PostQuestion extends Component{
-    constructor(props) {
-      super(props);
-    }
+  constructor(props){
+    super(props);
+    this.state = {
+      questiontitle:'',
+      questionbody: '',
+      //tagname: [],
+      
+      
+                  
+    };
+  } 
     render(){
         return(
           <KeyboardShift>
@@ -41,6 +49,7 @@ export default class PostQuestion extends Component{
                           multiline
                           placeholder="Lorem Ipsum is simply dummy text" 
                           placeholderTextColor="#C1C0C8"
+                         onChangeText = { (questiontitle) => this.setState({questiontitle}) }
                           returnKeyType = { "next" }
                           onSubmitEditing={() => { this.secondTextInput.focus(); }}
                           blurOnSubmit={false}
@@ -57,6 +66,7 @@ export default class PostQuestion extends Component{
                           placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen
                           book." 
                           placeholderTextColor="#C1C0C8" 
+                          onChangeText = { (questionbody) => this.setState({questionbody}) }
                           ref={(input) => { this.secondTextInput = input; }}
                           returnKeyType = { "next" }
                           onSubmitEditing={() => { this.thirdTextInput.focus(); }}
@@ -71,6 +81,7 @@ export default class PostQuestion extends Component{
                           multiline
                           placeholder="Lorem Ipsum is simply dummy text" 
                           placeholderTextColor="#C1C0C8"
+                         //onChangeText = { (tagname) => this.setState({tagname}) }
                           ref={(input) => { this.thirdTextInput = input; }}
                           returnKeyType = { "done" }
                           onSubmitEditing={this.handleTitleInputSubmit}
@@ -81,8 +92,7 @@ export default class PostQuestion extends Component{
 
                 <View style={styles.postYourQuestionView} >
                   <TouchableOpacity style={styles.postYourQuestionButton}
-                                    onPress={() =>
-                                    this.props.navigation.navigate('home') }>
+                                    onPress={this.postquestion}>
                     <Text style={styles.buttonText}> Post Your Question </Text>
                   </TouchableOpacity>
                 </View>
@@ -92,7 +102,32 @@ export default class PostQuestion extends Component{
           </KeyboardShift>     
         )
     }
+    postquestion = () =>{
+    
+    fetch('http://192.168.1.108:5000/api/question', {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+               title: this.state.questiontitle,
+                body: this.state.questionbody,
+                tags: res
+              }),
+      })
+      .then((response) => response.json())
+      .then((res) => {
+       
+       
+          alert(res.message);
+                     })
+      .done();
+    }
+
 }
+  
+  
 
 const styles = StyleSheet.create({
     container: {

@@ -20,6 +20,8 @@ export default class Login extends Component{
     };
   }
 
+  
+
   componentDidMount() {
     this._loadInitialStage().done();
   }
@@ -109,14 +111,15 @@ export default class Login extends Component{
                     <Text style={styler.linkButton}> Signup </Text>
               </TouchableOpacity>
             </View>
+            
     
       </View>       
     );    
   }
   login = () =>{
     
-      {
-        fetch('http://192.168.1.107:4000/api/login', {
+      
+        fetch('http://192.168.1.108:5000/api/login', {
                 method: 'POST',
                 headers: {
                   'Accept': 'application/json',
@@ -142,7 +145,7 @@ export default class Login extends Component{
         .done();
       }
   }
-}
+
           
  
 const styles = StyleSheet.create({
@@ -209,6 +212,7 @@ const styles = StyleSheet.create({
       justifyContent:'center',
       marginVertical: 10,
     },
+   
 });
  
   

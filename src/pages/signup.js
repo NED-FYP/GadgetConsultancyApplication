@@ -4,6 +4,18 @@ import KeyboardShift from "../components/keyboardShift.js";
 import {styler} from '../../assets/style'
 
 export default class Signup extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      user_name:'',
+      emailaddress: '',
+      password: '',
+      confirmpassword:'',
+    };
+  }
+
+  
+
   render(){
     return(
       <KeyboardShift>
@@ -19,6 +31,7 @@ export default class Signup extends Component{
             < TextInput style={styler.inputBox}
                 //underlineColorAndroid='#007c91'
                 placeholder="Username" 
+                onChangeText = { (username) => this.setState({username}) }
                 placeholderTextColor="#aeaeae"
                 returnKeyType = { "next" }
                 onSubmitEditing={() => { this.secondTextInput.focus(); }}
@@ -26,6 +39,7 @@ export default class Signup extends Component{
             < TextInput style={styler.inputBox}
                 //underlineColorAndroid='#007c91'
                 placeholder="Email address" 
+                onChangeText = { (emailaddress) => this.setState({emailaddress}) }
                 placeholderTextColor="#aeaeae"
                 ref={(input) => { this.secondTextInput = input; }}
                 returnKeyType = { "next" }
@@ -34,6 +48,7 @@ export default class Signup extends Component{
             < TextInput style={styler.inputBox}
                 //underlineColorAndroid='#007c91'
                 placeholder="Password" 
+                onChangeText = { (password) => this.setState({password}) }
                 secureTextEntry={true}
                 placeholderTextColor="#aeaeae"
                 ref={(input) => { this.thirdTextInput = input; }}
@@ -43,6 +58,7 @@ export default class Signup extends Component{
             < TextInput style={styler.inputBox}
                 //underlineColorAndroid='#007c91'
                 placeholder="Confirm password" 
+                onChangeText = { (confirmpassword) => this.setState({confirmpassword}) }
                 secureTextEntry={true}
                 placeholderTextColor="#aeaeae"
                 ref={(input) => { this.fourthTextInput = input; }}
@@ -53,7 +69,7 @@ export default class Signup extends Component{
 
         <View style={styler.buttonView}>
         <TouchableOpacity style={styler.button}
-                    onPress={() => this.props.navigation.navigate('home')}>
+                    onPress={this.signup}>
             <Text style={styler.text}> Signup </Text>
         </TouchableOpacity>
         </View>
@@ -71,7 +87,35 @@ export default class Signup extends Component{
       </KeyboardShift> 
     );
   }
-}  
+  
+  signup = () =>{
+    
+    
+      
+    
+      fetch('http://192.168.1.108:5000/api/signup', {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                user_name: this.state.username,
+                email_address: this.state.emailaddress,
+                password: this.state.password,
+              }),
+      })
+      .then((response) => response.json())
+      .then((res) => {
+       
+       
+          alert(res.message);
+                     })
+      .done();
+    }
+
+}
+
 
  
 const styles = StyleSheet.create({
