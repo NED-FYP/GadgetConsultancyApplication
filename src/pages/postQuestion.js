@@ -104,7 +104,7 @@ export default class PostQuestion extends Component{
     }
     postquestion = () =>{
     
-    fetch('http://192.168.1.108:5000/api/question', {
+    fetch('http://192.168.1.102:5000/api/question', {
               method: 'POST',
               headers: {
                 'Accept': 'application/json',
