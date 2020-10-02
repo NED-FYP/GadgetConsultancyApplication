@@ -11,17 +11,6 @@ import {styler} from '../../assets/style'
 
 
 
-onLogoff = async() => {
-    try {
-      this.setState({users:""})
-      await AsyncStorage.clear()
-      alert('Logout Successfully')
-    }
-    catch(err)
-    {
-      console.log(err)
-    }
-  }
 const navigationDrawer = props => (
     <ScrollView>
         

@@ -6,7 +6,6 @@ import {
 } from 'react-native-responsive-screen' ;
 import { Header } from 'react-native-elements';
 import HomeQuestions from "../components/homeQuestions.js";
-
 import Tag from "../components/tag.js";
 
 export default class Home extends Component{
@@ -41,15 +40,8 @@ export default class Home extends Component{
                         </View>
                             {/*Question**/}
                             <View style={styles.questionView}>
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
+                               
                                     <HomeQuestions/>
-                                </TouchableOpacity>
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                    <HomeQuestions/>
-                                </TouchableOpacity>
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                    <HomeQuestions/>
-                                </TouchableOpacity>
                             </View>   
                 </View>
 

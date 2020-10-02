@@ -20,7 +20,7 @@ class Profile extends Component {
           <View style={styles.header}>
             <View style={styles.headerContent}>
                 <Image style={styles.avatar}
-                  source={require('../images/avatar.png')}/>
+                  source={require('../images/profile.png')}/>
                 <Text style={styles.name}>Ramsha Khan</Text>
                 <View style={styles.editView} >
                     <TouchableOpacity  onPress={() => this.props.navigation.navigate('editProfile')}>

@@ -9,7 +9,61 @@ import {AntDesign} from '@expo/vector-icons';
 import {FontAwesome5} from '@expo/vector-icons';
  
 export default class DetailQuestion extends Component{
-   render(){
+   constructor(props){
+      super(props);
+      this.state = {
+        answerbody: '',
+        //tagname: [],
+         questionList : [],
+                 qid:''   
+      };
+
+      
+      // const { navigation } = this.props;
+// const itemId=JSON.stringify(navigation.getParam('id'))
+// console.log(itemId)
+// this.setState({qid:itemId})
+// console.log('id')
+// console.log(itemId) 
+   } 
+   
+   componentDidUpdate(prevProps, prevState) {
+      // Don't forget to compare states
+      const { navigation } = this.props;
+      const itemId=JSON.stringify(navigation.getParam('id'))
+      if (prevState && prevState.qid !== itemId) {
+              this.setState({qid:itemId});
+            // this.setState({qid:itemId})
+// this.setState({id:itemId})
+console.log('in comp:')
+// console.log(itemId)
+console.log(this.state.qid)
+      fetch(`http://192.168.1.101:5000/api/question/${this.state.qid}`, {
+                    method: 'GET'
+                      
+            })
+            .then((response) => response.json())
+            .then(res => {
+            //   console.log(res);
+            this.setState({questionList : res})
+            console.log(this.state.questionList)
+     
+            })
+            .catch(err=>console.log(err))
+            .done();
+          }}
+//YEH RUN KAR K DEKHO, CONSOLE P 1 2 3 ATA HAI YA NAHI
+// componentDidMount(){
+//    console.log("didmount")
+// }   
+render(){
+      
+//       const { navigation } = this.props;
+// const itemId=JSON.stringify(navigation.getParam('id'))
+// console.log(itemId)
+// // this.setState({qid:itemId})
+// console.log(this.state.qid)
+
       return(
          <View style={styles.container}>
                <Header
@@ -25,7 +79,7 @@ export default class DetailQuestion extends Component{
                      <View style={styles.separator}/>
 
                         <View style={styles.questionTitleCont} >
-                           <Text style={styles.questionTitleText} >Lorem Ipsum is simply dummy text </Text>
+                           <Text style={styles.questionTitleText} > ASD </Text>
                         </View>
 
                         <TouchableOpacity style={styles.button}>
@@ -54,11 +108,7 @@ export default class DetailQuestion extends Component{
              
                   <View style={styles.questionBody} >
                      <Text style={styles.questionBodyText}>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and scrambled it to make a type specimen
-                        book.
-                     </Text>
+ASD                     </Text>
                   </View>
 
                   <View style={styles.userView} >
@@ -136,12 +186,28 @@ export default class DetailQuestion extends Component{
                   </View>
 
                   <View style={styles.yourAnswerBodyView} >
+                  
+                      <TextInput style={styles.bodyInputBox}
+                          multiline
+                          //numberOfLines={4}
+                          placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen
+                          book." 
+                          placeholderTextColor="#C1C0C8" 
+                          //onChangeText = { (answerbody) => this.setState({answerbody}) }
+                          //ref={(input) => { this.secondTextInput = input; }}
+                          returnKeyType = { "done" }
+                          onSubmitEditing={this.handleTitleInputSubmit}
+                          blurOnSubmit 
+                      />
+                   
+                    {/** 
                     <Text style={styles.questionBodyText}>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                         when an unknown printer took a galley of type and scrambled it to make a type specimen
                         book.
                      </Text>
+                     */}
                   </View>
 
                   <View style={styles.postYourAnswerView} >
@@ -389,4 +455,14 @@ export default class DetailQuestion extends Component{
       color: '#ffffff',
       textAlign: 'center'
    },
+  
+    bodyInputBox:{
+      width: wp('95%'),
+      height: hp('20%'),
+      borderWidth: 1,
+      paddingHorizontal: 10,
+      fontSize:16,
+      borderColor:'#BBC0C4'
+      
+    },
 });

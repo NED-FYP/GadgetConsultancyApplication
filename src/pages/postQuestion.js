@@ -104,7 +104,7 @@ export default class PostQuestion extends Component{
     }
     postquestion = () =>{
     
-    fetch('http://192.168.1.102:5000/api/question', {
+    fetch('http://192.168.1.109:5000/api/question', {
               method: 'POST',
               headers: {
                 'Accept': 'application/json',
@@ -113,7 +113,7 @@ export default class PostQuestion extends Component{
               body: JSON.stringify({
                title: this.state.questiontitle,
                 body: this.state.questionbody,
-                tags: res
+               // tags: res
               }),
       })
       .then((response) => response.json())

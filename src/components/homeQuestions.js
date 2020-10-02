@@ -6,9 +6,51 @@ import {
     heightPercentageToDP as hp,
     widthPercentageToDP as wp,
    } from 'react-native-responsive-screen' ;
+   import { withNavigation } from 'react-navigation';
 
-export default class HomeQuestions extends Component {
+ class HomeQuestions extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      questionList : []
+        };
+  }
+ componentWillMount(){
+    fetch('http://192.168.1.101:5000/api/questions', {
+                  method: 'GET',
+  
+                 
+          })
+          .then((response) => response.json())
+          .then(res => {
+            // console.log(res);
+          this.setState({questionList : res})
+          console.log(this.state.questionList)
+   
+          })
+          // .catch(err)=>console
+          .done();
+       
+        }
+
+   
+  /** 
+   questionList =() =>{
+    return this.state.questions.map(element => {
+      return (
+        <View>
+          <Text>{element.title}</Text>
+          <Text>{element.question_body}</Text>
+        </View>
+      );
+    });
+  };
+  */
+   
+ 
   render() {
+    
+ 
     return(
         <View style={styles.container}>
   
@@ -24,26 +66,30 @@ export default class HomeQuestions extends Component {
                     </View>
           
             </View>
-
-            <View style={styles.quesTitleView} >
-              <Text style={styles.quesTitleText}>What is the latest Nokia mobile </Text>
-            </View>
+      {this.state.questionList.map((item)=>{
+    return(
+    <View>
+            <TouchableOpacity style={styles.quesTitleView} onPress={() =>this.props.navigation.navigate('detailQuestion',{id: item.id})} >
+              <Text style={styles.quesTitleText}>{item.question_title}-{item.id} </Text>
+              {/* <Text style={styles.quesTitleText}> </Text> */}
+            
+            </TouchableOpacity>
             <View style={styles.quesDescriptionView} >
               <Text style={styles.quesDescriptionText}>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  {item.question_body}
               </Text>
+              </View>
             </View>
-            
-    
-    
-            </View>
+      
+      )    
+    })}
+    </View>
        
       
      
    )
   }
-
-}
+  }
 const styles = StyleSheet.create({
     container:{
         width: wp('80%'),
@@ -98,3 +144,5 @@ const styles = StyleSheet.create({
       
     
 });    
+
+export default withNavigation(HomeQuestions);
