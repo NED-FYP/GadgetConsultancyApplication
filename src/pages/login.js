@@ -24,6 +24,7 @@ export default class Login extends Component{
 
   componentDidMount() {
     this._loadInitialStage().done();
+    
   }
 
   _loadInitialStage = async () => {
@@ -134,7 +135,8 @@ export default class Login extends Component{
         .then((res) => {
          
           if ( res.success === true ){
-            AsyncStorage.setItem('users' , res.users);
+            AsyncStorage.setItem('users',res);
+            console.log(res);
             this.props.navigation.navigate('home'); 
           }
           else{

@@ -4,7 +4,7 @@ import {
   Text,
   View,
   Image,
-  TouchableOpacity
+  TouchableOpacity, AsyncStorage
 } from 'react-native';
 import {
   heightPercentageToDP as hp,
@@ -13,6 +13,11 @@ import {
  import { withNavigation } from 'react-navigation';
 
 class Profile extends Component {
+  componentDidMount(){
+    AsyncStorage.getAllKeys().then(resp=>{
+      console.log("Profile",resp);
+    })
+  }
   render() {
     return (
       <View style={styles.container}>

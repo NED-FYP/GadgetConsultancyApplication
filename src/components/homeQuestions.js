@@ -25,7 +25,7 @@ import {
           .then(res => {
             // console.log(res);
           this.setState({questionList : res})
-          console.log(this.state.questionList)
+          // console.log(this.state.questionList)
    
           })
           // .catch(err)=>console
@@ -49,37 +49,35 @@ import {
    
  
   render() {
-    
- 
     return(
         <View style={styles.container}>
-  
-            <View style={styles.separator}>
-            
-                    
+           {this.state.questionList.slice(0,3).map((item)=>{
+    return(
+    <View style={{height: hp('8%')}}>
+            <View key={item} style={styles.separator}>
                     <View style={styles.dislikeIconView} >
                     <Image source={require('../images/answer.png')}/>
                         
                     </View>
                     <View style={styles.NumberOfLikeDislikeView} >
-                                <Text style={styles.NumberOfLikeDislikeText}>2</Text>
+                                <Text style={styles.NumberOfLikeDislikeText}>{item.id}</Text>
                     </View>
           
             </View>
-      {this.state.questionList.map((item)=>{
-    return(
-    <View>
+    
             <TouchableOpacity style={styles.quesTitleView} onPress={() =>this.props.navigation.navigate('detailQuestion',{id: item.id})} >
               <Text style={styles.quesTitleText}>{item.question_title}-{item.id} </Text>
               {/* <Text style={styles.quesTitleText}> </Text> */}
             
             </TouchableOpacity>
             <View style={styles.quesDescriptionView} >
-              <Text style={styles.quesDescriptionText}>
+              <Text numberOfLines={2} style={styles.quesDescriptionText}>
                   {item.question_body}
               </Text>
               </View>
-            </View>
+
+             
+    </View>
       
       )    
     })}
@@ -92,13 +90,14 @@ import {
   }
 const styles = StyleSheet.create({
     container:{
+     
         width: wp('80%'),
-        height: hp('12%'),
+        height: hp('25%'),
     },
 
     separator:{
-      
-        height: hp('11.5%'),
+      height: hp('11.5%'),
+        //height: hp('11.5%'),
         width: wp('20%'),
     },
 
@@ -120,7 +119,11 @@ const styles = StyleSheet.create({
      NumberOfLikeDislikeView:{
         position: "absolute",
         left: wp('9.5%') , 
-        top:hp('6%')
+        top:hp('6%'),
+        //backgroundColor:'yellow',
+        //height:hp('10%')
+        //paddingEnd:30
+        //paddingBottom:20
      },
      NumberOfLikeDislikeText:{
       fontSize:17,
@@ -129,13 +132,16 @@ const styles = StyleSheet.create({
 
      },
      quesDescriptionText:{
-        fontSize:15,
+        //fontSize:15,
+        
         
      },
      quesDescriptionView:{
-       top:hp('-9.5%'),
+       top:hp('-10%'),
        right: wp('-17%'), 
-       width:('100%')
+       width:('100%'),
+       //addingBottom:20
+       
      },
      deleteIconView:{
         right: wp('-43%'),

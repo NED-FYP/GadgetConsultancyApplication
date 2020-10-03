@@ -45,31 +45,31 @@ export default class Home extends Component{
                             </View>   
                 </View>
 
-        {/*Recent Tags**/}
+        {/*Recent Tags
                 <View style={{flex:1}}> 
-                        {/*Heading**/}
+                        
                         <View style={styles.headingView} >
                         <Text style={styles.text} >RECENT TAGS</Text>
                         </View>
-                        {/*Tags**/}
+                        
                         <View  style={styles.slider} >
                             <ScrollView horizontal={true} >
-                                {/*Tag 1*/ }
+                               
                                 <TouchableOpacity onPress={() =>
                                     this.props.navigation.navigate('detailQuestion')}>
                                             <Tag name="Laptop"/>
                                 </TouchableOpacity>
-                                    {/*Tag 2*/ }
+                                    
                                 <TouchableOpacity onPress={() =>
                                     this.props.navigation.navigate('detailQuestion')}>
                                             <Tag name="Mobile"/>
                                 </TouchableOpacity>
-                                    {/*Tag 3*/ }
+                                  
                                 <TouchableOpacity onPress={() =>
                                     this.props.navigation.navigate('detailQuestion')}>
                                             <Tag name="Camera"/>
                                 </TouchableOpacity>
-                                    {/*Tag 4*/ }
+                                   
                                 <TouchableOpacity onPress={() =>
                                     this.props.navigation.navigate('detailQuestion')}>
                                             <Tag name="Headphones"/>
@@ -77,7 +77,7 @@ export default class Home extends Component{
                             </ScrollView>
                         </View>
                 </View>
-                
+                **/}
         {/*Mostly viewed**/}
                 <View style={{flex:1 }}>
                             {/*Heading**/}
@@ -92,16 +92,9 @@ export default class Home extends Component{
                         </View>
                             {/*Question**/}
                             <View style={styles.questionView}>
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
+                               
                                     <HomeQuestions/>
-                                </TouchableOpacity>
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                    <HomeQuestions/>
-                                </TouchableOpacity>
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                    <HomeQuestions/>
-                                </TouchableOpacity>
-                            </View>   
+                            </View>  
                 </View>
 
         {/*your Interest**/}
@@ -118,16 +111,9 @@ export default class Home extends Component{
                     </View>
                         {/*Question**/}
                         <View style={styles.questionView}>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
+                               
                                     <HomeQuestions/>
-                                </TouchableOpacity>
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                    <HomeQuestions/>
-                                </TouchableOpacity>
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('detailQuestion') }>
-                                    <HomeQuestions/>
-                                </TouchableOpacity>
-                        </View>   
+                            </View>  
              </View>
 
             </ScrollView>         

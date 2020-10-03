@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-import {Text, View, StyleSheet, ScrollView,Image,TouchableOpacity} from 'react-native'
+import {Text, View, StyleSheet, ScrollView,Image,TouchableOpacity, AsyncStorage} from 'react-native'
 import SafeAreaView from 'react-native-safe-area-view';
 import { DrawerItems} from 'react-navigation-drawer';
 import {FontAwesome} from '@expo/vector-icons';
@@ -11,15 +11,30 @@ import {styler} from '../../assets/style'
 
 
 
-const navigationDrawer = props => (
-    <ScrollView>
+const navigationDrawer = props => {
+    const [data,setData] = React.useState("");
+    const getLocalStorage=()=>{
+        AsyncStorage.getItem('users').then(resp=>{
+            console.log("Drawer",resp);
+            setData(resp);
+        })
+        
+        
+       
+    }
+    React.useEffect(()=>{AsyncStorage.getItem('users').then(resp=>{
+        console.log("Drawer",resp);
+        setData(resp);
+    })},[]);
+    return(
+        <ScrollView>
         
         <SafeAreaView
           style={styles.container}
           forceInset={{ top: 'always', horizontal: 'never',  }} >
             <View style={styles.logoView}>
                 <FontAwesome name='user-circle-o' color ="#aeaeae" size={80}  />
-                <Text style={styles.text}>Saniya Abdul Rehman </Text>
+                <Text style={styles.text}></Text>
                 <View style={styles.separator}/>
             </View> 
             <DrawerItems {...props} />
@@ -27,14 +42,15 @@ const navigationDrawer = props => (
             <View style={styles.logoutButtonView}>
             <TouchableOpacity style={styles.button}
                         //onPress={() => this.props.navigation.navigate('home')}
-                          onPress= {this.onLogoff} >
+                           >
 
                 <Text style={styler.text}> Logout </Text>
             </TouchableOpacity>
             </View>
         </SafeAreaView>
     </ScrollView>
-)
+    )
+}
 
 const styles = StyleSheet.create({
     container: {
