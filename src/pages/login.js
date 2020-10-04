@@ -1,7 +1,9 @@
 import React, { Component } from 'react'; 
-import { StyleSheet, Text, View,TouchableOpacity, Image ,TextInput, AsyncStorage } from 'react-native';
+import {As} from 'expo'
+import { StyleSheet, Text, View,TouchableOpacity, Image ,TextInput } from 'react-native';
 import {FontAwesome} from '@expo/vector-icons';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
+import AsyncStorage from '@react-native-community/async-storage';
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
@@ -118,9 +120,18 @@ export default class Login extends Component{
     );    
   }
   login = () =>{
-    
+    const storeData = async (key,value) => {
+      try {
+        const jsonValue = JSON.stringify(value)
+        await AsyncStorage.setItem(key, jsonValue)
+      } catch (e) {
+        // saving error
+        console.log(e);
+      }
+    }
+   
       
-        fetch('http://192.168.1.101:5000/api/login', {
+        fetch('http://192.168.43.247:5000/api/login', {
                 method: 'POST',
                 headers: {
                   'Accept': 'application/json',
@@ -135,8 +146,9 @@ export default class Login extends Component{
         .then((res) => {
          
           if ( res.success === true ){
-            AsyncStorage.setItem('users',res);
-            console.log(res);
+            
+            storeData("users",res)
+            
             this.props.navigation.navigate('home'); 
           }
           else{

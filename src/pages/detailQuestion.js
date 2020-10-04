@@ -16,6 +16,7 @@ import {Header} from 'react-native-elements';
 import {AntDesign} from '@expo/vector-icons';
 import {FontAwesome5} from '@expo/vector-icons';
 import KeyboardShift from "../components/keyboardShift.js";
+import AsyncStorage from '@react-native-community/async-storage';
 
 export default class DetailQuestion extends Component {
   constructor(props) {
@@ -26,24 +27,48 @@ export default class DetailQuestion extends Component {
       questionList: [],
       qid: '',
       answerList: [],
+      data:[],
+      user_Id:''
+  
     };
 
-    // const { navigation } = this.props;
-    // const itemId=JSON.stringify(navigation.getParam('id'))
-    // console.log(itemId)
-    // this.setState({qid:itemId})
-    // console.log('id')
-    // console.log(itemId)
+   }
+  
+  _getData = async (key) => {
+    try {
+      const jsonValue = await AsyncStorage.getItem(key)
+      return jsonValue != null ? JSON.parse(jsonValue) : null;
+    } catch(e) {
+      // error reading value
+      console.log(e);
+    }
   }
-  componentDidUpdate(prevProps, prevState) {
+  _getLocalStorage=()=>{
+    const value = this._getData("users");
+    value.then(resp=>{
+        // console.log(resp);
+        this.setState({data:resp});
+        console.log(this.state.data.users.id)
+        this.setState({user_Id:this.state.data.users.id})
+        console.log(this.state.user_Id)
+    })
+  }
+  componentDidMount(){
+    this._getLocalStorage();
+  //   console.log("here in didmoubnt")
+  // console.log(this.state.data)
+  // console.log("here in didmoubnt end")
+
+  }
+   componentDidUpdate(prevProps, prevState) {
     // Don't forget to compare states
     const {navigation} = this.props;
     const itemId = navigation.getParam('id');
-    if (prevState && prevState.qid !== itemId) {
+    if (prevState && prevState.qid !== itemId  ) {
       this.setState({qid: itemId});
       console.log('in comp:');
       console.log(this.state.qid);
-      fetch(`http://192.168.1.101:5000/api/question/${this.state.qid}`, {
+      fetch(`http://192.168.43.247:5000/api/question/${this.state.qid}`, {
         method: 'GET',
       })
         .then((response) => response.json())
@@ -54,13 +79,12 @@ export default class DetailQuestion extends Component {
         });
       //  .catch((err) => console.log(err))
       fetch(
-        `http://192.168.1.101:5000/api/answer/question/user/${this.state.qid}`,
+        `http://192.168.43.247:5000/api/answer/question/user/${this.state.qid}`,
         {
           method: 'GET',
         },
       )
         .then((response) => response.json())
-
         .then((res1) => {
           //   console.log(res1);
           this.setState({answerList: res1});
@@ -74,7 +98,42 @@ export default class DetailQuestion extends Component {
   // componentDidMount(){
   //    console.log("didmount")
   // }
-  componentDidMount() {}
+  // componentDidMount() {}
+   OnSumit=()=>{
+     console.log(this.state.answerbody)
+     fetch('http://192.168.1.101:5000/api/answer', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        reply: this.state.answerbody,
+        question_id: this.state.qid,
+        user_id: this.state.user_Id
+      }),
+})
+.then((response) => response.json())
+.then((res) => {
+  console.log(res)
+})
+this.setState({answerbody:''})
+fetch(
+  `http://192.168.1.101:5000/api/answer/question/user/${this.state.qid}`,
+  {
+    method: 'GET',
+  },
+)
+  .then((response) => response.json())
+  .then((res1) => {
+    //   console.log(res1);
+    this.setState({answerList: res1});
+    console.log(this.state.answerList);
+  })
+  // .catch((err) => console.log(err))
+
+  .done();
+   }
   render() {
     //       const { navigation } = this.props;
     // const itemId=JSON.stringify(navigation.getParam('id'))
@@ -223,13 +282,13 @@ export default class DetailQuestion extends Component {
               style={styles.bodyInputBox}
               multiline
               //numberOfLines={4}
-              placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen
-                        book."
+              placeholder=" Enter your answer....."
               placeholderTextColor="#C1C0C8"
-              //onChangeText = { (answerbody) => this.setState({answerbody}) }
+              value={this.state.answerbody}
+              onChangeText = { (text) => this.setState({answerbody:text}) }
               //ref={(input) => { this.secondTextInput = input; }}
               returnKeyType={'done'}
-              onSubmitEditing={this.handleTitleInputSubmit}
+              onSubmitEditing={this.ObSubmit}
               blurOnSubmit
             />
 
@@ -246,7 +305,7 @@ export default class DetailQuestion extends Component {
           <View style={styles.postYourAnswerView}>
             <TouchableOpacity
               style={styles.postYourAnswerButton}
-              onPress={() => this.props.navigation.navigate('login')}>
+              onPress={() => this.OnSumit()}>
               <Text style={styles.answerButtonText}>Post Your Answer</Text>
             </TouchableOpacity>
           </View>

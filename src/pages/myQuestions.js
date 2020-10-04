@@ -49,8 +49,7 @@ export default class MyQuestions extends Component {
                     />
                 </View>
                 <Questions2/>
-                <Questions2/>
-                <Questions2/>
+                
                 </ScrollView>
             </View>
             

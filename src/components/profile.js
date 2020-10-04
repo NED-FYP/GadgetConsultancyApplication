@@ -4,19 +4,40 @@ import {
   Text,
   View,
   Image,
-  TouchableOpacity, AsyncStorage
+  TouchableOpacity,
 } from 'react-native';
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
  } from 'react-native-responsive-screen' ;
  import { withNavigation } from 'react-navigation';
+ import AsyncStorage from '@react-native-community/async-storage';
 
 class Profile extends Component {
-  componentDidMount(){
-    AsyncStorage.getAllKeys().then(resp=>{
-      console.log("Profile",resp);
+  constructor(props){
+    super(props);
+    this.state = {
+     data:""
+    };
+  }
+  _getData = async (key) => {
+    try {
+      const jsonValue = await AsyncStorage.getItem(key)
+      return jsonValue != null ? JSON.parse(jsonValue) : null;
+    } catch(e) {
+      // error reading value
+      console.log(e);
+    }
+  }
+  _getLocalStorage=()=>{
+    const value = this._getData("users");
+    value.then(resp=>{
+        console.log(resp);
+        this.setState({"data":resp});
     })
+  }
+  componentDidMount(){
+    this._getLocalStorage();
   }
   render() {
     return (
@@ -26,7 +47,7 @@ class Profile extends Component {
             <View style={styles.headerContent}>
                 <Image style={styles.avatar}
                   source={require('../images/profile.png')}/>
-                <Text style={styles.name}>Ramsha Khan</Text>
+                <Text style={styles.name}>{this.state.data.users?this.state.data.users.user_name:""}</Text>
                 <View style={styles.editView} >
                     <TouchableOpacity  onPress={() => this.props.navigation.navigate('editProfile')}>
                       <Text style={styles.editText}>Edit Profile</Text>

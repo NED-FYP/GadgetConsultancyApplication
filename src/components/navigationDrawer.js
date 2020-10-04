@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-import {Text, View, StyleSheet, ScrollView,Image,TouchableOpacity, AsyncStorage} from 'react-native'
+import {Text, View, StyleSheet, ScrollView,Image,TouchableOpacity, Alert} from 'react-native'
 import SafeAreaView from 'react-native-safe-area-view';
 import { DrawerItems} from 'react-navigation-drawer';
 import {FontAwesome} from '@expo/vector-icons';
@@ -7,25 +7,44 @@ import {
     heightPercentageToDP as hp,
     widthPercentageToDP as wp,
 } from 'react-native-responsive-screen' ;
-import {styler} from '../../assets/style'
+import {styler} from '../../assets/style';
+import AsyncStorage from '@react-native-community/async-storage';
+import { withNavigation } from 'react-navigation';
 
 
 
 const navigationDrawer = props => {
     const [data,setData] = React.useState("");
+    const getData = async (key) => {
+        try {
+          const jsonValue = await AsyncStorage.getItem(key)
+          return jsonValue != null ? JSON.parse(jsonValue) : null;
+        } catch(e) {
+          // error reading value
+          console.log(e);
+        }
+      }
+      const logOut =()=>{
+          try{
+                  AsyncStorage.clear(()=>{
+                      Alert("User Logged Out");
+                      props.navigation.navigate('login');
+
+                  })
+          }
+          catch(e){
+              console.log(e)
+          }
+      }
     const getLocalStorage=()=>{
-        AsyncStorage.getItem('users').then(resp=>{
-            console.log("Drawer",resp);
-            setData(resp);
-        })
+       const value = getData("users");
+       value.then(resp=>{
+           console.log(resp);
+           setData(resp);
+       })
         
-        
-       
     }
-    React.useEffect(()=>{AsyncStorage.getItem('users').then(resp=>{
-        console.log("Drawer",resp);
-        setData(resp);
-    })},[]);
+    React.useEffect(getLocalStorage,[]);
     return(
         <ScrollView>
         
@@ -34,14 +53,14 @@ const navigationDrawer = props => {
           forceInset={{ top: 'always', horizontal: 'never',  }} >
             <View style={styles.logoView}>
                 <FontAwesome name='user-circle-o' color ="#aeaeae" size={80}  />
-                <Text style={styles.text}></Text>
+                <Text style={styles.text}>{data.users?data.users.user_name:""}</Text>
                 <View style={styles.separator}/>
             </View> 
             <DrawerItems {...props} />
 
             <View style={styles.logoutButtonView}>
             <TouchableOpacity style={styles.button}
-                        //onPress={() => this.props.navigation.navigate('home')}
+                       onPress={logOut}
                            >
 
                 <Text style={styler.text}> Logout </Text>
@@ -88,5 +107,4 @@ const styles = StyleSheet.create({
       },
 });
 
-export default navigationDrawer
-
+export default withNavigation(navigationDrawer)
