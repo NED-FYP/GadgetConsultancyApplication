@@ -8,6 +8,8 @@ import {
 import KeyboardShift from "../components/keyboardShift.js";
 import {AntDesign} from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import AsyncStorage from '@react-native-community/async-storage';
+
 export default class PostQuestion extends Component{
   constructor(props){
     super(props);
@@ -15,10 +17,39 @@ export default class PostQuestion extends Component{
       questiontitle:'',
       questionbody: '',
       //tagname: [],
-      
+      data:[],
+      user_Id:''
+     
       
                   
     };
+  }
+  
+  _getData = async (key) => {
+    try {
+      const jsonValue = await AsyncStorage.getItem(key)
+      return jsonValue != null ? JSON.parse(jsonValue) : null;
+    } catch(e) {
+      // error reading value
+      console.log(e);
+    }
+  }
+  _getLocalStorage=()=>{
+    const value = this._getData("users");
+    value.then(resp=>{
+        // console.log(resp);
+        this.setState({data:resp});
+        console.log(this.state.data.users.id)
+        this.setState({user_Id:this.state.data.users.id})
+        console.log(this.state.user_Id)
+    })
+  }
+  componentDidMount(){
+    this._getLocalStorage();
+  //   console.log("here in didmoubnt")
+  // console.log(this.state.data)
+  // console.log("here in didmoubnt end")
+
   } 
     render(){
         return(
@@ -47,7 +78,7 @@ export default class PostQuestion extends Component{
                     <View style={styles.inputBoxView}>
                       <TextInput style={styles.inputBox}
                           multiline
-                          placeholder="Lorem Ipsum is simply dummy text" 
+                          placeholder="Ask your question.." 
                           placeholderTextColor="#C1C0C8"
                          onChangeText = { (questiontitle) => this.setState({questiontitle}) }
                           returnKeyType = { "next" }
@@ -113,14 +144,16 @@ export default class PostQuestion extends Component{
               body: JSON.stringify({
                title: this.state.questiontitle,
                 body: this.state.questionbody,
-               // tags: res
+        user_id: this.state.user_Id
+               
+                // tags: res
               }),
       })
       .then((response) => response.json())
       .then((res) => {
        
-       
-          alert(res.message);
+       console.log(res)
+          // alert(res.message);
                      })
       .done();
     }

@@ -16,7 +16,7 @@ import {
         };
   }
  componentWillMount(){
-    fetch('http://192.168.1.105:5000/api/questions', {
+    fetch('http://192.168.43.247:5000/api/questions', {
                   method: 'GET',
   
                  

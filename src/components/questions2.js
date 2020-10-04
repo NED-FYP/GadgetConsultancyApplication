@@ -8,6 +8,7 @@ import {
    } from 'react-native-responsive-screen' ;
 
 export default class Questions2 extends Component {
+  
   render() {
     return(
       <View style={styles.container}>

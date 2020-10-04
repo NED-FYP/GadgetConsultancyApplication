@@ -8,6 +8,31 @@ import {
 import { Header } from 'react-native-elements';
 
 export default class EditProfile extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+     profileData:{}
+    };
+  }
+  _getData = async (key) => {
+    try {
+      const jsonValue = await AsyncStorage.getItem(key)
+      return jsonValue != null ? JSON.parse(jsonValue) : null;
+    } catch(e) {
+      // error reading value
+      console.log(e);
+    }
+  }
+  _getLocalStorage=()=>{
+    const value = this._getData("users");
+    value.then(resp=>{
+        console.log(resp);
+        this.setState({"profileData":resp});
+    })
+  }
+  componentDidMount(){
+    this._getLocalStorage();
+  }
   render(){
     return(
       <View style={styles.container}> 
