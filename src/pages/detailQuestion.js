@@ -43,7 +43,7 @@ export default class DetailQuestion extends Component {
       this.setState({qid: itemId});
       console.log('in comp:');
       console.log(this.state.qid);
-      fetch(`http://192.168.1.101:5000/api/question/${this.state.qid}`, {
+      fetch(`http://192.168.1.105:5000/api/question/${this.state.qid}`, {
         method: 'GET',
       })
         .then((response) => response.json())
@@ -54,7 +54,7 @@ export default class DetailQuestion extends Component {
         });
       //  .catch((err) => console.log(err))
       fetch(
-        `http://192.168.1.101:5000/api/answer/question/user/${this.state.qid}`,
+        `http://192.168.1.105:5000/api/answer/question/user/${this.state.qid}`,
         {
           method: 'GET',
         },
