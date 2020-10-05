@@ -27,7 +27,7 @@ const navigationDrawer = props => {
       const logOut =()=>{
           try{
                   AsyncStorage.clear(()=>{
-                      Alert("User Logged Out");
+                      //Alert("User Logged Out");
                       props.navigation.navigate('login');
 
                   })
