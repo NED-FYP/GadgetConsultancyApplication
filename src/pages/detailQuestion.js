@@ -68,7 +68,7 @@ export default class DetailQuestion extends Component {
       this.setState({qid: itemId});
       console.log('in comp:');
       console.log(this.state.qid);
-      fetch(`http://192.168.43.247:5000/api/question/${this.state.qid}`, {
+      fetch(`http://192.168.0.110:5000/api/question/${this.state.qid}`, {
         method: 'GET',
       })
         .then((response) => response.json())
@@ -79,7 +79,7 @@ export default class DetailQuestion extends Component {
         });
       //  .catch((err) => console.log(err))
       fetch(
-        `http://192.168.43.247:5000/api/answer/question/user/${this.state.qid}`,
+        `http://192.168.0.110:5000/api/answer/question/user/${this.state.qid}`,
         {
           method: 'GET',
         },
@@ -101,7 +101,7 @@ export default class DetailQuestion extends Component {
   // componentDidMount() {}
    OnSumit=()=>{
      console.log(this.state.answerbody)
-     fetch('http://192.168.1.101:5000/api/answer', {
+     fetch('http://192.168.0.110:5000/api/answer', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -119,7 +119,7 @@ export default class DetailQuestion extends Component {
 })
 this.setState({answerbody:''})
 fetch(
-  `http://192.168.1.101:5000/api/answer/question/user/${this.state.qid}`,
+  `http://192.168.0.110:5000/api/answer/question/user/${this.state.qid}`,
   {
     method: 'GET',
   },

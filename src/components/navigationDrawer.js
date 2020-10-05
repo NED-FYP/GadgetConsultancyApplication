@@ -14,7 +14,7 @@ import { withNavigation } from 'react-navigation';
 
 
 const navigationDrawer = props => {
-    const [data,setData] = React.useState("");
+    const [data,setData] = React.useState([]);
     const getData = async (key) => {
         try {
           const jsonValue = await AsyncStorage.getItem(key)
@@ -53,7 +53,7 @@ const navigationDrawer = props => {
           forceInset={{ top: 'always', horizontal: 'never',  }} >
             <View style={styles.logoView}>
                 <FontAwesome name='user-circle-o' color ="#aeaeae" size={80}  />
-                <Text style={styles.text}>{data.users?data.users.user_name:""}</Text>
+                <Text style={styles.text}>dfghjk</Text>
                 <View style={styles.separator}/>
             </View> 
             <DrawerItems {...props} />
