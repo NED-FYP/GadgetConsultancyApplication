@@ -93,7 +93,7 @@ export default class Signup extends Component{
     
       
     
-      fetch('http://192.168.1.101:5000/api/signup', {
+      fetch('http://192.168.1.105:5000/api/signup', {
               method: 'POST',
               headers: {
                 'Accept': 'application/json',
