@@ -50,7 +50,7 @@ export default class DetailQuestion extends Component {
         this.setState({data:resp});
         console.log(this.state.data.users.id)
         this.setState({user_Id:this.state.data.users.id})
-        console.log(this.state.user_Id)
+        //console.log(this.state.user_Id)
     })
   }
   componentDidMount(){
@@ -233,7 +233,7 @@ fetch(
                   <View style={styles.answerBodyseparator} />
 
                   <View style={styles.answerBodyView}>
-                    <Text style={styles.answerBodyText}>{item.reply}</Text>
+                    <Text numberOfLines={6} style={styles.answerBodyText}>{item.reply}</Text>
                   </View>
 
 {/** 
@@ -472,7 +472,7 @@ const styles = StyleSheet.create({
   },
   answerBodyRectangle: {
     width: wp('100%'),
-    height: hp('27%'),
+    height: hp('20%'),
     borderWidth: wp('0.5%'),
     borderColor: '#bdbdbd',
     backgroundColor: '#fff',
@@ -486,7 +486,7 @@ const styles = StyleSheet.create({
     marginTop: 4,
     position: 'relative',
     right: wp('-22%'),
-    top: hp('-26%'),
+    top: hp('-20%'),
   },
   answerBodyText: {
     color: '#000',
@@ -504,7 +504,7 @@ const styles = StyleSheet.create({
     top: hp('-19.5%'),
   },
   answerBodyseparator: {
-    height: hp('26.5%'),
+    height: hp('19.5%'),
     width: wp('0.7%'),
     backgroundColor: '#bdbdbd',
     position: 'relative',

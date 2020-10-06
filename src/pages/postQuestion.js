@@ -78,7 +78,7 @@ export default class PostQuestion extends Component{
                     <View style={styles.inputBoxView}>
                       <TextInput style={styles.inputBox}
                           multiline
-                          placeholder="Ask your question.." 
+                          placeholder="Enter question title" 
                           placeholderTextColor="#C1C0C8"
                          onChangeText = { (questiontitle) => this.setState({questiontitle}) }
                           returnKeyType = { "next" }
@@ -94,8 +94,7 @@ export default class PostQuestion extends Component{
                       <TextInput style={styles.bodyInputBox}
                           multiline
                           //numberOfLines={4}
-                          placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen
-                          book." 
+                          placeholder="Enter question description" 
                           placeholderTextColor="#C1C0C8" 
                           onChangeText = { (questionbody) => this.setState({questionbody}) }
                           ref={(input) => { this.secondTextInput = input; }}
@@ -104,7 +103,7 @@ export default class PostQuestion extends Component{
                       />
                     </View>
                 </View>
-
+{/** 
                 <View style={styles.headingView} >
                   <Text style={styles.text} >Tag</Text>
                     <View style={styles.inputBoxView}>
@@ -120,7 +119,7 @@ export default class PostQuestion extends Component{
                       />
                     </View>
                 </View>
-
+*/}
                 <View style={styles.postYourQuestionView} >
                   <TouchableOpacity style={styles.postYourQuestionButton}
                                     onPress={this.postquestion}>
@@ -208,8 +207,8 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       paddingHorizontal: 10,
       fontSize:16,
-      borderColor:'#BBC0C4'
-      
+      borderColor:'#BBC0C4',
+      textAlignVertical: 'top',
     },
     postYourQuestionButton:{
       width:wp('50%'),

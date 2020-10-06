@@ -116,6 +116,38 @@ export default class Home extends Component{
                             </View>  
              </View>
 
+             <View style={{flex:1}}> 
+                        
+                        <View style={styles.headingView} >
+                        <Text style={styles.text} >RECENT TAGS</Text>
+                        </View>
+                        
+                        <View  style={styles.slider} >
+                            <ScrollView horizontal={true} >
+                               
+                                <TouchableOpacity onPress={() =>
+                                    this.props.navigation.navigate('detailQuestion')}>
+                                            <Tag name="Laptop"/>
+                                </TouchableOpacity>
+                                    
+                                <TouchableOpacity onPress={() =>
+                                    this.props.navigation.navigate('detailQuestion')}>
+                                            <Tag name="Mobile"/>
+                                </TouchableOpacity>
+                                  
+                                <TouchableOpacity onPress={() =>
+                                    this.props.navigation.navigate('detailQuestion')}>
+                                            <Tag name="Camera"/>
+                                </TouchableOpacity>
+                                   
+                                <TouchableOpacity onPress={() =>
+                                    this.props.navigation.navigate('detailQuestion')}>
+                                            <Tag name="Headphones"/>
+                                </TouchableOpacity>
+                            </ScrollView>
+                        </View>
+                </View>
+
             </ScrollView>         
           </View>
         )

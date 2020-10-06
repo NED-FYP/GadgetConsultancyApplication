@@ -53,7 +53,7 @@ const navigationDrawer = props => {
           forceInset={{ top: 'always', horizontal: 'never',  }} >
             <View style={styles.logoView}>
                 <FontAwesome name='user-circle-o' color ="#aeaeae" size={80}  />
-                <Text style={styles.text}>dfghjk</Text>
+    <Text style={styles.text}>{data.users?data.users.user_name:""}</Text>
                 <View style={styles.separator}/>
             </View> 
             <DrawerItems {...props} />

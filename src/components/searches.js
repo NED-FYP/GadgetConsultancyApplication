@@ -14,6 +14,30 @@ import {
 import {Icon} from 'react-native-elements';
 
 export default class Searches extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      questionList : []
+        };
+  }
+ componentDidMount(){
+    fetch('http://192.168.0.110:5000/api/questions', {
+                  method: 'GET',
+  
+                 
+          })
+          .then((response) => response.json())
+          .then(res => {
+            // console.log(res);
+          this.setState({questionList : res})
+          console.log(this.state.questionList)
+   
+          })
+          // .catch(err)=>console
+          .done();
+       
+        }
+        
   render() {
     return (
       <View style={styles.container}>
@@ -26,11 +50,15 @@ export default class Searches extends Component {
             </View>
           </View>
 
-          <View style={styles.dateView} >
-            <Text style={styles.dateText}>January 15, 2020</Text>
-          </View>
+         
 
           {/*Rectangle 1**/}
+          {this.state.questionList.slice(0,3).map((item)=>{
+    return(
+    <View >
+       <View style={styles.dateView} >
+            <Text style={styles.dateText}>January 15, 2020</Text>
+          </View>
           <View style={styles.rectangle2} >
               <View style={styles.searchIconView} >
                 <Icon
@@ -40,7 +68,7 @@ export default class Searches extends Component {
                 />
               </View>
               <View style={styles.searchContentView} >
-                <Text style={styles.searchContentText}>You searched  Lorem Ipsum is simply </Text>
+                <Text style={styles.searchContentText}>You searched {item.question_title}</Text>
               </View>
               <View style={styles.deleteIconView} >
                 <TouchableOpacity >
@@ -53,7 +81,11 @@ export default class Searches extends Component {
               </View>
           </View>
 
-           {/*Rectangle 2**/}
+          </View>
+      
+      )    
+    })}
+           {/*Rectangle 2
           <View style={styles.rectangle2} >
               <View style={styles.searchIconView} >
                 <Icon
@@ -79,8 +111,8 @@ export default class Searches extends Component {
           <View style={styles.dateView} >
             <Text style={styles.dateText}>January 16, 2020</Text>
           </View>
-
-          {/*Rectangle 3**/}
+**/}
+          {/*Rectangle 3
           <View style={styles.rectangle2} >
               <View style={styles.searchIconView} >
                 <Icon
@@ -102,8 +134,8 @@ export default class Searches extends Component {
                 </TouchableOpacity>
               </View>
           </View>
-
-          {/*Rectangle 4**/}
+**/}
+          {/*Rectangle 4
           <View style={styles.rectangle2} >
               <View style={styles.searchIconView} >
                 <Icon
@@ -126,7 +158,7 @@ export default class Searches extends Component {
               </View>
           </View>
      
-
+**/}
       </View>
     );  
   }
